@@ -52,12 +52,17 @@ html {
 
 body {
   margin: 0;
+
   background: var(--paper);
   color: var(--ink);
+
   font-family: var(--font-body);
+
   font-size: 1.0625rem;
   line-height: 1.6;
+
   -webkit-font-smoothing: antialiased;
+
   transition:
     background-color 200ms ease,
     color 200ms ease;
@@ -67,17 +72,21 @@ h1,
 h2,
 h3 {
   font-family: var(--font-display);
+
   color: var(--ink);
+
   margin: 0;
 }
 
 p {
   margin: 0 0 1rem;
+
   max-width: 62ch;
 }
 
 a {
   color: var(--teal-dark);
+
   text-decoration-thickness: 1px;
   text-underline-offset: 2px;
 }
@@ -89,6 +98,7 @@ a:hover {
 img,
 svg {
   max-width: 100%;
+
   display: block;
 }
 
@@ -97,25 +107,36 @@ svg {
    Accessibility
    ========================================================= */
 
-.sr-only {
-  position: absolute;
+.sr-only,
+.visually-hidden {
+  position: absolute !important;
+
   width: 1px;
   height: 1px;
+
   padding: 0;
   margin: -1px;
+
   overflow: hidden;
+
   clip: rect(0, 0, 0, 0);
+
   white-space: nowrap;
+
   border: 0;
 }
 
 .skip-link {
   position: absolute;
+
   left: -999px;
   top: 0;
+
   background: var(--ink);
   color: var(--paper);
+
   padding: 0.6rem 1rem;
+
   z-index: 100;
 }
 
@@ -127,18 +148,24 @@ svg {
 a:focus-visible,
 button:focus-visible {
   outline: 2px solid var(--teal);
+
   outline-offset: 2px;
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
+
     animation-iteration-count: 1 !important;
+
     transition-duration: 0.01ms !important;
+
     scroll-behavior: auto !important;
   }
+
 }
 
 
@@ -148,10 +175,13 @@ button:focus-visible {
 
 .sidebar {
   position: sticky;
+
   top: 0;
+
   width: 100%;
 
   display: flex;
+
   flex-direction: column;
 
   gap: 0;
@@ -167,16 +197,23 @@ button:focus-visible {
 
 .sidebar-top {
   display: flex;
+
   align-items: center;
+
   justify-content: space-between;
 }
 
 .wordmark {
   font-family: var(--font-display);
+
   font-weight: 600;
+
   font-size: 1.15rem;
+
   color: var(--ink);
+
   text-decoration: none;
+
   line-height: 1.3;
 }
 
@@ -202,6 +239,7 @@ button:focus-visible {
   background: var(--paper);
 
   border: 1px solid var(--line);
+
   border-right: none;
 
   border-radius:
@@ -213,7 +251,9 @@ button:focus-visible {
   color: var(--ink-soft);
 
   font-family: var(--font-body);
+
   font-size: 0.8rem;
+
   font-weight: 500;
 
   letter-spacing: 0.02em;
@@ -223,6 +263,7 @@ button:focus-visible {
   padding: 0.85rem 0.5rem;
 
   writing-mode: vertical-rl;
+
   text-orientation: mixed;
 
   transition:
@@ -234,13 +275,17 @@ button:focus-visible {
 
 .theme-tab:hover {
   color: var(--ink);
+
   background: var(--surface);
+
   border-color: var(--ink-soft);
+
   padding-right: 0.75rem;
 }
 
 .theme-tab:focus-visible {
   outline: 2px solid var(--teal);
+
   outline-offset: 2px;
 }
 
@@ -258,12 +303,15 @@ button:focus-visible {
   padding: 0;
 
   border: none;
+
   background: none;
 
   cursor: pointer;
 
   flex-direction: column;
+
   justify-content: center;
+
   align-items: center;
 
   gap: 4px;
@@ -290,6 +338,7 @@ button:focus-visible {
   position: absolute;
 
   top: 100%;
+
   left: 0;
   right: 0;
 
@@ -297,7 +346,10 @@ button:focus-visible {
 
   border-bottom: 1px solid var(--line);
 
-  padding: 0.5rem 1.5rem 1.25rem;
+  padding:
+    0.5rem
+    1.5rem
+    1.25rem;
 }
 
 .nav-links.open {
@@ -310,6 +362,7 @@ button:focus-visible {
   text-decoration: none;
 
   font-size: 0.95rem;
+
   font-weight: 500;
 
   padding: 0.6rem 0;
@@ -327,7 +380,9 @@ button:focus-visible {
 
 .nav-links a.active {
   color: var(--ink);
+
   font-weight: 600;
+
   border-bottom-color: var(--teal);
 }
 
@@ -344,10 +399,14 @@ button:focus-visible {
 
   .sidebar {
     flex-direction: row;
+
     align-items: center;
+
     justify-content: space-between;
 
-    padding: 1.25rem 3.25rem;
+    padding:
+      1.25rem
+      3.25rem;
   }
 
   .nav-toggle {
@@ -371,7 +430,10 @@ button:focus-visible {
   }
 
   .nav-links a {
-    padding: 0.2rem 0 0.35rem;
+    padding:
+      0.2rem
+      0
+      0.35rem;
   }
 
 }
@@ -394,20 +456,26 @@ button:focus-visible {
 
 .page-title {
   font-size: 2.25rem;
+
   font-weight: 600;
+
   margin-bottom: 0.75rem;
 }
 
 .page-intro {
   color: var(--ink-soft);
+
   max-width: 58ch;
+
   margin-bottom: 2.75rem;
 }
 
 .accent-rust .page-title {
   display: inline-block;
 
-  border-bottom: 2px solid var(--rust);
+  border-bottom:
+    2px solid
+    var(--rust);
 
   padding-bottom: 0.5rem;
 }
@@ -429,11 +497,13 @@ button:focus-visible {
 
 .hero-text {
   flex: 1;
+
   min-width: 0;
 }
 
 .hero-photo {
   flex-shrink: 0;
+
   width: 150px;
 }
 
@@ -444,7 +514,9 @@ button:focus-visible {
 
   object-fit: cover;
 
-  border: 1px solid var(--line);
+  border:
+    1px solid
+    var(--line);
 
   border-radius: var(--radius);
 
@@ -468,7 +540,9 @@ button:focus-visible {
 
   text-decoration: none;
 
-  border-bottom: 1px solid transparent;
+  border-bottom:
+    1px solid
+    transparent;
 
   padding-bottom: 1px;
 }
@@ -526,12 +600,16 @@ button:focus-visible {
 
   from {
     opacity: 0;
-    transform: translateY(10px);
+
+    transform:
+      translateY(10px);
   }
 
   to {
     opacity: 1;
-    transform: translateY(0);
+
+    transform:
+      translateY(0);
   }
 
 }
@@ -566,7 +644,9 @@ button:focus-visible {
    ========================================================= */
 
 .status {
-  border-left: 2px solid var(--teal);
+  border-left:
+    2px solid
+    var(--teal);
 
   padding:
     0.1rem
@@ -574,7 +654,10 @@ button:focus-visible {
     0.1rem
     1rem;
 
-  margin: 0 0 3rem;
+  margin:
+    0
+    0
+    3rem;
 
   max-width: 52ch;
 }
@@ -611,7 +694,9 @@ button:focus-visible {
    ========================================================= */
 
 .row-list {
-  border-top: 1px solid var(--line);
+  border-top:
+    1px solid
+    var(--line);
 }
 
 .row {
@@ -625,7 +710,9 @@ button:focus-visible {
 
   padding: 1.5rem 0;
 
-  border-bottom: 1px solid var(--line);
+  border-bottom:
+    1px solid
+    var(--line);
 }
 
 .row-head {
@@ -707,7 +794,10 @@ button:focus-visible {
 
   color: var(--ink-soft);
 
-  margin: 2.25rem 0 0;
+  margin:
+    2.25rem
+    0
+    0;
 }
 
 .year-heading:first-child {
@@ -728,7 +818,9 @@ button:focus-visible {
 
   padding: 0;
 
-  border-top: 1px solid var(--line);
+  border-top:
+    1px solid
+    var(--line);
 }
 
 .book-list li {
@@ -742,13 +834,17 @@ button:focus-visible {
 
   padding: 0.85rem 0;
 
-  border-bottom: 1px solid var(--line);
+  border-bottom:
+    1px solid
+    var(--line);
 
   font-weight: 500;
 }
 
 .book-list li::before {
-  content: counter(book, decimal-leading-zero) ".";
+  content:
+    counter(book, decimal-leading-zero)
+    ".";
 
   font-family: var(--font-mono);
 
@@ -775,11 +871,15 @@ button:focus-visible {
 
   padding: 1.25rem 0;
 
-  border-bottom: 1px solid var(--line);
+  border-bottom:
+    1px solid
+    var(--line);
 }
 
 .game-row:first-child {
-  border-top: 1px solid var(--line);
+  border-top:
+    1px solid
+    var(--line);
 }
 
 .tag {
@@ -795,11 +895,15 @@ button:focus-visible {
 
   background: var(--surface);
 
-  border: 1px solid var(--line);
+  border:
+    1px solid
+    var(--line);
 
   border-radius: var(--radius);
 
-  padding: 0.15rem 0.45rem;
+  padding:
+    0.15rem
+    0.45rem;
 
   white-space: nowrap;
 }
@@ -811,7 +915,10 @@ button:focus-visible {
 .game-note {
   color: var(--ink-soft);
 
-  margin: 0.2rem 0 0;
+  margin:
+    0.2rem
+    0
+    0;
 }
 
 .log {
@@ -823,7 +930,9 @@ button:focus-visible {
 
   line-height: 1.9;
 
-  border-left: 2px solid var(--rust);
+  border-left:
+    2px solid
+    var(--rust);
 
   padding-left: 1rem;
 
@@ -842,11 +951,15 @@ button:focus-visible {
 
   margin: 0;
 
-  border-top: 1px solid var(--line);
+  border-top:
+    1px solid
+    var(--line);
 }
 
 .contact-list li {
-  border-bottom: 1px solid var(--line);
+  border-bottom:
+    1px solid
+    var(--line);
 
   padding: 1.1rem 0;
 
@@ -933,7 +1046,9 @@ button:focus-visible {
 
   display: inline-block;
 
-  border-bottom: 2px solid var(--rust);
+  border-bottom:
+    2px solid
+    var(--rust);
 
   padding-bottom: 0.4rem;
 }
@@ -959,7 +1074,9 @@ button:focus-visible {
   grid-template-columns:
     repeat(2, minmax(0, 1fr));
 
-  gap: 2.75rem 2rem;
+  gap:
+    2.75rem
+    2rem;
 }
 
 
@@ -975,10 +1092,35 @@ button:focus-visible {
 
 
 /* =========================================================
+   Gallery image button
+   ========================================================= */
+
+.gallery-image-button {
+  display: block;
+
+  width: 100%;
+
+  padding: 0;
+
+  margin: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  font: inherit;
+
+  text-align: left;
+
+  cursor: zoom-in;
+}
+
+
+/* =========================================================
    Gallery image
    ========================================================= */
 
-.gallery-item img {
+.gallery-image-button img {
   width: 100%;
 
   aspect-ratio: 4 / 3;
@@ -992,7 +1134,9 @@ button:focus-visible {
 
   background: var(--surface);
 
-  border: 1px solid var(--line);
+  border:
+    1px solid
+    var(--line);
 
   border-radius: var(--radius);
 
@@ -1004,12 +1148,27 @@ button:focus-visible {
     opacity 150ms ease;
 }
 
-.gallery-item img:hover {
-  transform: translateY(-2px);
 
-  border-color: var(--ink-soft);
+.gallery-image-button:hover img {
+  transform:
+    translateY(-2px);
+
+  border-color:
+    var(--ink-soft);
 
   opacity: 0.94;
+}
+
+
+.gallery-image-button:focus-visible {
+  outline:
+    2px solid
+    var(--teal);
+
+  outline-offset: 4px;
+
+  border-radius:
+    var(--radius);
 }
 
 
@@ -1065,6 +1224,85 @@ button:focus-visible {
 
 
 /* =========================================================
+   Guess the year
+   ========================================================= */
+
+.year-guess {
+  display: flex;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 0.5rem;
+
+  margin-top: 0.85rem;
+}
+
+.guess-year {
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  color: var(--teal-dark);
+
+  font-family: var(--font-mono);
+
+  font-size: 0.75rem;
+
+  line-height: 1.5;
+
+  cursor: pointer;
+
+  text-decoration: underline;
+
+  text-decoration-thickness: 1px;
+
+  text-underline-offset: 4px;
+
+  transition:
+    color var(--speed) ease,
+    opacity var(--speed) ease;
+}
+
+.guess-year:hover {
+  color: var(--rust);
+}
+
+.guess-year:focus-visible {
+  outline:
+    2px solid
+    var(--teal);
+
+  outline-offset: 4px;
+
+  border-radius: 2px;
+}
+
+.guess-year:disabled {
+  color: var(--ink-soft);
+
+  cursor: default;
+
+  text-decoration: none;
+
+  opacity: 1;
+}
+
+.gallery-year {
+  display: inline-block;
+
+  font-family: var(--font-mono);
+
+  font-size: 0.75rem;
+
+  color: var(--ink-soft);
+}
+
+
+/* =========================================================
    Lightbox
    ========================================================= */
 
@@ -1103,6 +1341,29 @@ button:focus-visible {
   visibility: visible;
 }
 
+.lightbox[hidden] {
+  display: none;
+}
+
+
+/* =========================================================
+   Lightbox content
+   ========================================================= */
+
+.lightbox-content {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  max-width: 95vw;
+
+  max-height: 90vh;
+}
+
 
 /* =========================================================
    Enlarged image
@@ -1136,9 +1397,9 @@ button:focus-visible {
 .lightbox-close {
   position: absolute;
 
-  top: 1.25rem;
+  top: -3rem;
 
-  right: 1.5rem;
+  right: 0;
 
   width: auto;
 
@@ -1170,6 +1431,25 @@ button:focus-visible {
   color: var(--rust);
 }
 
+.lightbox-close:focus-visible {
+  outline:
+    2px solid
+    #fff;
+
+  outline-offset: 4px;
+
+  border-radius: 2px;
+}
+
+
+/* =========================================================
+   Prevent background scrolling
+   ========================================================= */
+
+body.lightbox-open {
+  overflow: hidden;
+}
+
 
 /* =========================================================
    Mobile gallery
@@ -1198,7 +1478,7 @@ button:focus-visible {
     gap: 2.5rem;
   }
 
-  .gallery-item img {
+  .gallery-image-button img {
     aspect-ratio: 4 / 3;
   }
 
@@ -1210,8 +1490,18 @@ button:focus-visible {
     font-size: 0.86rem;
   }
 
+  .year-guess {
+    margin-top: 0.75rem;
+  }
+
   .lightbox {
     padding: 1rem;
+  }
+
+  .lightbox-content {
+    max-width: 100%;
+
+    max-height: 90vh;
   }
 
   .lightbox img {
@@ -1221,9 +1511,9 @@ button:focus-visible {
   }
 
   .lightbox-close {
-    top: 0.9rem;
+    top: -2.75rem;
 
-    right: 1rem;
+    right: 0;
 
     font-size: 2.2rem;
   }
