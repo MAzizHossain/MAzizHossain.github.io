@@ -186,7 +186,7 @@ button:focus-visible {
 }
 .hero-photo img {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   border: 1px solid var(--line);
   border-radius: var(--radius);
