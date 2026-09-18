@@ -54,16 +54,18 @@ function renderHeader() {
   return (
     '<div class="sidebar-top">\n' +
     '  <a class="wordmark" href="index.html">' + SITE_NAME + '</a>\n' +
-    '  <div class="header-actions">\n' +
-    '    <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false" aria-label="Switch color theme">Dark</button>\n' +
-    '    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="nav-links">\n' +
-    '      <span></span><span></span><span></span>\n' +
-    '      <span class="sr-only">Menu</span>\n' +
-    '    </button>\n' +
-    '  </div>\n' +
+    '  <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="nav-links">\n' +
+    '    <span></span><span></span><span></span>\n' +
+    '    <span class="sr-only">Menu</span>\n' +
+    '  </button>\n' +
     '</div>\n' +
     '<nav class="nav-links" id="nav-links">\n    ' + links + '\n</nav>'
   );
+}
+
+function renderThemeTab() {
+  return '<button class="theme-tab" id="themeToggle" type="button" ' +
+    'aria-pressed="false" aria-label="Switch color theme">Dark</button>';
 }
 
 function initToggle() {
@@ -104,6 +106,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   var footerSlot = document.getElementById("site-footer");
   if (footerSlot) footerSlot.innerHTML = FOOTER_HTML;
+
+  document.body.insertAdjacentHTML("beforeend", renderThemeTab());
 
   initToggle();
   initThemeToggle();
