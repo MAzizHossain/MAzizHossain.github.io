@@ -363,6 +363,77 @@ function initThemeToggle() {
 
 
 // =========================================================
+// Expandable News / Currently panels
+// =========================================================
+
+function initInfoPanels() {
+
+  var buttons =
+    document.querySelectorAll(
+      ".info-toggle"
+    );
+
+
+  if (!buttons.length) {
+    return;
+  }
+
+
+  buttons.forEach(
+    function (button) {
+
+      button.addEventListener(
+        "click",
+        function () {
+
+          var panelId =
+            button.getAttribute(
+              "aria-controls"
+            );
+
+
+          var panel =
+            document.getElementById(
+              panelId
+            );
+
+
+          if (!panel) {
+            return;
+          }
+
+
+          var isOpen =
+            button.getAttribute(
+              "aria-expanded"
+            ) === "true";
+
+
+          // Toggle the button state.
+
+          button.setAttribute(
+            "aria-expanded",
+            isOpen
+              ? "false"
+              : "true"
+          );
+
+
+          // Show or hide the panel.
+
+          panel.hidden =
+            isOpen;
+
+        }
+      );
+
+    }
+  );
+
+}
+
+
+// =========================================================
 // Dynamic Publications
 // =========================================================
 
@@ -1016,6 +1087,8 @@ document.addEventListener(
     initToggle();
 
     initThemeToggle();
+
+    initInfoPanels();
 
     loadPublications();
 
