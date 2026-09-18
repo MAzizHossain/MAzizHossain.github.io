@@ -386,11 +386,11 @@ button:focus-visible,
 
 
 /* =========================================================
-   Content
+   Page layout
    ========================================================= */
 
-.content {
-  max-width: var(--maxw);
+.page-layout {
+  max-width: 1120px;
 
   margin: 0 auto;
 
@@ -398,6 +398,89 @@ button:focus-visible,
     3.5rem
     1.5rem
     4rem;
+
+  display: grid;
+
+  grid-template-columns:
+    190px
+    minmax(0, 760px);
+
+  gap: 3.5rem;
+
+  align-items: start;
+}
+
+
+/* =========================================================
+   News sidebar
+   ========================================================= */
+
+.news-sidebar {
+  position: sticky;
+
+  top: 6rem;
+
+  padding:
+    0.15rem
+    0
+    0.15rem
+    1rem;
+
+  border-left: 2px solid var(--rust);
+}
+
+.news-heading {
+  font-family: var(--font-display);
+
+  font-size: 1rem;
+
+  font-weight: 600;
+
+  color: var(--ink);
+
+  margin:
+    0
+    0
+    1rem;
+}
+
+.news-entry {
+  margin: 0;
+}
+
+.news-date {
+  display: block;
+
+  font-family: var(--font-mono);
+
+  font-size: 0.72rem;
+
+  color: var(--ink-soft);
+
+  margin-bottom: 0.45rem;
+}
+
+.news-text {
+  color: var(--ink-soft);
+
+  font-size: 0.84rem;
+
+  line-height: 1.5;
+
+  margin: 0;
+}
+
+
+/* =========================================================
+   Content
+   ========================================================= */
+
+.content {
+  max-width: var(--maxw);
+
+  margin: 0;
+
+  padding: 0;
 }
 
 .page-title {
@@ -428,21 +511,29 @@ button:focus-visible,
 .hero {
   display: flex;
 
-  flex-direction: column-reverse;
+  flex-direction: row;
 
-  gap: 1.5rem;
+  align-items: flex-start;
 
-  margin-bottom: 0.5rem;
-}
+  gap: 2.75rem;
 
-.hero-text {
-  flex: 1;
-  min-width: 0;
+  margin-bottom: 2.5rem;
 }
 
 .hero-photo {
   flex-shrink: 0;
-  width: 150px;
+
+  width: 220px;
+
+  order: 1;
+}
+
+.hero-text {
+  flex: 1;
+
+  min-width: 0;
+
+  order: 2;
 }
 
 .hero-photo img {
@@ -488,7 +579,7 @@ button:focus-visible,
 }
 
 .hero-name {
-  font-size: 2.1rem;
+  font-size: 3rem;
 
   font-weight: 600;
 
@@ -512,7 +603,7 @@ button:focus-visible,
 
   font-weight: 500;
 
-  font-size: 1.1rem;
+  font-size: 1.3rem;
 
   color: var(--ink-soft);
 
@@ -540,30 +631,6 @@ button:focus-visible,
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-
-}
-
-@media (min-width: 701px) {
-
-  .hero {
-    flex-direction: row;
-
-    align-items: flex-start;
-
-    gap: 2.75rem;
-  }
-
-  .hero-photo {
-    width: 220px;
-  }
-
-  .hero-name {
-    font-size: 3rem;
-  }
-
-  .hero-tagline {
-    font-size: 1.3rem;
   }
 
 }
@@ -919,11 +986,6 @@ button:focus-visible,
     4rem;
 }
 
-
-/* =========================================================
-   Gallery introduction
-   ========================================================= */
-
 .gallery-intro {
   max-width: 680px;
 
@@ -956,11 +1018,6 @@ button:focus-visible,
   margin-bottom: 0;
 }
 
-
-/* =========================================================
-   Gallery grid
-   ========================================================= */
-
 .gallery-grid {
   display: grid;
 
@@ -970,21 +1027,11 @@ button:focus-visible,
   gap: 2.75rem 2rem;
 }
 
-
-/* =========================================================
-   Gallery item
-   ========================================================= */
-
 .gallery-item {
   margin: 0;
 
   min-width: 0;
 }
-
-
-/* =========================================================
-   Gallery image
-   ========================================================= */
 
 .gallery-item img {
   width: 100%;
@@ -1014,11 +1061,6 @@ button:focus-visible,
 
   opacity: 0.94;
 }
-
-
-/* =========================================================
-   Gallery caption
-   ========================================================= */
 
 .gallery-caption {
   padding:
@@ -1057,19 +1099,9 @@ button:focus-visible,
   max-width: 60ch;
 }
 
-
-/* =========================================================
-   Scientific names
-   ========================================================= */
-
 .gallery-caption i {
   font-style: italic;
 }
-
-
-/* =========================================================
-   Guess the year
-   ========================================================= */
 
 .gallery-year-row {
   display: flex;
@@ -1194,11 +1226,6 @@ button:focus-visible,
   visibility: visible;
 }
 
-
-/* =========================================================
-   Enlarged image
-   ========================================================= */
-
 .lightbox img {
   max-width: 94vw;
 
@@ -1218,11 +1245,6 @@ button:focus-visible,
 
   cursor: default;
 }
-
-
-/* =========================================================
-   Lightbox close button
-   ========================================================= */
 
 .lightbox-close {
   position: absolute;
@@ -1263,10 +1285,72 @@ button:focus-visible,
 
 
 /* =========================================================
-   Mobile gallery
+   Mobile
    ========================================================= */
 
 @media (max-width: 700px) {
+
+  .page-layout {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 2.5rem;
+
+    padding:
+      2.75rem
+      1.25rem
+      3rem;
+  }
+
+
+  /* News */
+
+  .news-sidebar {
+    position: static;
+
+    width: 100%;
+
+    padding:
+      0.1rem
+      0
+      0.1rem
+      1rem;
+
+    border-left: 2px solid var(--rust);
+  }
+
+
+  /* Hero */
+
+  .hero {
+    flex-direction: column;
+
+    gap: 1.5rem;
+
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-photo {
+    width: 150px;
+
+    order: 1;
+  }
+
+  .hero-text {
+    order: 2;
+  }
+
+  .hero-name {
+    font-size: 2.1rem;
+  }
+
+  .hero-tagline {
+    font-size: 1.1rem;
+  }
+
+
+  /* Gallery */
 
   .gallery-page {
     padding:
@@ -1305,6 +1389,9 @@ button:focus-visible,
     gap: 0.5rem;
   }
 
+
+  /* Lightbox */
+
   .lightbox {
     padding: 1rem;
   }
@@ -1324,5 +1411,3 @@ button:focus-visible,
   }
 
 }
-
-
