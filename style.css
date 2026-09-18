@@ -172,6 +172,45 @@ button:focus-visible {
 /* =========================================================
    Hero (home page)
    ========================================================= */
+.hero {
+  display: flex;
+  gap: 2.75rem;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+.hero-text { flex: 1; min-width: 0; }
+
+.hero-photo {
+  flex-shrink: 0;
+  width: 220px;
+}
+.hero-photo img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.hero-links {
+  display: flex;
+  gap: 1.4rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+.hero-links a {
+  color: var(--teal-dark);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 1px;
+}
+.hero-links a:hover {
+  color: var(--rust);
+  border-bottom-color: currentColor;
+}
+
 .hero-name {
   font-size: 3rem;
   font-weight: 600;
@@ -385,4 +424,7 @@ button:focus-visible {
   .hero-name { font-size: 2.1rem; }
   .hero-tagline { font-size: 1.1rem; }
   .page-title { font-size: 1.75rem; }
+
+  .hero { flex-direction: column-reverse; gap: 1.5rem; }
+  .hero-photo { width: 150px; }
 }
