@@ -11,6 +11,30 @@ var NAV_ITEMS = [
 
 var SITE_NAME = "Mohammed Aziz Hossain";
 var FOOTER_HTML = "<p>&copy; 2026 Aziz Hossain. Built with GitHub Pages.</p>";
+var THEME_KEY = "site-theme";
+
+// Applied immediately (not waiting for DOMContentLoaded) so the correct
+// theme is set as early as possible.
+function preferredTheme() {
+  var stored = null;
+  try { stored = localStorage.getItem(THEME_KEY); } catch (e) {}
+  if (stored === "dark" || stored === "light") return stored;
+  if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    return "dark";
+  }
+  return "light";
+}
+
+function applyTheme(theme) {
+  document.documentElement.setAttribute("data-theme", theme);
+  var btn = document.getElementById("themeToggle");
+  if (btn) {
+    btn.textContent = theme === "dark" ? "Light" : "Dark";
+    btn.setAttribute("aria-pressed", theme === "dark" ? "true" : "false");
+  }
+}
+
+applyTheme(preferredTheme());
 
 function currentPage() {
   var path = window.location.pathname.split("/").pop();
@@ -30,10 +54,13 @@ function renderHeader() {
   return (
     '<div class="sidebar-top">\n' +
     '  <a class="wordmark" href="index.html">' + SITE_NAME + '</a>\n' +
-    '  <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="nav-links">\n' +
-    '    <span></span><span></span><span></span>\n' +
-    '    <span class="sr-only">Menu</span>\n' +
-    '  </button>\n' +
+    '  <div class="header-actions">\n' +
+    '    <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false" aria-label="Switch color theme">Dark</button>\n' +
+    '    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="nav-links">\n' +
+    '      <span></span><span></span><span></span>\n' +
+    '      <span class="sr-only">Menu</span>\n' +
+    '    </button>\n' +
+    '  </div>\n' +
     '</div>\n' +
     '<nav class="nav-links" id="nav-links">\n    ' + links + '\n</nav>'
   );
@@ -57,6 +84,20 @@ function initToggle() {
   });
 }
 
+function initThemeToggle() {
+  var btn = document.getElementById("themeToggle");
+  if (!btn) return;
+
+  applyTheme(preferredTheme()); // sync label with the already-applied theme
+
+  btn.addEventListener("click", function () {
+    var current = document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
+    var next = current === "dark" ? "light" : "dark";
+    applyTheme(next);
+    try { localStorage.setItem(THEME_KEY, next); } catch (e) {}
+  });
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   var headerSlot = document.getElementById("site-header");
   if (headerSlot) headerSlot.innerHTML = renderHeader();
@@ -65,4 +106,5 @@ document.addEventListener("DOMContentLoaded", function () {
   if (footerSlot) footerSlot.innerHTML = FOOTER_HTML;
 
   initToggle();
+  initThemeToggle();
 });
