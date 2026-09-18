@@ -20,6 +20,20 @@
   --speed: 150ms;
 }
 
+/* Dark theme — same tokens, different values. Everything else in this
+   file reads colors through these variables, so this one block re-themes
+   the whole site. */
+:root[data-theme="dark"] {
+  --paper: #15181B;
+  --surface: #1E2225;
+  --ink: #E7E9E6;
+  --ink-soft: #A8AFA9;
+  --teal: #4FA79F;
+  --teal-dark: #7ED9CE;
+  --rust: #E3966B;
+  --line: #2A2E31;
+}
+
 /* =========================================================
    Reset & base
    ========================================================= */
@@ -34,6 +48,7 @@ body {
   font-size: 1.0625rem;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 200ms ease, color 200ms ease;
 }
 
 h1, h2, h3 { font-family: var(--font-display); color: var(--ink); margin: 0; }
@@ -102,6 +117,25 @@ button:focus-visible {
   line-height: 1.3;
 }
 .wordmark:hover { color: var(--teal-dark); }
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  color: var(--ink-soft);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.3rem 0.65rem;
+  cursor: pointer;
+}
+.theme-toggle:hover { color: var(--ink); border-color: var(--ink-soft); }
 
 .nav-toggle {
   display: flex;
@@ -354,6 +388,34 @@ button:focus-visible {
   margin: 2.25rem 0 0;
 }
 .year-heading:first-child { margin-top: 0; }
+
+/* =========================================================
+   Numbered book list (teaching page)
+   ========================================================= */
+.book-list {
+  list-style: none;
+  counter-reset: book;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+.book-list li {
+  counter-increment: book;
+  display: flex;
+  align-items: baseline;
+  gap: 0.85rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--line);
+  font-weight: 500;
+}
+.book-list li::before {
+  content: counter(book, decimal-leading-zero) ".";
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+  flex-shrink: 0;
+}
 
 /* =========================================================
    Gaming page
