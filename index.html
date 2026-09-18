@@ -48,269 +48,301 @@
 </a>
 
 
+<!-- =====================================================
+     Navigation
+     ===================================================== -->
+
 <header
   class="sidebar"
   id="site-header"
->
+></header>
 
-  <!-- =====================================================
-       News
-       ===================================================== -->
 
-  <div class="sidebar-news">
+<!-- =====================================================
+     Page layout
+     ===================================================== -->
 
-    <p class="section-label">
+<div class="page-layout">
+
+
+  <!-- ===================================================
+       News sidebar
+       =================================================== -->
+
+  <aside
+    class="news-sidebar"
+    aria-label="News"
+  >
+
+    <p class="news-heading">
       News
     </p>
 
-    <div class="news-item">
 
-      <span class="news-date">
+    <article class="news-entry">
+
+      <time
+        class="news-date"
+        datetime="2026-09"
+      >
         September 2026
-      </span>
+      </time>
 
-      <p>
+      <p class="news-text">
         Still looking for evidence of disturbance.
         Nothing conclusive yet.
       </p>
 
-    </div>
-
-  </div>
-
-</header>
+    </article>
 
 
-<main
-  id="main"
-  class="content"
->
+  </aside>
 
 
-  <!-- =====================================================
-       Hero
-       ===================================================== -->
+  <!-- ===================================================
+       Main content
+       =================================================== -->
 
-  <div class="hero">
-
-    <div class="hero-text">
-
-      <h1 class="hero-name">
-        Mohammed Aziz Hossain
-      </h1>
+  <main
+    id="main"
+    class="content"
+  >
 
 
-      <p class="hero-tagline">
-        Naturally curious, usually found tinkering in a lab,
-        occasional poetry attempts, and probably playing
-        strategy games.
-      </p>
+    <!-- =================================================
+         Hero
+         ================================================= -->
+
+    <div class="hero">
 
 
-      <div class="hero-links">
+      <!-- Profile photo -->
 
-        <a href="cv.pdf">
-          CV
-        </a>
+      <div class="hero-photo">
 
-        <a
-          href="https://github.com/MAzizHossain"
+        <img
+          src="profile.jpg"
+          alt="Photo of Aziz Hossain"
+          class="profile-photo"
         >
-          GitHub
-        </a>
-
-        <a
-          href="https://www.linkedin.com/in/aziz2077"
-        >
-          LinkedIn
-        </a>
 
       </div>
 
+
+      <!-- Hero text -->
+
+      <div class="hero-text">
+
+        <h1 class="hero-name">
+          Mohammed Aziz Hossain
+        </h1>
+
+
+        <p class="hero-tagline">
+          Naturally curious, usually found tinkering in a lab,
+          occasional poetry attempts, and probably playing
+          strategy games.
+        </p>
+
+
+        <div class="hero-links">
+
+          <a href="cv.pdf">
+            CV
+          </a>
+
+          <a
+            href="https://github.com/MAzizHossain"
+          >
+            GitHub
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/aziz2077"
+          >
+            LinkedIn
+          </a>
+
+        </div>
+
+
+        <p>
+          I am interested in understanding how biological
+          systems work and how their interactions shape the
+          world around them. I enjoy research, exploring new
+          ideas, and unwinding with movies, books, and video
+          games.
+        </p>
+
+      </div>
+
+
+    </div>
+
+
+    <!-- =================================================
+         Currently
+         ================================================= -->
+
+    <div class="status">
+
+      <h2>
+        Currently
+      </h2>
 
       <p>
-        I am interested in understanding how biological
-        systems work and how their interactions shape the
-        world around them. I enjoy research, exploring new
-        ideas, and unwinding with movies, books, and video
-        games.
+        Currently reading whatever catches my attention and
+        tinkering with GitHub Pages. Treating the whole thing
+        as research, mostly because “I have no idea what I am
+        doing” sounds less impressive.
       </p>
 
     </div>
 
 
-    <!-- Profile photo -->
+    <!-- =================================================
+         Explore
+         ================================================= -->
 
-    <div class="hero-photo">
-
-      <img
-        src="profile.jpg"
-        alt="Photo of Aziz Hossain"
-        class="profile-photo"
-      >
-
-    </div>
-
-  </div>
-
-
-  <!-- =====================================================
-       Currently
-       ===================================================== -->
-
-  <div class="status">
-
-    <h2>
-      Currently
-    </h2>
-
-    <p>
-      Currently reading whatever catches my attention and
-      tinkering with GitHub Pages. Treating the whole thing
-      as research, mostly because “I have no idea what I am
-      doing” sounds less impressive.
+    <p class="section-label">
+      Explore
     </p>
 
-  </div>
+
+    <div class="row-list">
 
 
-  <!-- =====================================================
-       Explore
-       ===================================================== -->
+      <!-- Publications -->
 
-  <p class="section-label">
-    Explore
-  </p>
+      <div class="row">
 
+        <div class="row-head">
 
-  <div class="row-list">
+          <span class="row-title">
 
+            <a href="publications.html">
+              Publications
+            </a>
 
-    <!-- Publications -->
+          </span>
 
-    <div class="row">
+        </div>
 
-      <div class="row-head">
-
-        <span class="row-title">
-
-          <a href="publications.html">
-            Publications
-          </a>
-
-        </span>
+        <p class="row-desc">
+          A list of things I have researched, written, and
+          somehow convinced other people to publish.
+        </p>
 
       </div>
 
-      <p class="row-desc">
-        A list of things I have researched, written, and
-        somehow convinced other people to publish.
-      </p>
+
+      <!-- Teaching -->
+
+      <div class="row">
+
+        <div class="row-head">
+
+          <span class="row-title">
+
+            <a href="teaching.html">
+              Teaching
+            </a>
+
+          </span>
+
+        </div>
+
+        <p class="row-desc">
+          A collection of scientific rabbit holes,
+          questionable reading choices, and books I probably
+          did not need to read.
+        </p>
+
+      </div>
+
+
+      <!-- Gaming -->
+
+      <div class="row">
+
+        <div class="row-head">
+
+          <span class="row-title">
+
+            <a href="gaming.html">
+              Gaming
+            </a>
+
+          </span>
+
+        </div>
+
+        <p class="row-desc">
+          Games I have played, games I fell in love with, and
+          compelling evidence of hours I sacrificed to them.
+        </p>
+
+      </div>
+
+
+      <!-- Gallery -->
+
+      <div class="row">
+
+        <div class="row-head">
+
+          <span class="row-title">
+
+            <a href="gallery.html">
+              Gallery
+            </a>
+
+          </span>
+
+        </div>
+
+        <p class="row-desc">
+          Just a collection of things I found interesting.
+          Interpret them at your own peril.
+        </p>
+
+      </div>
+
+
+      <!-- Contact -->
+
+      <div class="row">
+
+        <div class="row-head">
+
+          <span class="row-title">
+
+            <a href="contact.html">
+              Contact
+            </a>
+
+          </span>
+
+        </div>
+
+        <p class="row-desc">
+          How to find me (without a search party)
+        </p>
+
+      </div>
+
 
     </div>
 
 
-    <!-- Teaching -->
+  </main>
 
-    <div class="row">
-
-      <div class="row-head">
-
-        <span class="row-title">
-
-          <a href="teaching.html">
-            Teaching
-          </a>
-
-        </span>
-
-      </div>
-
-      <p class="row-desc">
-        A collection of scientific rabbit holes,
-        questionable reading choices, and books I probably
-        did not need to read.
-      </p>
-
-    </div>
+</div>
 
 
-    <!-- Gaming -->
-
-    <div class="row">
-
-      <div class="row-head">
-
-        <span class="row-title">
-
-          <a href="gaming.html">
-            Gaming
-          </a>
-
-        </span>
-
-      </div>
-
-      <p class="row-desc">
-        Games I have played, games I fell in love with, and
-        compelling evidence of hours I sacrificed to them.
-      </p>
-
-    </div>
-
-
-    <!-- Gallery -->
-
-    <div class="row">
-
-      <div class="row-head">
-
-        <span class="row-title">
-
-          <a href="gallery.html">
-            Gallery
-          </a>
-
-        </span>
-
-      </div>
-
-      <p class="row-desc">
-        Just a collection of things I found interesting.
-        Interpret them at your own peril.
-      </p>
-
-    </div>
-
-
-    <!-- Contact -->
-
-    <div class="row">
-
-      <div class="row-head">
-
-        <span class="row-title">
-
-          <a href="contact.html">
-            Contact
-          </a>
-
-        </span>
-
-      </div>
-
-      <p class="row-desc">
-        How to find me (without a search party)
-      </p>
-
-    </div>
-
-
-  </div>
-
-
-</main>
-
+<!-- =====================================================
+     Footer
+     ===================================================== -->
 
 <footer
   class="site-footer"
