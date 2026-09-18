@@ -1,6 +1,10 @@
+// =========================================================
+// Site configuration
+// =========================================================
+
 // Single source of truth for the site nav.
-// To add a page: add one entry here and create the matching .html file.
-// You never need to touch the nav markup in any individual page again.
+// To add a page: add one entry here and create the matching
+// .html file.
 
 var NAV_ITEMS = [
   { href: "index.html", label: "Home" },
@@ -23,8 +27,8 @@ var THEME_KEY = "site-theme";
 // Theme
 // =========================================================
 
-// Applied immediately (not waiting for DOMContentLoaded) so
-// the correct theme is set as early as possible.
+// Applied immediately so the correct theme is set
+// as early as possible.
 
 function preferredTheme() {
 
@@ -34,13 +38,18 @@ function preferredTheme() {
     stored = localStorage.getItem(THEME_KEY);
   } catch (e) {}
 
-  if (stored === "dark" || stored === "light") {
+  if (
+    stored === "dark" ||
+    stored === "light"
+  ) {
     return stored;
   }
 
   if (
     window.matchMedia &&
-    window.matchMedia("(prefers-color-scheme: dark)").matches
+    window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches
   ) {
     return "dark";
   }
@@ -72,12 +81,20 @@ function applyTheme(theme) {
         ? "true"
         : "false"
     );
+
   }
+
 }
 
 
-applyTheme(preferredTheme());
+applyTheme(
+  preferredTheme()
+);
 
+
+// =========================================================
+// Current page
+// =========================================================
 
 function currentPage() {
 
@@ -89,6 +106,7 @@ function currentPage() {
   return path === ""
     ? "index.html"
     : path;
+
 }
 
 
@@ -98,45 +116,51 @@ function currentPage() {
 
 function renderHeader() {
 
-  var page = currentPage();
+  var page =
+    currentPage();
+
 
   var links =
-    NAV_ITEMS.map(function (item) {
+    NAV_ITEMS.map(
+      function (item) {
 
-      var attrs = [
-        'href="' + item.href + '"'
-      ];
+        var attrs = [
+          'href="' + item.href + '"'
+        ];
 
 
-      if (item.href === page) {
+        if (
+          item.href === page
+        ) {
 
-        attrs.push(
-          'class="active"'
+          attrs.push(
+            'class="active"'
+          );
+
+        }
+
+
+        if (item.section) {
+
+          attrs.push(
+            'data-section="' +
+            item.section +
+            '"'
+          );
+
+        }
+
+
+        return (
+          "<a " +
+          attrs.join(" ") +
+          ">" +
+          item.label +
+          "</a>"
         );
 
       }
-
-
-      if (item.section) {
-
-        attrs.push(
-          'data-section="' +
-          item.section +
-          '"'
-        );
-
-      }
-
-
-      return (
-        "<a " +
-        attrs.join(" ") +
-        ">" +
-        item.label +
-        "</a>"
-      );
-
-    }).join("\n    ");
+    ).join("\n    ");
 
 
   return (
@@ -147,20 +171,31 @@ function renderHeader() {
     SITE_NAME +
     '</a>\n' +
 
-    '  <button class="nav-toggle" id="navToggle" ' +
-    'aria-expanded="false" aria-controls="nav-links">\n' +
+    '  <button ' +
+    'class="nav-toggle" ' +
+    'id="navToggle" ' +
+    'type="button" ' +
+    'aria-expanded="false" ' +
+    'aria-controls="nav-links">' +
 
     '    <span></span>' +
-    '<span></span>' +
-    '<span></span>\n' +
+    '    <span></span>' +
+    '    <span></span>' +
 
-    '    <span class="sr-only">Menu</span>\n' +
+    '    <span class="sr-only">' +
+    'Menu' +
+    '</span>' +
 
     '  </button>\n' +
 
     '</div>\n' +
 
-    '<nav class="nav-links" id="nav-links">\n    ' +
+    '<nav ' +
+    'class="nav-links" ' +
+    'id="nav-links" ' +
+    'aria-label="Main navigation">\n' +
+
+    '    ' +
 
     links +
 
@@ -202,13 +237,20 @@ function renderThemeTab() {
 function initToggle() {
 
   var toggle =
-    document.getElementById("navToggle");
+    document.getElementById(
+      "navToggle"
+    );
 
   var links =
-    document.getElementById("nav-links");
+    document.getElementById(
+      "nav-links"
+    );
 
 
-  if (!toggle || !links) {
+  if (
+    !toggle ||
+    !links
+  ) {
     return;
   }
 
@@ -218,7 +260,9 @@ function initToggle() {
     function () {
 
       var isOpen =
-        links.classList.toggle("open");
+        links.classList.toggle(
+          "open"
+        );
 
 
       toggle.setAttribute(
@@ -234,25 +278,27 @@ function initToggle() {
 
   links
     .querySelectorAll("a")
-    .forEach(function (link) {
+    .forEach(
+      function (link) {
 
-      link.addEventListener(
-        "click",
-        function () {
+        link.addEventListener(
+          "click",
+          function () {
 
-          links.classList.remove(
-            "open"
-          );
+            links.classList.remove(
+              "open"
+            );
 
-          toggle.setAttribute(
-            "aria-expanded",
-            "false"
-          );
+            toggle.setAttribute(
+              "aria-expanded",
+              "false"
+            );
 
-        }
-      );
+          }
+        );
 
-    });
+      }
+    );
 
 }
 
@@ -264,7 +310,9 @@ function initToggle() {
 function initThemeToggle() {
 
   var btn =
-    document.getElementById("themeToggle");
+    document.getElementById(
+      "themeToggle"
+    );
 
 
   if (!btn) {
@@ -283,7 +331,9 @@ function initThemeToggle() {
 
       var current =
         document.documentElement
-          .getAttribute("data-theme") === "dark"
+          .getAttribute(
+            "data-theme"
+          ) === "dark"
           ? "dark"
           : "light";
 
@@ -312,9 +362,9 @@ function initThemeToggle() {
 }
 
 
-/* =========================================================
-   Dynamic Publications
-   ========================================================= */
+// =========================================================
+// Dynamic Publications
+// =========================================================
 
 function loadPublications() {
 
@@ -324,8 +374,7 @@ function loadPublications() {
     );
 
 
-  // This means the code only runs
-  // on publications.html.
+  // Only runs on publications.html.
 
   if (!container) {
     return;
@@ -334,189 +383,578 @@ function loadPublications() {
 
   fetch("publications.json")
 
-    .then(function (response) {
+    .then(
+      function (response) {
 
-      if (!response.ok) {
+        if (!response.ok) {
 
-        throw new Error(
-          "Could not load publications.json"
-        );
-
-      }
-
-      return response.json();
-
-    })
-
-
-    .then(function (data) {
-
-      var publications =
-        data.publications || [];
-
-
-      // Newest publications first.
-
-      publications.sort(
-        function (a, b) {
-
-          return b.year - a.year;
+          throw new Error(
+            "Could not load publications.json"
+          );
 
         }
-      );
+
+        return response.json();
+
+      }
+    )
 
 
-      container.innerHTML = "";
+    .then(
+      function (data) {
+
+        var publications =
+          data.publications || [];
 
 
-      var currentYear = null;
+        // Newest publications first.
 
-      var rowList = null;
+        publications.sort(
+          function (a, b) {
 
+            return b.year - a.year;
 
-      publications.forEach(
-        function (publication) {
-
-
-          // Create a new year heading
-          // when the year changes.
-
-          if (
-            publication.year !==
-            currentYear
-          ) {
-
-            currentYear =
-              publication.year;
+          }
+        );
 
 
-            var yearHeading =
-              document.createElement(
-                "p"
+        container.innerHTML = "";
+
+
+        var currentYear = null;
+
+        var rowList = null;
+
+
+        publications.forEach(
+          function (publication) {
+
+
+            // Create a new year heading
+            // when the year changes.
+
+            if (
+              publication.year !==
+              currentYear
+            ) {
+
+              currentYear =
+                publication.year;
+
+
+              var yearHeading =
+                document.createElement(
+                  "p"
+                );
+
+
+              yearHeading.className =
+                "year-heading";
+
+
+              yearHeading.textContent =
+                currentYear;
+
+
+              container.appendChild(
+                yearHeading
               );
 
 
-            yearHeading.className =
-              "year-heading";
+              rowList =
+                document.createElement(
+                  "div"
+                );
 
 
-            yearHeading.textContent =
-              currentYear;
+              rowList.className =
+                "row-list";
 
 
-            container.appendChild(
-              yearHeading
-            );
+              container.appendChild(
+                rowList
+              );
+
+            }
 
 
-            rowList =
+            // Create publication row.
+
+            var row =
               document.createElement(
                 "div"
               );
 
 
-            rowList.className =
-              "row-list";
+            row.className =
+              "row";
 
 
-            container.appendChild(
-              rowList
-            );
+            row.innerHTML = `
 
-          }
+              <div class="row-head">
+
+                <span class="row-title">
+
+                  <a
+                    href="${publication.doi}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    ${publication.title}
+                  </a>
+
+                </span>
+
+                <span class="row-meta">
+                  ${publication.journal}
+                </span>
+
+              </div>
 
 
-          // Create the publication row.
-
-          var row =
-            document.createElement(
-              "div"
-            );
+              <p class="row-desc">
+                ${publication.authors}
+              </p>
 
 
-          row.className =
-            "row";
-
-
-          row.innerHTML = `
-
-            <div class="row-head">
-
-              <span class="row-title">
+              <div class="row-links">
 
                 <a
                   href="${publication.doi}"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  ${publication.title}
+                  DOI
                 </a>
 
-              </span>
+              </div>
 
-              <span class="row-meta">
-                ${publication.journal}
-              </span>
-
-            </div>
+            `;
 
 
-            <p class="row-desc">
-              ${publication.authors}
-            </p>
+            rowList.appendChild(
+              row
+            );
+
+          }
+        );
+
+      }
+    )
 
 
-            <div class="row-links">
+    .catch(
+      function (error) {
 
-              <a
-                href="${publication.doi}"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                DOI
-              </a>
-
-            </div>
-
-          `;
+        console.error(
+          "Publication loading error:",
+          error
+        );
 
 
-          rowList.appendChild(
-            row
-          );
+        container.innerHTML =
+          '<p class="publication-error">' +
+          'Unable to load publications.' +
+          '</p>';
 
-        }
-      );
-
-    })
-
-
-    .catch(function (error) {
-
-      console.error(
-        "Publication loading error:",
-        error
-      );
-
-
-      container.innerHTML =
-        '<p class="publication-error">' +
-        'Unable to load publications.' +
-        '</p>';
-
-    });
+      }
+    );
 
 }
 
 
-/* =========================================================
-   Initialize the site
-   ========================================================= */
+// =========================================================
+// Gallery
+// =========================================================
+
+
+// ---------------------------------------------------------
+// Guess the year
+// ---------------------------------------------------------
+
+function initGalleryYearGuess() {
+
+  var buttons =
+    document.querySelectorAll(
+      ".guess-year"
+    );
+
+
+  if (!buttons.length) {
+    return;
+  }
+
+
+  buttons.forEach(
+    function (button) {
+
+      button.addEventListener(
+        "click",
+        function () {
+
+          var galleryItem =
+            button.closest(
+              ".gallery-item"
+            );
+
+
+          if (!galleryItem) {
+            return;
+          }
+
+
+          var year =
+            galleryItem.dataset.year;
+
+
+          var yearDisplay =
+            galleryItem.querySelector(
+              ".gallery-year"
+            );
+
+
+          if (!yearDisplay) {
+            return;
+          }
+
+
+          yearDisplay.textContent =
+            year;
+
+
+          button.textContent =
+            "It was " + year + ".";
+
+
+          button.disabled = true;
+
+        }
+      );
+
+    }
+  );
+
+}
+
+
+// ---------------------------------------------------------
+// Gallery shuffle
+// ---------------------------------------------------------
+
+function shuffleGallery() {
+
+  var gallery =
+    document.querySelector(
+      ".gallery-grid"
+    );
+
+
+  if (!gallery) {
+    return;
+  }
+
+
+  var items =
+    Array.from(
+      gallery.querySelectorAll(
+        ".gallery-item"
+      )
+    );
+
+
+  // Fisher-Yates shuffle.
+
+  for (
+    var i = items.length - 1;
+    i > 0;
+    i--
+  ) {
+
+    var j =
+      Math.floor(
+        Math.random() * (i + 1)
+      );
+
+
+    var temp =
+      items[i];
+
+    items[i] =
+      items[j];
+
+    items[j] =
+      temp;
+
+  }
+
+
+  // Reinsert shuffled items.
+
+  items.forEach(
+    function (item) {
+
+      gallery.appendChild(
+        item
+      );
+
+    }
+  );
+
+}
+
+
+// ---------------------------------------------------------
+// Lightbox
+// ---------------------------------------------------------
+
+var lightbox = null;
+var lightboxImage = null;
+var lightboxClose = null;
+
+var previousFocusedElement = null;
+
+
+function initLightbox() {
+
+  lightbox =
+    document.getElementById(
+      "lightbox"
+    );
+
+  lightboxImage =
+    document.getElementById(
+      "lightbox-image"
+    );
+
+  lightboxClose =
+    document.querySelector(
+      ".lightbox-close"
+    );
+
+
+  if (
+    !lightbox ||
+    !lightboxImage ||
+    !lightboxClose
+  ) {
+    return;
+  }
+
+
+  var galleryImages =
+    document.querySelectorAll(
+      ".gallery-item img"
+    );
+
+
+  galleryImages.forEach(
+    function (image) {
+
+      image.addEventListener(
+        "click",
+        function () {
+
+          openLightbox(image);
+
+        }
+      );
+
+
+      image.addEventListener(
+        "keydown",
+        function (event) {
+
+          if (
+            event.key === "Enter" ||
+            event.key === " "
+          ) {
+
+            event.preventDefault();
+
+            openLightbox(image);
+
+          }
+
+        }
+      );
+
+    }
+  );
+
+
+  lightboxClose.addEventListener(
+    "click",
+    function () {
+
+      closeLightbox();
+
+    }
+  );
+
+
+  lightbox.addEventListener(
+    "click",
+    function (event) {
+
+      if (
+        event.target === lightbox
+      ) {
+
+        closeLightbox();
+
+      }
+
+    }
+  );
+
+
+  document.addEventListener(
+    "keydown",
+    function (event) {
+
+      if (
+        event.key === "Escape" &&
+        !lightbox.hidden
+      ) {
+
+        closeLightbox();
+
+      }
+
+    }
+  );
+
+}
+
+
+function openLightbox(image) {
+
+  if (
+    !lightbox ||
+    !lightboxImage
+  ) {
+    return;
+  }
+
+
+  previousFocusedElement =
+    document.activeElement;
+
+
+  lightboxImage.src =
+    image.currentSrc ||
+    image.src;
+
+
+  lightboxImage.alt =
+    image.alt;
+
+
+  lightbox.hidden =
+    false;
+
+
+  // Force the browser to recognize
+  // the visible state before applying
+  // the active class.
+
+  requestAnimationFrame(
+    function () {
+
+      lightbox.classList.add(
+        "active"
+      );
+
+    }
+  );
+
+
+  document.body.classList.add(
+    "lightbox-open"
+  );
+
+
+  lightboxClose.focus();
+
+}
+
+
+function closeLightbox() {
+
+  if (
+    !lightbox ||
+    !lightboxImage
+  ) {
+    return;
+  }
+
+
+  lightbox.classList.remove(
+    "active"
+  );
+
+
+  document.body.classList.remove(
+    "lightbox-open"
+  );
+
+
+  lightboxImage.src =
+    "";
+
+  lightboxImage.alt =
+    "";
+
+
+  // Wait for the opacity transition
+  // before hiding the element.
+
+  setTimeout(
+    function () {
+
+      if (
+        lightbox &&
+        !lightbox.classList.contains(
+          "active"
+        )
+      ) {
+
+        lightbox.hidden =
+          true;
+
+      }
+
+    },
+    160
+  );
+
+
+  if (
+    previousFocusedElement &&
+    typeof previousFocusedElement.focus ===
+      "function"
+  ) {
+
+    previousFocusedElement.focus();
+
+  }
+
+}
+
+
+// =========================================================
+// Initialize the site
+// =========================================================
 
 document.addEventListener(
   "DOMContentLoaded",
   function () {
 
+
+    // -------------------------------------------------------
+    // Header
+    // -------------------------------------------------------
 
     var headerSlot =
       document.getElementById(
@@ -532,6 +970,10 @@ document.addEventListener(
     }
 
 
+    // -------------------------------------------------------
+    // Footer
+    // -------------------------------------------------------
+
     var footerSlot =
       document.getElementById(
         "site-footer"
@@ -546,21 +988,47 @@ document.addEventListener(
     }
 
 
-    document.body.insertAdjacentHTML(
-      "beforeend",
-      renderThemeTab()
-    );
+    // -------------------------------------------------------
+    // Theme tab
+    // -------------------------------------------------------
 
+    // Prevent duplicate theme buttons if this script
+    // is accidentally loaded more than once.
+
+    if (
+      !document.getElementById(
+        "themeToggle"
+      )
+    ) {
+
+      document.body.insertAdjacentHTML(
+        "beforeend",
+        renderThemeTab()
+      );
+
+    }
+
+
+    // -------------------------------------------------------
+    // Shared site features
+    // -------------------------------------------------------
 
     initToggle();
 
     initThemeToggle();
 
-
-    // Load publications if this is
-    // publications.html.
-
     loadPublications();
+
+
+    // -------------------------------------------------------
+    // Gallery features
+    // -------------------------------------------------------
+
+    shuffleGallery();
+
+    initGalleryYearGuess();
+
+    initLightbox();
 
   }
 );
