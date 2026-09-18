@@ -21,7 +21,7 @@
 
   <link
     rel="preconnect"
-    href="https://fonts.googleapis.com"
+    href="https://fonts.gstatic.com"
     crossorigin
   >
 
@@ -48,14 +48,20 @@
   </a>
 
 
-  <!-- Header -->
+  <!-- =====================================================
+       Header
+       ===================================================== -->
+
   <header
     class="sidebar"
     id="site-header"
   ></header>
 
 
-  <!-- Main content -->
+  <!-- =====================================================
+       Main content
+       ===================================================== -->
+
   <main
     id="main"
     class="gallery-page"
@@ -73,27 +79,28 @@
     </section>
 
 
-    <!-- Gallery -->
+    <!-- ===================================================
+         Gallery
+         =================================================== -->
+
     <section
       class="gallery-grid"
       aria-label="Gallery of interesting things"
     >
 
 
-      <!-- ========================= -->
       <!-- Gallery Item 1 -->
-      <!-- ========================= -->
 
       <article
         class="gallery-item"
-        data-year="2022"
+        data-year="2024"
       >
 
         <img
           src="images/gallery/pcr.jpg"
           alt="PCR result showing successful amplification"
           loading="lazy"
-          onclick="openLightbox(this)"
+          tabindex="0"
         >
 
         <div class="gallery-caption">
@@ -111,30 +118,28 @@
             announced, “This is going into my submission.”
           </p>
 
+          <div class="gallery-year-row">
 
-          <!-- Guess the year -->
+            <button
+              class="guess-year"
+              type="button"
+            >
+              Guess the year →
+            </button>
 
-          <button
-            class="guess-year"
-            type="button"
-            onclick="revealYear(this)"
-          >
-            Guess the year →
-          </button>
+            <span
+              class="gallery-year"
+              aria-live="polite"
+            ></span>
 
-          <span
-            class="gallery-year"
-            aria-live="polite"
-          ></span>
+          </div>
 
         </div>
 
       </article>
 
 
-      <!-- ========================= -->
       <!-- Gallery Item 2 -->
-      <!-- ========================= -->
 
       <article
         class="gallery-item"
@@ -145,7 +150,7 @@
           src="images/gallery/Bee.jpg"
           alt="A bee sitting on a flower"
           loading="lazy"
-          onclick="openLightbox(this)"
+          tabindex="0"
         >
 
         <div class="gallery-caption">
@@ -161,41 +166,39 @@
             that was its entire modelling career.
           </p>
 
+          <div class="gallery-year-row">
 
-          <!-- Guess the year -->
+            <button
+              class="guess-year"
+              type="button"
+            >
+              Guess the year →
+            </button>
 
-          <button
-            class="guess-year"
-            type="button"
-            onclick="revealYear(this)"
-          >
-            Guess the year →
-          </button>
+            <span
+              class="gallery-year"
+              aria-live="polite"
+            ></span>
 
-          <span
-            class="gallery-year"
-            aria-live="polite"
-          ></span>
+          </div>
 
         </div>
 
       </article>
 
 
-      <!-- ========================= -->
       <!-- Gallery Item 3 -->
-      <!-- ========================= -->
 
       <article
         class="gallery-item"
-        data-year="2024"
+        data-year="2023"
       >
 
         <img
           src="images/gallery/aurora.jpg"
           alt="Aurora borealis over Umeå"
           loading="lazy"
-          onclick="openLightbox(this)"
+          tabindex="0"
         >
 
         <div class="gallery-caption">
@@ -212,41 +215,39 @@
             unfortunately, had to work with my camera.
           </p>
 
+          <div class="gallery-year-row">
 
-          <!-- Guess the year -->
+            <button
+              class="guess-year"
+              type="button"
+            >
+              Guess the year →
+            </button>
 
-          <button
-            class="guess-year"
-            type="button"
-            onclick="revealYear(this)"
-          >
-            Guess the year →
-          </button>
+            <span
+              class="gallery-year"
+              aria-live="polite"
+            ></span>
 
-          <span
-            class="gallery-year"
-            aria-live="polite"
-          ></span>
+          </div>
 
         </div>
 
       </article>
 
 
-      <!-- ========================= -->
       <!-- Gallery Item 4 -->
-      <!-- ========================= -->
 
       <article
         class="gallery-item"
-        data-year="2001"
+        data-year="2022"
       >
 
         <img
           src="images/gallery/metaphotography.jpg"
           alt="Me taking a photo while someone takes a photo of me taking a photo"
           loading="lazy"
-          onclick="openLightbox(this)"
+          tabindex="0"
         >
 
         <div class="gallery-caption">
@@ -261,164 +262,67 @@
             or am I just overthinking a photo?
           </p>
 
+          <div class="gallery-year-row">
 
-          <!-- Guess the year -->
+            <button
+              class="guess-year"
+              type="button"
+            >
+              Guess the year →
+            </button>
 
-          <button
-            class="guess-year"
-            type="button"
-            onclick="revealYear(this)"
-          >
-            Guess the year →
-          </button>
+            <span
+              class="gallery-year"
+              aria-live="polite"
+            ></span>
 
-          <span
-            class="gallery-year"
-            aria-live="polite"
-          ></span>
+          </div>
 
         </div>
 
       </article>
- <!-- ========================= -->
+
+
       <!-- Gallery Item 5 -->
-      <!-- ========================= -->
 
       <article
         class="gallery-item"
-        data-year="2018"
+        data-year="2025"
       >
 
         <img
-          src="images/gallery/tour.jpg"
-          alt="Me taking a photo while someone takes a photo of me taking a photo"
+          src="images/gallery/random.jpg"
+          alt="A random moment"
           loading="lazy"
-          onclick="openLightbox(this)"
+          tabindex="0"
         >
 
         <div class="gallery-caption">
 
           <h2>
-        Taking in the view. And my insignificance.
-
+            A random little thing.
           </h2>
 
           <p>
-            I actually do not know who took this photo because there were about 18 of us on that tour.
-            I was just sitting and looking at those "mountains" from below when I suddenly realized how small I am in the universe. Apparently, that is all it took to trigger an existential crisis.
+            Not particularly important, but I liked it enough
+            to keep a picture of it.
           </p>
 
+          <div class="gallery-year-row">
 
-          <!-- Guess the year -->
+            <button
+              class="guess-year"
+              type="button"
+            >
+              Guess the year →
+            </button>
 
-          <button
-            class="guess-year"
-            type="button"
-            onclick="revealYear(this)"
-          >
-            Guess the year →
-          </button>
+            <span
+              class="gallery-year"
+              aria-live="polite"
+            ></span>
 
-          <span
-            class="gallery-year"
-            aria-live="polite"
-          ></span>
-
-        </div>
-
-      </article>
- <!-- ========================= -->
-      <!-- Gallery Item 6 -->
-      <!-- ========================= -->
-
-      <article
-        class="gallery-item"
-        data-year="2023"
-      >
-
-        <img
-          src="images/gallery/tree.jpg"
-          alt="The tree outside my kitchen, glowing red against the snow"
-          loading="lazy"
-          onclick="openLightbox(this)"
-        >
-
-        <div class="gallery-caption">
-
-          <h2>
-          My kitchen-window philosopher.
-          </h2>
-
-          <p>
-            This tree stood right outside my kitchen in Umeå.
-            I watched it go through summer and winter, looking slightly different every time, but somehow always standing and glowing in its own way. 
-            At some point, I started feeling like it was doing a better job at life than I was.
-          </p>
-
-
-          <!-- Guess the year -->
-
-          <button
-            class="guess-year"
-            type="button"
-            onclick="revealYear(this)"
-          >
-            Guess the year →
-          </button>
-
-          <span
-            class="gallery-year"
-            aria-live="polite"
-          ></span>
-
-        </div>
-
-      </article>
-
-
-      <!-- ========================= -->
-      <!-- Gallery Item 7 -->
-      <!-- ========================= -->
-
-      <article
-        class="gallery-item"
-        data-year="2021"
-      >
-
-        <img
-          src="images/gallery/unknown.jpg"
-          alt="A mysterious heart-like structure seen under a microscope"
-          loading="lazy"
-          onclick="openLightbox(this)"
-        >
-
-        <div class="gallery-caption">
-
-          <h2>
-     A microscopic mystery.
-
-          </h2>
-
-          <p>
-           I saw this little heart-shaped thing under a microscope. I actually do not know what it is. 
-            If you can figure it out, let me be part of the unraveling too.
-          </p>
-
-
-          <!-- Guess the year -->
-
-          <button
-            class="guess-year"
-            type="button"
-            onclick="revealYear(this)"
-          >
-            Guess the year →
-          </button>
-
-          <span
-            class="gallery-year"
-            aria-live="polite"
-          ></span>
+          </div>
 
         </div>
 
@@ -430,24 +334,31 @@
   </main>
 
 
-  <!-- ========================= -->
-  <!-- Lightbox -->
-  <!-- ========================= -->
+  <!-- =====================================================
+       Lightbox
+       ===================================================== -->
 
   <div
     id="lightbox"
     class="lightbox"
     role="dialog"
     aria-modal="true"
-    aria-label="Expanded gallery image"
-    onclick="handleLightboxClick(event)"
+    aria-labelledby="lightbox-label"
+    hidden
   >
+
+    <span
+      id="lightbox-label"
+      class="sr-only"
+    >
+      Expanded gallery image
+    </span>
+
 
     <button
       class="lightbox-close"
       type="button"
       aria-label="Close image"
-      onclick="event.stopPropagation(); closeLightbox()"
     >
       &times;
     </button>
@@ -462,7 +373,10 @@
   </div>
 
 
-  <!-- Footer -->
+  <!-- =====================================================
+       Footer
+       ===================================================== -->
+
   <footer
     class="site-footer"
     id="site-footer"
@@ -470,198 +384,6 @@
 
 
   <script src="script.js"></script>
-
-
-  <script>
-
-    /*
-     * ==========================================
-     * Lightbox
-     * ==========================================
-     */
-
-    const lightbox =
-      document.getElementById("lightbox");
-
-    const lightboxImage =
-      document.getElementById("lightbox-image");
-
-
-    function openLightbox(image) {
-
-      lightboxImage.src = image.src;
-
-      lightboxImage.alt = image.alt;
-
-      lightbox.classList.add("active");
-
-      document.body.style.overflow = "hidden";
-
-    }
-
-
-    function closeLightbox() {
-
-      lightbox.classList.remove("active");
-
-      document.body.style.overflow = "";
-
-      lightboxImage.src = "";
-
-      lightboxImage.alt = "";
-
-    }
-
-
-    function handleLightboxClick(event) {
-
-      if (event.target === lightbox) {
-
-        closeLightbox();
-
-      }
-
-    }
-
-
-    /*
-     * ==========================================
-     * Close lightbox with Escape key
-     * ==========================================
-     */
-
-    document.addEventListener(
-      "keydown",
-      function(event) {
-
-        if (
-          event.key === "Escape" &&
-          lightbox.classList.contains("active")
-        ) {
-
-          closeLightbox();
-
-        }
-
-      }
-    );
-
-
-    /*
-     * ==========================================
-     * Guess the year
-     * ==========================================
-     *
-     * The year is stored in the article's
-     * data-year attribute.
-     *
-     * Example:
-     *
-     * <article class="gallery-item"
-     *          data-year="2024">
-     *
-     * The visitor only sees "Guess the year →"
-     * until they click it.
-     */
-
-    function revealYear(button) {
-
-      const galleryItem =
-        button.closest(".gallery-item");
-
-      const year =
-        galleryItem.dataset.year;
-
-      const yearDisplay =
-        galleryItem.querySelector(".gallery-year");
-
-
-      yearDisplay.textContent =
-        year;
-
-      button.textContent =
-        "It was " + year + ".";
-
-      button.disabled = true;
-
-    }
-
-
-    /*
-     * ==========================================
-     * Randomize gallery
-     * ==========================================
-     *
-     * Every time the page loads, the gallery
-     * items are placed in a random order.
-     *
-     * The image, caption, and year all stay
-     * together because they belong to the
-     * same gallery-item.
-     */
-
-    function shuffleGallery() {
-
-      const gallery =
-        document.querySelector(".gallery-grid");
-
-      const items =
-        Array.from(
-          gallery.querySelectorAll(".gallery-item")
-        );
-
-
-      /*
-       * Fisher-Yates shuffle
-       */
-
-      for (
-        let i = items.length - 1;
-        i > 0;
-        i--
-      ) {
-
-        const j =
-          Math.floor(
-            Math.random() * (i + 1)
-          );
-
-
-        [
-          items[i],
-          items[j]
-        ] = [
-          items[j],
-          items[i]
-        ];
-
-      }
-
-
-      /*
-       * Put the shuffled items
-       * back into the gallery.
-       */
-
-      items.forEach(
-        function(item) {
-
-          gallery.appendChild(item);
-
-        }
-      );
-
-    }
-
-
-    /*
-     * Shuffle the gallery when
-     * the page loads.
-     */
-
-    shuffleGallery();
-
-  </script>
 
 </body>
 
