@@ -1,34 +1,32 @@
 {
-  "manual": [
+  "publications": [
     {
-      "doi": "10.1016/j.jgar.2026.09.004",
+      "year": 2026,
       "title": "Whole genome sequencing reveals the co-existence of <i>bla</i><sub>PER-7</sub>, <i>bla</i><sub>ADC-52</sub> and <i>bla</i><sub>OXA-91</sub> in multidrug resistant ST164<sup>pas</sup>/ST234<sup>oxf</sup> <i>Acinetobacter baumannii</i> strains in Bangladesh.",
       "journal": "Journal of Global Antimicrobial Resistance",
       "authors": "Spencer Mark Mondol, Mohammed Aziz Hossain, Fahim Kabir Monjurul Haque",
-      "year": 2026
+      "doi": "https://doi.org/10.1016/j.jgar.2026.09.004"
     },
     {
-      "doi": "10.1186/s12866-025-04029-w",
+      "year": 2025,
       "title": "Isolation and characterization of <i>Acinetobacter baumannii</i> from environmental waters in Dhaka City, Bangladesh",
       "journal": "BMC Microbiology",
       "authors": "Mohammed Aziz Hossain, Nayara Noor E. Fatima, Jahid H. Tushar, Hasib Mahmud, Fahim Kabir Monjurul Haque",
-      "year": 2025
+      "doi": "https://doi.org/10.1186/s12866-025-04029-w"
     },
     {
-      "doi": "10.1038/s41598-025-90414-4",
+      "year": 2025,
       "title": "Comprehensive genomic insights into a highly pathogenic clone ST656 of mcr8.1 containing multidrug-resistant <i>Klebsiella pneumoniae</i> from Bangladesh",
       "journal": "Scientific Reports",
       "authors": "Spencer Mark Mondol, Mohammed Aziz Hossain, Fahim Kabir Monjurul Haque",
-      "year": 2025
+      "doi": "https://doi.org/10.1038/s41598-025-90414-4"
     },
     {
-      "doi": "10.1128/mra.01332-24",
+      "year": 2025,
       "title": "Draft genome analysis of a serum-resistant and fourth-generation cephalosporin (cefepime)-resistant <i>Acinetobacter baumannii</i> strain TDU5 isolated from Dhaka, Bangladesh.",
       "journal": "Microbiology Resource Announcement (ASM)",
       "authors": "Spencer Mark Mondol, Mohammed Aziz Hossain, Fahim Kabir Monjurul Haque",
-      "year": 2025
+      "doi": "https://doi.org/10.1128/mra.01332-24"
     }
-  ],
-  "automatic": []
+  ]
 }
-
