@@ -2,193 +2,444 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Gallery | Md. Aziz Hossain</title>
+  <title>Gallery | Mohammed Aziz Hossain</title>
 
-    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 
 <body>
 
-    <!-- Navigation -->
-    <header>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="publications.html">Publications</a>
-            <a href="teaching.html">Teaching</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
+  <!-- =====================================================
+       Skip link
+       ===================================================== -->
+
+  <a class="skip-link" href="#main-content">
+    Skip to content
+  </a>
 
 
-    <!-- Main Gallery -->
-    <main class="gallery-page">
+  <!-- =====================================================
+       Navigation
+       ===================================================== -->
 
-        <!-- Introduction -->
-        <section class="gallery-intro">
+  <header class="sidebar">
 
-            <h1>Gallery</h1>
+    <div class="sidebar-top">
 
-            <p>
-                A collection of snippets, ideas, images, and little things
-                that I have found interesting along the way.
-            </p>
-
-            <p>
-                Some of these are here because they inspired me, some because
-                I found them beautiful or clever, and others simply because
-                they made me stop and think.
-            </p>
-
-        </section>
+      <a href="index.html" class="wordmark">
+        Md. Aziz Hossain
+      </a>
 
 
-        <!-- Gallery Items -->
-        <section class="gallery-grid">
-
-
-            <!-- ==========================================
-                 GALLERY ITEM 1
-                 ========================================== -->
-
-            <article class="gallery-item">
-
-                <img
-                    src="images/gallery/my-snippet.jpg"
-                    alt="Description of my interesting snippet"
-                    onclick="openLightbox(this)"
-                >
-
-                <div class="gallery-caption">
-
-                    <h2>Why I chose this</h2>
-
-                    <p>
-                        I found this interesting because ...
-                    </p>
-
-                </div>
-
-            </article>
-
-
-            <!-- ==========================================
-                 GALLERY ITEM 2
-                 Copy this block whenever you add another image
-                 ========================================== -->
-
-            <!--
-            <article class="gallery-item">
-
-                <img
-                    src="images/gallery/another-image.jpg"
-                    alt="Description of the image"
-                    onclick="openLightbox(this)"
-                >
-
-                <div class="gallery-caption">
-
-                    <h2>Why I chose this</h2>
-
-                    <p>
-                        Explain here why you found this interesting.
-                    </p>
-
-                </div>
-
-            </article>
-            -->
-
-
-        </section>
-
-    </main>
-
-
-    <!-- ==========================================
-         LIGHTBOX
-         ========================================== -->
-
-    <div
-        id="lightbox"
-        class="lightbox"
-        onclick="closeLightbox()"
-    >
-
-        <span class="lightbox-close">&times;</span>
-
-        <img
-            id="lightbox-image"
-            src=""
-            alt=""
-        >
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
     </div>
 
 
-    <!-- ==========================================
-         JAVASCRIPT
-         ========================================== -->
+    <nav
+      id="main-navigation"
+      class="nav-links"
+      aria-label="Main navigation"
+    >
 
-    <script>
+      <a href="index.html">
+        Home
+      </a>
 
-        /*
-         * Open image
-         */
+      <a href="publications.html">
+        Publications
+      </a>
 
-        function openLightbox(image) {
+      <a href="teaching.html">
+        Teaching
+      </a>
 
-            const lightbox =
-                document.getElementById("lightbox");
+      <a href="gaming.html">
+        Gaming
+      </a>
 
-            const lightboxImage =
-                document.getElementById("lightbox-image");
+      <a
+        href="gallery.html"
+        class="active"
+        aria-current="page"
+      >
+        Gallery
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+    </nav>
+
+  </header>
 
 
-            lightboxImage.src = image.src;
+  <!-- =====================================================
+       Theme toggle
+       ===================================================== -->
 
-            lightboxImage.alt = image.alt;
+  <button
+    class="theme-tab"
+    id="theme-toggle"
+    type="button"
+    aria-label="Toggle dark mode"
+  >
+    Theme
+  </button>
 
 
-            lightbox.classList.add("active");
+  <!-- =====================================================
+       Main content
+       ===================================================== -->
+
+  <main
+    id="main-content"
+    class="gallery-page"
+  >
+
+
+    <!-- ===================================================
+         Introduction
+         =================================================== -->
+
+    <section class="gallery-intro">
+
+      <h1>
+        Gallery
+      </h1>
+
+      <p>
+        A collection of snippets, ideas, images, and little
+        things that I have found interesting along the way.
+      </p>
+
+      <p>
+        Some of these are here because they inspired me,
+        some because I found them beautiful or clever, and
+        others simply because they made me stop and think.
+      </p>
+
+    </section>
+
+
+    <!-- ===================================================
+         Gallery
+         =================================================== -->
+
+    <section
+      class="gallery-grid"
+      aria-label="Gallery of interesting things"
+    >
+
+
+      <!-- =================================================
+           Gallery Item 1
+           ================================================= -->
+
+      <article class="gallery-item">
+
+        <img
+          src="images/gallery/my-snippet.jpg"
+          alt="Description of the interesting snippet"
+          loading="lazy"
+          onclick="openLightbox(this)"
+        >
+
+        <div class="gallery-caption">
+
+          <h2>
+            Why I chose this
+          </h2>
+
+          <p>
+            I found this interesting because ...
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <!-- =================================================
+           Gallery Item 2
+
+           Copy this entire article whenever you want to
+           add another image.
+           ================================================= -->
+
+      <!--
+
+      <article class="gallery-item">
+
+        <img
+          src="images/gallery/another-image.jpg"
+          alt="Description of the image"
+          loading="lazy"
+          onclick="openLightbox(this)"
+        >
+
+        <div class="gallery-caption">
+
+          <h2>
+            Why I chose this
+          </h2>
+
+          <p>
+            Explain here why you found this interesting
+            or worth keeping.
+          </p>
+
+        </div>
+
+      </article>
+
+      -->
+
+
+    </section>
+
+  </main>
+
+
+  <!-- =====================================================
+       Lightbox
+       ===================================================== -->
+
+  <div
+    id="lightbox"
+    class="lightbox"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Expanded gallery image"
+    onclick="handleLightboxClick(event)"
+  >
+
+    <button
+      class="lightbox-close"
+      type="button"
+      aria-label="Close image"
+      onclick="closeLightbox()"
+    >
+      &times;
+    </button>
+
+
+    <img
+      id="lightbox-image"
+      src=""
+      alt=""
+    >
+
+  </div>
+
+
+  <!-- =====================================================
+       JavaScript
+       ===================================================== -->
+
+  <script>
+
+    /* =====================================================
+       Gallery lightbox
+       ===================================================== */
+
+    const lightbox =
+      document.getElementById("lightbox");
+
+    const lightboxImage =
+      document.getElementById("lightbox-image");
+
+
+    function openLightbox(image) {
+
+      lightboxImage.src = image.src;
+      lightboxImage.alt = image.alt;
+
+      lightbox.classList.add("active");
+
+      document.body.style.overflow = "hidden";
+
+    }
+
+
+    function closeLightbox() {
+
+      lightbox.classList.remove("active");
+
+      document.body.style.overflow = "";
+
+      lightboxImage.src = "";
+      lightboxImage.alt = "";
+
+    }
+
+
+    function handleLightboxClick(event) {
+
+      /*
+       * Close only when the dark background itself
+       * is clicked.
+       */
+
+      if (event.target === lightbox) {
+
+        closeLightbox();
+
+      }
+
+    }
+
+
+    /* =====================================================
+       Escape key
+       ===================================================== */
+
+    document.addEventListener(
+      "keydown",
+      function(event) {
+
+        if (
+          event.key === "Escape" &&
+          lightbox.classList.contains("active")
+        ) {
+
+          closeLightbox();
 
         }
 
+      }
+    );
 
-        /*
-         * Close image
-         */
 
-        function closeLightbox() {
+    /* =====================================================
+       Mobile navigation
+       ===================================================== */
 
-            document
-                .getElementById("lightbox")
-                .classList.remove("active");
+    const navToggle =
+      document.querySelector(".nav-toggle");
+
+    const navLinks =
+      document.querySelector(".nav-links");
+
+
+    if (navToggle && navLinks) {
+
+      navToggle.addEventListener(
+        "click",
+        function() {
+
+          const isOpen =
+            navLinks.classList.toggle("open");
+
+
+          navToggle.setAttribute(
+            "aria-expanded",
+            isOpen
+          );
+
+
+          navToggle.setAttribute(
+            "aria-label",
+            isOpen
+              ? "Close navigation"
+              : "Open navigation"
+          );
 
         }
+      );
+
+    }
 
 
-        /*
-         * Close with Escape key
-         */
+    /* =====================================================
+       Dark / light theme
+       ===================================================== */
 
-        document.addEventListener(
-            "keydown",
-            function(event) {
+    const themeToggle =
+      document.getElementById("theme-toggle");
 
-                if (event.key === "Escape") {
 
-                    closeLightbox();
+    function applyTheme(theme) {
 
-                }
+      if (theme === "dark") {
 
-            }
-        );
+        document.documentElement
+          .setAttribute("data-theme", "dark");
 
-    </script>
+      } else {
+
+        document.documentElement
+          .removeAttribute("data-theme");
+
+      }
+
+    }
+
+
+    /*
+     * Load saved theme.
+     */
+
+    const savedTheme =
+      localStorage.getItem("theme");
+
+
+    if (savedTheme) {
+
+      applyTheme(savedTheme);
+
+    }
+
+
+    /*
+     * Toggle theme.
+     */
+
+    if (themeToggle) {
+
+      themeToggle.addEventListener(
+        "click",
+        function() {
+
+          const isDark =
+            document.documentElement
+              .getAttribute("data-theme") === "dark";
+
+
+          const newTheme =
+            isDark ? "light" : "dark";
+
+
+          applyTheme(newTheme);
+
+
+          localStorage.setItem(
+            "theme",
+            newTheme
+          );
+
+        }
+      );
+
+    }
+
+  </script>
+
 
 </body>
 
