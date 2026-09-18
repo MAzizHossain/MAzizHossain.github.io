@@ -21,7 +21,7 @@
 
   <link
     rel="preconnect"
-    href="https://fonts.gstatic.com"
+    href="https://fonts.googleapis.com"
     crossorigin
   >
 
@@ -84,7 +84,10 @@
       <!-- Gallery Item 1 -->
       <!-- ========================= -->
 
-      <article class="gallery-item">
+      <article
+        class="gallery-item"
+        data-year="2022"
+      >
 
         <img
           src="images/gallery/pcr.jpg"
@@ -108,6 +111,22 @@
             announced, “This is going into my submission.”
           </p>
 
+
+          <!-- Guess the year -->
+
+          <button
+            class="guess-year"
+            type="button"
+            onclick="revealYear(this)"
+          >
+            Guess the year →
+          </button>
+
+          <span
+            class="gallery-year"
+            aria-live="polite"
+          ></span>
+
         </div>
 
       </article>
@@ -117,11 +136,14 @@
       <!-- Gallery Item 2 -->
       <!-- ========================= -->
 
-      <article class="gallery-item">
+      <article
+        class="gallery-item"
+        data-year="2024"
+      >
 
         <img
-          src="images/gallery/lab.jpg"
-          alt="Laboratory work"
+          src="images/gallery/Bee.jpg"
+          alt="A bee sitting on a flower"
           loading="lazy"
           onclick="openLightbox(this)"
         >
@@ -129,12 +151,31 @@
         <div class="gallery-caption">
 
           <h2>
-            Another day in the lab.
+            Came for the flowers, stayed for the photo.
           </h2>
 
           <p>
-            A small moment from the work behind the scenes.
+            I was taking photos of flowers when this bee suddenly
+            showed up. Naturally, I assumed it wanted a photo too.
+            Took a few shots, and then it flew away. I suppose
+            that was its entire modelling career.
           </p>
+
+
+          <!-- Guess the year -->
+
+          <button
+            class="guess-year"
+            type="button"
+            onclick="revealYear(this)"
+          >
+            Guess the year →
+          </button>
+
+          <span
+            class="gallery-year"
+            aria-live="polite"
+          ></span>
 
         </div>
 
@@ -145,11 +186,14 @@
       <!-- Gallery Item 3 -->
       <!-- ========================= -->
 
-      <article class="gallery-item">
+      <article
+        class="gallery-item"
+        data-year="2024"
+      >
 
         <img
-          src="images/gallery/fieldwork.jpg"
-          alt="Fieldwork"
+          src="images/gallery/aurora.jpg"
+          alt="Aurora borealis over Umeå"
           loading="lazy"
           onclick="openLightbox(this)"
         >
@@ -157,12 +201,32 @@
         <div class="gallery-caption">
 
           <h2>
-            Somewhere between fieldwork and everything else.
+            The aurora was better in person.
           </h2>
 
           <p>
-            One of those moments that seemed worth keeping.
+            I met this guy randomly while he was visiting Umeå
+            from Peru, and somehow we ended up looking for the
+            aurora together. Neither of us had seen one up close
+            before. While the aurora was great, the photo,
+            unfortunately, had to work with my camera.
           </p>
+
+
+          <!-- Guess the year -->
+
+          <button
+            class="guess-year"
+            type="button"
+            onclick="revealYear(this)"
+          >
+            Guess the year →
+          </button>
+
+          <span
+            class="gallery-year"
+            aria-live="polite"
+          ></span>
 
         </div>
 
@@ -173,11 +237,14 @@
       <!-- Gallery Item 4 -->
       <!-- ========================= -->
 
-      <article class="gallery-item">
+      <article
+        class="gallery-item"
+        data-year="2001"
+      >
 
         <img
-          src="images/gallery/microscopy.jpg"
-          alt="Microscopy image"
+          src="images/gallery/metaphotography.jpg"
+          alt="Me taking a photo while someone takes a photo of me taking a photo"
           loading="lazy"
           onclick="openLightbox(this)"
         >
@@ -185,12 +252,124 @@
         <div class="gallery-caption">
 
           <h2>
-            Looking at things very closely.
+            The photographer became the subject.
           </h2>
 
           <p>
-            A small glimpse from the microscope.
+            Someone took a photo of me while I was trying to take
+            a photo of my mom. Is this considered metaphotography
+            or am I just overthinking a photo?
           </p>
+
+
+          <!-- Guess the year -->
+
+          <button
+            class="guess-year"
+            type="button"
+            onclick="revealYear(this)"
+          >
+            Guess the year →
+          </button>
+
+          <span
+            class="gallery-year"
+            aria-live="polite"
+          ></span>
+
+        </div>
+
+      </article>
+ <!-- ========================= -->
+      <!-- Gallery Item 5 -->
+      <!-- ========================= -->
+
+      <article
+        class="gallery-item"
+        data-year="2018"
+      >
+
+        <img
+          src="images/gallery/tour.jpg"
+          alt="Me taking a photo while someone takes a photo of me taking a photo"
+          loading="lazy"
+          onclick="openLightbox(this)"
+        >
+
+        <div class="gallery-caption">
+
+          <h2>
+        Taking in the view. And my insignificance.
+
+          </h2>
+
+          <p>
+            I actually do not know who took this photo because there were about 18 of us on that tour.
+            I was just sitting and looking at those "mountains" from below when I suddenly realized how small I am in the universe. Apparently, that is all it took to trigger an existential crisis.
+          </p>
+
+
+          <!-- Guess the year -->
+
+          <button
+            class="guess-year"
+            type="button"
+            onclick="revealYear(this)"
+          >
+            Guess the year →
+          </button>
+
+          <span
+            class="gallery-year"
+            aria-live="polite"
+          ></span>
+
+        </div>
+
+      </article>
+ <!-- ========================= -->
+      <!-- Gallery Item 6 -->
+      <!-- ========================= -->
+
+      <article
+        class="gallery-item"
+        data-year="2023"
+      >
+
+        <img
+          src="images/gallery/tree.jpg"
+          alt="The tree outside my kitchen, glowing red against the snow"
+          loading="lazy"
+          onclick="openLightbox(this)"
+        >
+
+        <div class="gallery-caption">
+
+          <h2>
+          My kitchen-window philosopher.
+          </h2>
+
+          <p>
+            This tree stood right outside my kitchen in Umeå.
+            I watched it go through summer and winter, looking slightly different every time, but somehow always standing and glowing in its own way. 
+            At some point, I started feeling like it was doing a better job at life than I was.
+          </p>
+
+
+          <!-- Guess the year -->
+
+          <button
+            class="guess-year"
+            type="button"
+            onclick="revealYear(this)"
+          >
+            Guess the year →
+          </button>
+
+          <span
+            class="gallery-year"
+            aria-live="polite"
+          ></span>
 
         </div>
 
@@ -198,14 +377,17 @@
 
 
       <!-- ========================= -->
-      <!-- Gallery Item 5 -->
+      <!-- Gallery Item 7 -->
       <!-- ========================= -->
 
-      <article class="gallery-item">
+      <article
+        class="gallery-item"
+        data-year="2021"
+      >
 
         <img
-          src="images/gallery/random.jpg"
-          alt="A random moment"
+          src="images/gallery/unknown.jpg"
+          alt="A mysterious heart-like structure seen under a microscope"
           loading="lazy"
           onclick="openLightbox(this)"
         >
@@ -213,13 +395,30 @@
         <div class="gallery-caption">
 
           <h2>
-            A random little thing.
+     A microscopic mystery.
+
           </h2>
 
           <p>
-            Not particularly important, but I liked it enough
-            to keep a picture of it.
+           I saw this little heart-shaped thing under a microscope. I actually do not know what it is. 
+            If you can figure it out, let me be part of the unraveling too.
           </p>
+
+
+          <!-- Guess the year -->
+
+          <button
+            class="guess-year"
+            type="button"
+            onclick="revealYear(this)"
+          >
+            Guess the year →
+          </button>
+
+          <span
+            class="gallery-year"
+            aria-live="polite"
+          ></span>
 
         </div>
 
@@ -350,13 +549,55 @@
 
     /*
      * ==========================================
+     * Guess the year
+     * ==========================================
+     *
+     * The year is stored in the article's
+     * data-year attribute.
+     *
+     * Example:
+     *
+     * <article class="gallery-item"
+     *          data-year="2024">
+     *
+     * The visitor only sees "Guess the year →"
+     * until they click it.
+     */
+
+    function revealYear(button) {
+
+      const galleryItem =
+        button.closest(".gallery-item");
+
+      const year =
+        galleryItem.dataset.year;
+
+      const yearDisplay =
+        galleryItem.querySelector(".gallery-year");
+
+
+      yearDisplay.textContent =
+        year;
+
+      button.textContent =
+        "It was " + year + ".";
+
+      button.disabled = true;
+
+    }
+
+
+    /*
+     * ==========================================
      * Randomize gallery
      * ==========================================
      *
      * Every time the page loads, the gallery
      * items are placed in a random order.
      *
-     * The image and its caption stay together.
+     * The image, caption, and year all stay
+     * together because they belong to the
+     * same gallery-item.
      */
 
     function shuffleGallery() {
@@ -415,7 +656,7 @@
 
     /*
      * Shuffle the gallery when
-     * the page finishes loading.
+     * the page loads.
      */
 
     shuffleGallery();
