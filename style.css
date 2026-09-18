@@ -15,8 +15,7 @@
   --font-body: "IBM Plex Sans", -apple-system, Segoe UI, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
 
-  --maxw: 700px;
-  --sidebar-w: 15rem;
+  --maxw: 760px;
   --radius: 3px;
   --speed: 150ms;
 }
@@ -73,19 +72,25 @@ button:focus-visible {
 }
 
 /* =========================================================
-   Sidebar / nav
+   Top nav
    ========================================================= */
 .sidebar {
-  position: fixed;
-  top: 0; left: 0;
-  width: var(--sidebar-w);
-  height: 100vh;
+  position: sticky;
+  top: 0;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
-  padding: 2.75rem 1.75rem;
-  border-right: 1px solid var(--line);
-  overflow-y: auto;
+  gap: 0;
+  padding: 1.1rem 1.5rem;
+  border-bottom: 1px solid var(--line);
+  background: var(--paper);
+  z-index: 50;
+}
+
+.sidebar-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .wordmark {
@@ -98,31 +103,8 @@ button:focus-visible {
 }
 .wordmark:hover { color: var(--teal-dark); }
 
-.nav-links {
-  display: flex;
-  flex-direction: column;
-  gap: 0.15rem;
-}
-
-.nav-links a {
-  color: var(--ink-soft);
-  text-decoration: none;
-  font-size: 0.95rem;
-  font-weight: 500;
-  padding: 0.45rem 0 0.45rem 0.85rem;
-  border-left: 2px solid transparent;
-  transition: border-color var(--speed) ease, color var(--speed) ease;
-}
-.nav-links a:hover { color: var(--ink); border-left-color: var(--line); }
-.nav-links a.active {
-  color: var(--ink);
-  font-weight: 600;
-  border-left-color: var(--teal);
-}
-.nav-links a.active[data-section="gaming"] { border-left-color: var(--rust); }
-
 .nav-toggle {
-  display: none;
+  display: flex;
   width: 2.1rem; height: 2.1rem;
   padding: 0; border: none; background: none;
   cursor: pointer;
@@ -136,19 +118,63 @@ button:focus-visible {
   background: var(--ink); border-radius: 1px;
 }
 
-.sidebar-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.nav-links {
+  display: none;
+  flex-direction: column;
+  gap: 0.1rem;
+  position: absolute;
+  top: 100%; left: 0; right: 0;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+  padding: 0.5rem 1.5rem 1.25rem;
+}
+.nav-links.open { display: flex; }
+
+.nav-links a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--speed) ease, color var(--speed) ease;
+}
+.nav-links a:hover { color: var(--ink); }
+.nav-links a.active {
+  color: var(--ink);
+  font-weight: 600;
+  border-bottom-color: var(--teal);
+}
+.nav-links a.active[data-section="gaming"] { border-bottom-color: var(--rust); }
+
+/* Promote the nav from a hamburger menu to an inline top bar once there's room */
+@media (min-width: 701px) {
+  .sidebar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 3.25rem;
+  }
+  .nav-toggle { display: none; }
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    position: static;
+    background: none;
+    border-bottom: none;
+    padding: 0;
+  }
+  .nav-links a { padding: 0.2rem 0 0.35rem; }
 }
 
 /* =========================================================
    Content
    ========================================================= */
 .content {
-  margin-left: var(--sidebar-w);
-  padding: 4.5rem 3.25rem 4rem;
-  max-width: calc(var(--maxw) + 3.25rem);
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem 4rem;
 }
 
 .page-title {
@@ -174,15 +200,15 @@ button:focus-visible {
    ========================================================= */
 .hero {
   display: flex;
-  gap: 2.75rem;
-  align-items: flex-start;
+  flex-direction: column-reverse;
+  gap: 1.5rem;
   margin-bottom: 0.5rem;
 }
 .hero-text { flex: 1; min-width: 0; }
 
 .hero-photo {
   flex-shrink: 0;
-  width: 220px;
+  width: 150px;
 }
 .hero-photo img {
   width: 100%;
@@ -212,7 +238,7 @@ button:focus-visible {
 }
 
 .hero-name {
-  font-size: 3rem;
+  font-size: 2.1rem;
   font-weight: 600;
   letter-spacing: -0.01em;
   margin-bottom: 0.6rem;
@@ -224,7 +250,7 @@ button:focus-visible {
   font-family: var(--font-display);
   font-style: italic;
   font-weight: 500;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   color: var(--ink-soft);
   max-width: 46ch;
   margin-bottom: 2rem;
@@ -235,6 +261,13 @@ button:focus-visible {
 @keyframes rise {
   from { opacity: 0; transform: translateY(10px); }
   to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (min-width: 701px) {
+  .hero { flex-direction: row; align-items: flex-start; gap: 2.75rem; }
+  .hero-photo { width: 220px; }
+  .hero-name { font-size: 3rem; }
+  .hero-tagline { font-size: 1.3rem; }
 }
 
 .status {
@@ -385,46 +418,9 @@ button:focus-visible {
    Footer
    ========================================================= */
 .site-footer {
-  margin-left: var(--sidebar-w);
-  padding: 1.5rem 3.25rem 3rem;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 1.5rem 1.5rem 3rem;
   color: var(--ink-soft);
   font-size: 0.85rem;
-}
-
-/* =========================================================
-   Responsive
-   ========================================================= */
-@media (max-width: 899px) {
-  .sidebar {
-    position: sticky;
-    width: 100%;
-    height: auto;
-    flex-direction: column;
-    gap: 0;
-    padding: 1.1rem 1.25rem;
-    border-right: none;
-    border-bottom: 1px solid var(--line);
-    z-index: 50;
-    background: var(--paper);
-  }
-  .nav-toggle { display: flex; }
-  .nav-links {
-    display: none;
-    position: absolute;
-    top: 100%; left: 0; right: 0;
-    background: var(--paper);
-    border-bottom: 1px solid var(--line);
-    padding: 0.5rem 1.25rem 1.25rem;
-    gap: 0.1rem;
-  }
-  .nav-links.open { display: flex; }
-
-  .content { margin-left: 0; padding: 2.75rem 1.25rem 3rem; }
-  .site-footer { margin-left: 0; padding: 1.25rem 1.25rem 2.5rem; }
-  .hero-name { font-size: 2.1rem; }
-  .hero-tagline { font-size: 1.1rem; }
-  .page-title { font-size: 1.75rem; }
-
-  .hero { flex-direction: column-reverse; gap: 1.5rem; }
-  .hero-photo { width: 150px; }
 }
