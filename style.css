@@ -16,7 +16,7 @@
   --font-body: "IBM Plex Sans", -apple-system, Segoe UI, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
 
-  --maxw: 760px;
+  --maxw: 980px;
   --radius: 3px;
   --speed: 150ms;
 }
@@ -432,7 +432,7 @@ button:focus-visible,
 
 
 /* =========================================================
-   Content
+   Main content
    ========================================================= */
 
 .content {
@@ -441,33 +441,9 @@ button:focus-visible,
   margin: 0 auto;
 
   padding:
-    3.5rem
+    4.5rem
     1.5rem
     4rem;
-}
-
-.page-title {
-  font-size: 2.25rem;
-
-  font-weight: 600;
-
-  margin-bottom: 0.75rem;
-}
-
-.page-intro {
-  color: var(--ink-soft);
-
-  max-width: 58ch;
-
-  margin-bottom: 2.75rem;
-}
-
-.accent-rust .page-title {
-  display: inline-block;
-
-  border-bottom: 2px solid var(--rust);
-
-  padding-bottom: 0.5rem;
 }
 
 
@@ -484,14 +460,14 @@ button:focus-visible,
 
   align-items: start;
 
-  column-gap: 2.75rem;
+  column-gap: 3.25rem;
 
-  margin-bottom: 3rem;
+  margin-bottom: 3.5rem;
 }
 
 
 /* =========================================================
-   Hero visual
+   Hero visual column
    ========================================================= */
 
 .hero-visual {
@@ -525,7 +501,7 @@ button:focus-visible,
 
 
 /* =========================================================
-   Hero links
+   Links under photo
    ========================================================= */
 
 .hero-links {
@@ -533,15 +509,17 @@ button:focus-visible,
 
   justify-content: center;
 
+  align-items: center;
+
   flex-wrap: wrap;
 
   gap:
-    0.8rem
-    1.15rem;
+    0.65rem
+    1rem;
 
-  margin-top: 0.85rem;
+  margin-top: 0.9rem;
 
-  font-size: 0.9rem;
+  font-size: 0.88rem;
 
   font-weight: 500;
 }
@@ -566,11 +544,13 @@ button:focus-visible,
 
 
 /* =========================================================
-   Hero text
+   Hero text / naturally curious section
    ========================================================= */
 
 .hero-text {
   min-width: 0;
+
+  padding-top: 0.15rem;
 }
 
 .hero-name {
@@ -616,10 +596,12 @@ button:focus-visible,
     forwards;
 }
 
-.hero-text > p:last-child {
+.hero-description {
   color: var(--ink-soft);
 
   max-width: 55ch;
+
+  margin: 0;
 }
 
 
@@ -653,13 +635,8 @@ button:focus-visible,
 .info-drawers {
   border-top: 1px solid var(--line);
 
-  margin-bottom: 3rem;
+  margin-bottom: 3.5rem;
 }
-
-
-/* =========================================================
-   Individual drawer
-   ========================================================= */
 
 .info-drawer {
   border-bottom: 1px solid var(--line);
@@ -753,7 +730,7 @@ button:focus-visible,
 
 
 /* =========================================================
-   News entry
+   News
    ========================================================= */
 
 .news-entry {
@@ -821,11 +798,6 @@ button:focus-visible,
 
   margin-bottom: 0.25rem;
 }
-
-
-/* =========================================================
-   Row lists
-   ========================================================= */
 
 .row-list {
   border-top: 1px solid var(--line);
@@ -1140,11 +1112,6 @@ button:focus-visible,
     4rem;
 }
 
-
-/* =========================================================
-   Gallery introduction
-   ========================================================= */
-
 .gallery-intro {
   max-width: 680px;
 
@@ -1179,11 +1146,6 @@ button:focus-visible,
   margin-bottom: 0;
 }
 
-
-/* =========================================================
-   Gallery grid
-   ========================================================= */
-
 .gallery-grid {
   display: grid;
 
@@ -1195,21 +1157,11 @@ button:focus-visible,
     2rem;
 }
 
-
-/* =========================================================
-   Gallery item
-   ========================================================= */
-
 .gallery-item {
   margin: 0;
 
   min-width: 0;
 }
-
-
-/* =========================================================
-   Gallery image
-   ========================================================= */
 
 .gallery-item img {
   width: 100%;
@@ -1241,11 +1193,6 @@ button:focus-visible,
 
   opacity: 0.94;
 }
-
-
-/* =========================================================
-   Gallery caption
-   ========================================================= */
 
 .gallery-caption {
   padding:
@@ -1284,19 +1231,9 @@ button:focus-visible,
   max-width: 60ch;
 }
 
-
-/* =========================================================
-   Scientific names
-   ========================================================= */
-
 .gallery-caption i {
   font-style: italic;
 }
-
-
-/* =========================================================
-   Guess the year
-   ========================================================= */
 
 .gallery-year-row {
   display: flex;
@@ -1421,11 +1358,6 @@ button:focus-visible,
   visibility: visible;
 }
 
-
-/* =========================================================
-   Enlarged image
-   ========================================================= */
-
 .lightbox img {
   max-width: 94vw;
 
@@ -1445,11 +1377,6 @@ button:focus-visible,
 
   cursor: default;
 }
-
-
-/* =========================================================
-   Lightbox close button
-   ========================================================= */
 
 .lightbox-close {
   position: absolute;
@@ -1512,7 +1439,7 @@ button:focus-visible,
 
     flex-direction: column;
 
-    gap: 1.5rem;
+    gap: 1.75rem;
 
     margin-bottom: 2.5rem;
   }
@@ -1527,6 +1454,8 @@ button:focus-visible,
 
   .hero-text {
     width: 100%;
+
+    padding-top: 0;
   }
 
   .hero-name {
