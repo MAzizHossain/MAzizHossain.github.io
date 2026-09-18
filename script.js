@@ -9,7 +9,7 @@ var NAV_ITEMS = [
   { href: "contact.html", label: "Contact" }
 ];
 
-var SITE_NAME = "TEST — Mohammed Aziz Hossain";
+var SITE_NAME = "Mohammed Aziz Hossain";
 var FOOTER_HTML = "<p>&copy; 2026 Aziz Hossain. Built with GitHub Pages.</p>";
 var THEME_KEY = "site-theme";
 
