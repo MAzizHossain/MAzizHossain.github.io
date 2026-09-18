@@ -30,7 +30,10 @@
     rel="stylesheet"
   >
 
-  <link rel="stylesheet" href="style.css">
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
 
 </head>
 
@@ -45,12 +48,14 @@
   </a>
 
 
+  <!-- Header -->
   <header
     class="sidebar"
     id="site-header"
   ></header>
 
 
+  <!-- Main content -->
   <main
     id="main"
     class="gallery-page"
@@ -68,16 +73,22 @@
     </section>
 
 
+    <!-- Gallery -->
     <section
       class="gallery-grid"
       aria-label="Gallery of interesting things"
     >
 
+
+      <!-- ========================= -->
+      <!-- Gallery Item 1 -->
+      <!-- ========================= -->
+
       <article class="gallery-item">
 
         <img
-          src="images/gallery/placeholder.jpg"
-          alt="PCR result showing a successful amplification"
+          src="images/gallery/pcr.jpg"
+          alt="PCR result showing successful amplification"
           loading="lazy"
           onclick="openLightbox(this)"
         >
@@ -85,7 +96,8 @@
         <div class="gallery-caption">
 
           <h2>
-First successful PCR confirming <i>Acinetobacter baumannii</i>. 
+            First successful PCR confirming
+            <i>Acinetobacter baumannii</i>.
           </h2>
 
           <p>
@@ -100,10 +112,128 @@ First successful PCR confirming <i>Acinetobacter baumannii</i>.
 
       </article>
 
+
+      <!-- ========================= -->
+      <!-- Gallery Item 2 -->
+      <!-- ========================= -->
+
+      <article class="gallery-item">
+
+        <img
+          src="images/gallery/lab.jpg"
+          alt="Laboratory work"
+          loading="lazy"
+          onclick="openLightbox(this)"
+        >
+
+        <div class="gallery-caption">
+
+          <h2>
+            Another day in the lab.
+          </h2>
+
+          <p>
+            A small moment from the work behind the scenes.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <!-- ========================= -->
+      <!-- Gallery Item 3 -->
+      <!-- ========================= -->
+
+      <article class="gallery-item">
+
+        <img
+          src="images/gallery/fieldwork.jpg"
+          alt="Fieldwork"
+          loading="lazy"
+          onclick="openLightbox(this)"
+        >
+
+        <div class="gallery-caption">
+
+          <h2>
+            Somewhere between fieldwork and everything else.
+          </h2>
+
+          <p>
+            One of those moments that seemed worth keeping.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <!-- ========================= -->
+      <!-- Gallery Item 4 -->
+      <!-- ========================= -->
+
+      <article class="gallery-item">
+
+        <img
+          src="images/gallery/microscopy.jpg"
+          alt="Microscopy image"
+          loading="lazy"
+          onclick="openLightbox(this)"
+        >
+
+        <div class="gallery-caption">
+
+          <h2>
+            Looking at things very closely.
+          </h2>
+
+          <p>
+            A small glimpse from the microscope.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <!-- ========================= -->
+      <!-- Gallery Item 5 -->
+      <!-- ========================= -->
+
+      <article class="gallery-item">
+
+        <img
+          src="images/gallery/random.jpg"
+          alt="A random moment"
+          loading="lazy"
+          onclick="openLightbox(this)"
+        >
+
+        <div class="gallery-caption">
+
+          <h2>
+            A random little thing.
+          </h2>
+
+          <p>
+            Not particularly important, but I liked it enough
+            to keep a picture of it.
+          </p>
+
+        </div>
+
+      </article>
+
+
     </section>
 
   </main>
 
+
+  <!-- ========================= -->
+  <!-- Lightbox -->
+  <!-- ========================= -->
 
   <div
     id="lightbox"
@@ -123,6 +253,7 @@ First successful PCR confirming <i>Acinetobacter baumannii</i>.
       &times;
     </button>
 
+
     <img
       id="lightbox-image"
       src=""
@@ -132,6 +263,7 @@ First successful PCR confirming <i>Acinetobacter baumannii</i>.
   </div>
 
 
+  <!-- Footer -->
   <footer
     class="site-footer"
     id="site-footer"
@@ -142,6 +274,12 @@ First successful PCR confirming <i>Acinetobacter baumannii</i>.
 
 
   <script>
+
+    /*
+     * ==========================================
+     * Lightbox
+     * ==========================================
+     */
 
     const lightbox =
       document.getElementById("lightbox");
@@ -187,6 +325,12 @@ First successful PCR confirming <i>Acinetobacter baumannii</i>.
     }
 
 
+    /*
+     * ==========================================
+     * Close lightbox with Escape key
+     * ==========================================
+     */
+
     document.addEventListener(
       "keydown",
       function(event) {
@@ -202,6 +346,79 @@ First successful PCR confirming <i>Acinetobacter baumannii</i>.
 
       }
     );
+
+
+    /*
+     * ==========================================
+     * Randomize gallery
+     * ==========================================
+     *
+     * Every time the page loads, the gallery
+     * items are placed in a random order.
+     *
+     * The image and its caption stay together.
+     */
+
+    function shuffleGallery() {
+
+      const gallery =
+        document.querySelector(".gallery-grid");
+
+      const items =
+        Array.from(
+          gallery.querySelectorAll(".gallery-item")
+        );
+
+
+      /*
+       * Fisher-Yates shuffle
+       */
+
+      for (
+        let i = items.length - 1;
+        i > 0;
+        i--
+      ) {
+
+        const j =
+          Math.floor(
+            Math.random() * (i + 1)
+          );
+
+
+        [
+          items[i],
+          items[j]
+        ] = [
+          items[j],
+          items[i]
+        ];
+
+      }
+
+
+      /*
+       * Put the shuffled items
+       * back into the gallery.
+       */
+
+      items.forEach(
+        function(item) {
+
+          gallery.appendChild(item);
+
+        }
+      );
+
+    }
+
+
+    /*
+     * Shuffle the gallery when
+     * the page finishes loading.
+     */
+
+    shuffleGallery();
 
   </script>
 
