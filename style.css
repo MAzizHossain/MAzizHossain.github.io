@@ -52,11 +52,14 @@ html {
 
 body {
   margin: 0;
+
   background: var(--paper);
   color: var(--ink);
+
   font-family: var(--font-body);
   font-size: 1.0625rem;
   line-height: 1.6;
+
   -webkit-font-smoothing: antialiased;
 
   transition:
@@ -83,6 +86,7 @@ p {
 
 a {
   color: var(--teal-dark);
+
   text-decoration-thickness: 1px;
   text-underline-offset: 2px;
 }
@@ -104,23 +108,33 @@ svg {
 
 .sr-only {
   position: absolute;
+
   width: 1px;
   height: 1px;
+
   padding: 0;
   margin: -1px;
+
   overflow: hidden;
+
   clip: rect(0, 0, 0, 0);
+
   white-space: nowrap;
+
   border: 0;
 }
 
 .skip-link {
   position: absolute;
+
   left: -999px;
   top: 0;
+
   background: var(--ink);
   color: var(--paper);
+
   padding: 0.6rem 1rem;
+
   z-index: 100;
 }
 
@@ -156,7 +170,9 @@ button:focus-visible,
 
 .sidebar {
   position: sticky;
+
   top: 0;
+
   width: 100%;
 
   display: flex;
@@ -175,16 +191,23 @@ button:focus-visible,
 
 .sidebar-top {
   display: flex;
+
   align-items: center;
+
   justify-content: space-between;
 }
 
 .wordmark {
   font-family: var(--font-display);
+
   font-weight: 600;
+
   font-size: 1.15rem;
+
   color: var(--ink);
+
   text-decoration: none;
+
   line-height: 1.3;
 }
 
@@ -221,7 +244,9 @@ button:focus-visible,
   color: var(--ink-soft);
 
   font-family: var(--font-body);
+
   font-size: 0.8rem;
+
   font-weight: 500;
 
   letter-spacing: 0.02em;
@@ -231,6 +256,7 @@ button:focus-visible,
   padding: 0.85rem 0.5rem;
 
   writing-mode: vertical-rl;
+
   text-orientation: mixed;
 
   transition:
@@ -242,8 +268,11 @@ button:focus-visible,
 
 .theme-tab:hover {
   color: var(--ink);
+
   background: var(--surface);
+
   border-color: var(--ink-soft);
+
   padding-right: 0.75rem;
 }
 
@@ -266,12 +295,15 @@ button:focus-visible,
   padding: 0;
 
   border: none;
+
   background: none;
 
   cursor: pointer;
 
   flex-direction: column;
+
   justify-content: center;
+
   align-items: center;
 
   gap: 4px;
@@ -298,6 +330,7 @@ button:focus-visible,
   position: absolute;
 
   top: 100%;
+
   left: 0;
   right: 0;
 
@@ -305,7 +338,10 @@ button:focus-visible,
 
   border-bottom: 1px solid var(--line);
 
-  padding: 0.5rem 1.5rem 1.25rem;
+  padding:
+    0.5rem
+    1.5rem
+    1.25rem;
 }
 
 .nav-links.open {
@@ -318,6 +354,7 @@ button:focus-visible,
   text-decoration: none;
 
   font-size: 0.95rem;
+
   font-weight: 500;
 
   padding: 0.6rem 0;
@@ -335,7 +372,9 @@ button:focus-visible,
 
 .nav-links a.active {
   color: var(--ink);
+
   font-weight: 600;
+
   border-bottom-color: var(--teal);
 }
 
@@ -352,10 +391,14 @@ button:focus-visible,
 
   .sidebar {
     flex-direction: row;
+
     align-items: center;
+
     justify-content: space-between;
 
-    padding: 1.25rem 3.25rem;
+    padding:
+      1.25rem
+      3.25rem;
   }
 
   .nav-toggle {
@@ -379,95 +422,12 @@ button:focus-visible,
   }
 
   .nav-links a {
-    padding: 0.2rem 0 0.35rem;
+    padding:
+      0.2rem
+      0
+      0.35rem;
   }
 
-}
-
-
-/* =========================================================
-   Page layout
-   ========================================================= */
-
-.page-layout {
-  max-width: 1120px;
-
-  margin: 0 auto;
-
-  padding:
-    3.5rem
-    1.5rem
-    4rem;
-
-  display: grid;
-
-  grid-template-columns:
-    190px
-    minmax(0, 760px);
-
-  gap: 3.5rem;
-
-  align-items: start;
-}
-
-
-/* =========================================================
-   News sidebar
-   ========================================================= */
-
-.news-sidebar {
-  position: sticky;
-
-  top: 6rem;
-
-  padding:
-    0.15rem
-    0
-    0.15rem
-    1rem;
-
-  border-left: 2px solid var(--rust);
-}
-
-.news-heading {
-  font-family: var(--font-display);
-
-  font-size: 1rem;
-
-  font-weight: 600;
-
-  color: var(--ink);
-
-  margin:
-    0
-    0
-    1rem;
-}
-
-.news-entry {
-  margin: 0;
-}
-
-.news-date {
-  display: block;
-
-  font-family: var(--font-mono);
-
-  font-size: 0.72rem;
-
-  color: var(--ink-soft);
-
-  margin-bottom: 0.45rem;
-}
-
-.news-text {
-  color: var(--ink-soft);
-
-  font-size: 0.84rem;
-
-  line-height: 1.5;
-
-  margin: 0;
 }
 
 
@@ -478,20 +438,27 @@ button:focus-visible,
 .content {
   max-width: var(--maxw);
 
-  margin: 0;
+  margin: 0 auto;
 
-  padding: 0;
+  padding:
+    3.5rem
+    1.5rem
+    4rem;
 }
 
 .page-title {
   font-size: 2.25rem;
+
   font-weight: 600;
+
   margin-bottom: 0.75rem;
 }
 
 .page-intro {
   color: var(--ink-soft);
+
   max-width: 58ch;
+
   margin-bottom: 2.75rem;
 }
 
@@ -509,31 +476,35 @@ button:focus-visible,
    ========================================================= */
 
 .hero {
-  display: flex;
+  display: grid;
 
-  flex-direction: row;
+  grid-template-columns:
+    220px
+    minmax(0, 1fr);
 
-  align-items: flex-start;
+  align-items: start;
 
-  gap: 2.75rem;
+  column-gap: 2.75rem;
 
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem;
 }
+
+
+/* =========================================================
+   Hero visual
+   ========================================================= */
+
+.hero-visual {
+  width: 220px;
+}
+
+
+/* =========================================================
+   Profile photo
+   ========================================================= */
 
 .hero-photo {
-  flex-shrink: 0;
-
   width: 220px;
-
-  order: 1;
-}
-
-.hero-text {
-  flex: 1;
-
-  min-width: 0;
-
-  order: 2;
 }
 
 .hero-photo img {
@@ -543,21 +514,34 @@ button:focus-visible,
 
   object-fit: cover;
 
-  border: 1px solid var(--line);
+  border:
+    1px solid
+    var(--line);
 
   border-radius: var(--radius);
 
   background: var(--surface);
 }
 
+
+/* =========================================================
+   Hero links
+   ========================================================= */
+
 .hero-links {
   display: flex;
 
-  gap: 1.4rem;
+  justify-content: center;
 
-  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
 
-  font-size: 0.95rem;
+  gap:
+    0.8rem
+    1.15rem;
+
+  margin-top: 0.85rem;
+
+  font-size: 0.9rem;
 
   font-weight: 500;
 }
@@ -567,7 +551,9 @@ button:focus-visible,
 
   text-decoration: none;
 
-  border-bottom: 1px solid transparent;
+  border-bottom:
+    1px solid
+    transparent;
 
   padding-bottom: 1px;
 }
@@ -576,6 +562,15 @@ button:focus-visible,
   color: var(--rust);
 
   border-bottom-color: currentColor;
+}
+
+
+/* =========================================================
+   Hero text
+   ========================================================= */
+
+.hero-text {
+  min-width: 0;
 }
 
 .hero-name {
@@ -621,56 +616,203 @@ button:focus-visible,
     forwards;
 }
 
+.hero-text > p:last-child {
+  color: var(--ink-soft);
+
+  max-width: 55ch;
+}
+
+
+/* =========================================================
+   Hero animation
+   ========================================================= */
+
 @keyframes rise {
 
   from {
     opacity: 0;
-    transform: translateY(10px);
+
+    transform:
+      translateY(10px);
   }
 
   to {
     opacity: 1;
-    transform: translateY(0);
+
+    transform:
+      translateY(0);
   }
 
 }
 
 
 /* =========================================================
-   Status
+   Expandable News / Currently
    ========================================================= */
 
-.status {
-  border-left: 2px solid var(--teal);
+.info-drawers {
+  border-top: 1px solid var(--line);
 
+  margin-bottom: 3rem;
+}
+
+
+/* =========================================================
+   Individual drawer
+   ========================================================= */
+
+.info-drawer {
+  border-bottom: 1px solid var(--line);
+}
+
+
+/* =========================================================
+   Drawer button
+   ========================================================= */
+
+.drawer-toggle {
+  appearance: none;
+
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 1rem;
+
+  padding:
+    1rem
+    0;
+
+  border: none;
+
+  background: transparent;
+
+  color: var(--ink);
+
+  font-family: var(--font-display);
+
+  font-size: 1rem;
+
+  font-weight: 600;
+
+  text-align: left;
+
+  cursor: pointer;
+}
+
+.drawer-toggle:hover {
+  color: var(--teal-dark);
+}
+
+.drawer-symbol {
+  font-family: var(--font-mono);
+
+  font-size: 1rem;
+
+  font-weight: 400;
+
+  color: var(--ink-soft);
+
+  line-height: 1;
+
+  transition:
+    transform var(--speed) ease,
+    color var(--speed) ease;
+}
+
+
+/* =========================================================
+   Drawer open state
+   ========================================================= */
+
+.info-drawer.open .drawer-symbol {
+  transform: rotate(45deg);
+
+  color: var(--rust);
+}
+
+
+/* =========================================================
+   Drawer content
+   ========================================================= */
+
+.drawer-content {
   padding:
     0.1rem
     0
-    0.1rem
-    1rem;
+    1.25rem;
+}
 
-  margin: 0 0 3rem;
+.drawer-content[hidden] {
+  display: none;
+}
+
+
+/* =========================================================
+   News entry
+   ========================================================= */
+
+.news-entry {
+  border-left:
+    2px solid
+    var(--rust);
+
+  padding-left: 1rem;
 
   max-width: 52ch;
 }
 
-.status h2 {
-  font-size: 0.95rem;
+.news-date {
+  display: block;
 
-  font-weight: 600;
+  font-family: var(--font-mono);
 
-  font-style: italic;
+  font-size: 0.72rem;
 
-  margin-bottom: 0.25rem;
+  color: var(--ink-soft);
 
-  color: var(--ink);
+  margin-bottom: 0.35rem;
 }
 
-.status p {
+.news-entry p {
+  color: var(--ink-soft);
+
+  font-size: 0.9rem;
+
+  line-height: 1.55;
+
+  margin: 0;
+}
+
+
+/* =========================================================
+   Currently
+   ========================================================= */
+
+#currently-content {
+  border-left:
+    2px solid
+    var(--teal);
+
+  padding-left: 1rem;
+
+  max-width: 52ch;
+}
+
+#currently-content p {
   color: var(--ink-soft);
 
   margin: 0;
 }
+
+
+/* =========================================================
+   Explore
+   ========================================================= */
 
 .section-label {
   font-size: 1.1rem;
@@ -782,7 +924,10 @@ button:focus-visible,
 
   color: var(--ink-soft);
 
-  margin: 2.25rem 0 0;
+  margin:
+    2.25rem
+    0
+    0;
 }
 
 .year-heading:first-child {
@@ -823,7 +968,9 @@ button:focus-visible,
 }
 
 .book-list li::before {
-  content: counter(book, decimal-leading-zero) ".";
+  content:
+    counter(book, decimal-leading-zero)
+    ".";
 
   font-family: var(--font-mono);
 
@@ -874,7 +1021,9 @@ button:focus-visible,
 
   border-radius: var(--radius);
 
-  padding: 0.15rem 0.45rem;
+  padding:
+    0.15rem
+    0.45rem;
 
   white-space: nowrap;
 }
@@ -886,7 +1035,10 @@ button:focus-visible,
 .game-note {
   color: var(--ink-soft);
 
-  margin: 0.2rem 0 0;
+  margin:
+    0.2rem
+    0
+    0;
 }
 
 .log {
@@ -898,7 +1050,9 @@ button:focus-visible,
 
   line-height: 1.9;
 
-  border-left: 2px solid var(--rust);
+  border-left:
+    2px solid
+    var(--rust);
 
   padding-left: 1rem;
 
@@ -986,6 +1140,11 @@ button:focus-visible,
     4rem;
 }
 
+
+/* =========================================================
+   Gallery introduction
+   ========================================================= */
+
 .gallery-intro {
   max-width: 680px;
 
@@ -1003,7 +1162,9 @@ button:focus-visible,
 
   display: inline-block;
 
-  border-bottom: 2px solid var(--rust);
+  border-bottom:
+    2px solid
+    var(--rust);
 
   padding-bottom: 0.4rem;
 }
@@ -1018,20 +1179,37 @@ button:focus-visible,
   margin-bottom: 0;
 }
 
+
+/* =========================================================
+   Gallery grid
+   ========================================================= */
+
 .gallery-grid {
   display: grid;
 
   grid-template-columns:
     repeat(2, minmax(0, 1fr));
 
-  gap: 2.75rem 2rem;
+  gap:
+    2.75rem
+    2rem;
 }
+
+
+/* =========================================================
+   Gallery item
+   ========================================================= */
 
 .gallery-item {
   margin: 0;
 
   min-width: 0;
 }
+
+
+/* =========================================================
+   Gallery image
+   ========================================================= */
 
 .gallery-item img {
   width: 100%;
@@ -1042,7 +1220,9 @@ button:focus-visible,
 
   background: var(--surface);
 
-  border: 1px solid var(--line);
+  border:
+    1px solid
+    var(--line);
 
   border-radius: var(--radius);
 
@@ -1061,6 +1241,11 @@ button:focus-visible,
 
   opacity: 0.94;
 }
+
+
+/* =========================================================
+   Gallery caption
+   ========================================================= */
 
 .gallery-caption {
   padding:
@@ -1099,9 +1284,19 @@ button:focus-visible,
   max-width: 60ch;
 }
 
+
+/* =========================================================
+   Scientific names
+   ========================================================= */
+
 .gallery-caption i {
   font-style: italic;
 }
+
+
+/* =========================================================
+   Guess the year
+   ========================================================= */
 
 .gallery-year-row {
   display: flex;
@@ -1226,6 +1421,11 @@ button:focus-visible,
   visibility: visible;
 }
 
+
+/* =========================================================
+   Enlarged image
+   ========================================================= */
+
 .lightbox img {
   max-width: 94vw;
 
@@ -1245,6 +1445,11 @@ button:focus-visible,
 
   cursor: default;
 }
+
+
+/* =========================================================
+   Lightbox close button
+   ========================================================= */
 
 .lightbox-close {
   position: absolute;
@@ -1290,13 +1495,7 @@ button:focus-visible,
 
 @media (max-width: 700px) {
 
-  .page-layout {
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 2.5rem;
-
+  .content {
     padding:
       2.75rem
       1.25rem
@@ -1304,26 +1503,13 @@ button:focus-visible,
   }
 
 
-  /* News */
-
-  .news-sidebar {
-    position: static;
-
-    width: 100%;
-
-    padding:
-      0.1rem
-      0
-      0.1rem
-      1rem;
-
-    border-left: 2px solid var(--rust);
-  }
-
-
-  /* Hero */
+  /* -------------------------------------------------------
+     Hero
+     ------------------------------------------------------- */
 
   .hero {
+    display: flex;
+
     flex-direction: column;
 
     gap: 1.5rem;
@@ -1331,14 +1517,16 @@ button:focus-visible,
     margin-bottom: 2.5rem;
   }
 
+  .hero-visual {
+    width: 150px;
+  }
+
   .hero-photo {
     width: 150px;
-
-    order: 1;
   }
 
   .hero-text {
-    order: 2;
+    width: 100%;
   }
 
   .hero-name {
@@ -1349,8 +1537,39 @@ button:focus-visible,
     font-size: 1.1rem;
   }
 
+  .hero-links {
+    justify-content: flex-start;
 
-  /* Gallery */
+    gap:
+      0.8rem
+      1rem;
+
+    margin-top: 0.75rem;
+  }
+
+
+  /* -------------------------------------------------------
+     Drawers
+     ------------------------------------------------------- */
+
+  .info-drawers {
+    margin-bottom: 2.5rem;
+  }
+
+  .drawer-toggle {
+    padding:
+      0.9rem
+      0;
+  }
+
+  .drawer-content {
+    padding-bottom: 1rem;
+  }
+
+
+  /* -------------------------------------------------------
+     Gallery
+     ------------------------------------------------------- */
 
   .gallery-page {
     padding:
@@ -1390,7 +1609,9 @@ button:focus-visible,
   }
 
 
-  /* Lightbox */
+  /* -------------------------------------------------------
+     Lightbox
+     ------------------------------------------------------- */
 
   .lightbox {
     padding: 1rem;
