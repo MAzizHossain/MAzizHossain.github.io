@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Name</title>
+<meta name="description" content="Personal site of Your Name — researcher, teacher, and gamer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,500&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="sidebar" id="sidebar">
+  <div class="sidebar-top">
+    <a class="wordmark" href="index.html">Your Name</a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="nav-links">
+      <span></span><span></span><span></span>
+      <span class="sr-only">Menu</span>
+    </button>
+  </div>
+  <nav class="nav-links" id="nav-links">
+    <a href="index.html" class="active">Home</a>
+    <a href="publications.html">Publications</a>
+    <a href="gaming.html" data-section="gaming">Gaming</a>
+    <a href="teaching.html">Teaching</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main id="main" class="content">
+
+  <h1 class="hero-name">Your Name</h1>
+  <p class="hero-tagline">Your role, e.g. Assistant Professor of Computer Science — researcher, teacher, and occasional strategy-game enthusiast.</p>
+
+  <p>
+    A couple of sentences about who you are and what you work on.
+    Keep it plain and specific: what you study, what you build, or what
+    problem you care about. This is the one paragraph most visitors
+    will actually read, so make it count.
+  </p>
+
+  <div class="status">
+    <h2>Currently</h2>
+    <p>Working on [a project / paper], teaching [a course], and playing
+      too much [a game].</p>
+  </div>
+
+  <p class="section-label">Explore</p>
+  <div class="row-list">
+    <div class="row">
+      <div class="row-head">
+        <span class="row-title"><a href="publications.html">Publications</a></span>
+      </div>
+      <p class="row-desc">Papers, preprints, and talks.</p>
+    </div>
+    <div class="row">
+      <div class="row-head">
+        <span class="row-title"><a href="teaching.html">Teaching</a></span>
+      </div>
+      <p class="row-desc">Courses, materials, and office hours.</p>
+    </div>
+    <div class="row">
+      <div class="row-head">
+        <span class="row-title"><a href="gaming.html">Gaming</a></span>
+      </div>
+      <p class="row-desc">What I'm playing, and a few things I've built.</p>
+    </div>
+    <div class="row">
+      <div class="row-head">
+        <span class="row-title"><a href="contact.html">Contact</a></span>
+      </div>
+      <p class="row-desc">Email and where else to find me.</p>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <p>&copy; 2026 Your Name. Built with GitHub Pages.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
