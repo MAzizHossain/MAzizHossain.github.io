@@ -1324,3 +1324,579 @@ button:focus-visible,
   }
 
 }
+
+
+/* =========================================================
+   MACHINA VISUAL OVERRIDE
+   Paste at the very bottom of your existing CSS.
+   Delete this entire section to revert.
+   ========================================================= */
+
+:root {
+  --paper: #030508;
+  --surface: #060A10;
+  --ink: #E2E8F0;
+  --ink-soft: rgba(226, 232, 240, 0.52);
+
+  --teal: #00F0FF;
+  --teal-dark: #00F0FF;
+  --rust: #FF003C;
+
+  --line: rgba(226, 232, 240, 0.10);
+
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+
+  --radius: 0px;
+}
+
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+html {
+  background: var(--paper);
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-weight: 300;
+  letter-spacing: 0.01em;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+
+  background:
+    repeating-linear-gradient(
+      to right,
+      rgba(226, 232, 240, 0.025) 0 1px,
+      transparent 1px 120px
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      rgba(226, 232, 240, 0.02) 0 1px,
+      transparent 1px 120px
+    );
+}
+
+::selection {
+  background: var(--teal);
+  color: var(--paper);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  color: var(--ink);
+}
+
+a {
+  color: var(--teal);
+}
+
+a:hover {
+  color: var(--rust);
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.sidebar {
+  background: rgba(3, 5, 8, 0.88);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(10px);
+}
+
+.wordmark {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.wordmark::before {
+  content: "// ";
+  color: var(--teal);
+}
+
+.nav-links {
+  background: rgba(3, 5, 8, 0.96);
+}
+
+.nav-links a {
+  color: var(--ink-soft);
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--teal);
+}
+
+.nav-links a.active {
+  border-bottom-color: var(--teal);
+}
+
+.nav-links a.active[data-section="gaming"] {
+  border-bottom-color: var(--rust);
+}
+
+
+/* =========================================================
+   THEME BUTTON
+   ========================================================= */
+
+.theme-tab {
+  background: var(--surface);
+  border-color: var(--line);
+  color: var(--teal);
+
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.theme-tab:hover {
+  background: var(--teal);
+  color: var(--paper);
+  border-color: var(--teal);
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.page-title,
+.gallery-intro h1 {
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.page-title {
+  font-weight: 700;
+}
+
+.accent-rust .page-title,
+.gallery-intro h1 {
+  border-bottom-color: var(--teal);
+}
+
+.page-intro,
+.gallery-intro p {
+  color: var(--ink-soft);
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.025em;
+}
+
+.hero-tagline {
+  font-family: var(--font-display);
+  color: var(--ink-soft);
+}
+
+.hero-links {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.72rem;
+}
+
+.hero-links a {
+  color: var(--teal);
+}
+
+.hero-links a:hover {
+  color: var(--rust);
+}
+
+.hero-photo img {
+  border-color: var(--line);
+  filter: grayscale(0.45) contrast(1.1);
+}
+
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.status {
+  border-left-color: var(--teal);
+}
+
+.status h2 {
+  font-family: var(--font-mono);
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.72rem;
+  color: var(--teal);
+}
+
+.status p {
+  color: var(--ink-soft);
+}
+
+
+/* =========================================================
+   SECTION LABELS
+   ========================================================= */
+
+.section-label {
+  font-family: var(--font-display);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.section-label::before {
+  content: "// ";
+  color: var(--teal);
+}
+
+
+/* =========================================================
+   ROWS
+   ========================================================= */
+
+.row-list,
+.book-list,
+.contact-list {
+  border-color: var(--line);
+}
+
+.row {
+  border-color: var(--line);
+
+  transition:
+    background 200ms ease,
+    padding-left 200ms ease;
+}
+
+.row:hover {
+  background: rgba(0, 240, 255, 0.025);
+  padding-left: 0.75rem;
+}
+
+.row-title {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.row-title a:hover {
+  color: var(--teal);
+}
+
+.row-meta,
+.row-desc {
+  color: var(--ink-soft);
+}
+
+.row-meta,
+.year-heading {
+  font-family: var(--font-mono);
+}
+
+.row-links a {
+  color: var(--teal);
+}
+
+.year-heading {
+  color: var(--teal);
+  letter-spacing: 0.15em;
+}
+
+
+/* =========================================================
+   TEACHING
+   ========================================================= */
+
+.book-list li {
+  border-color: var(--line);
+}
+
+.book-list li::before {
+  color: var(--teal);
+}
+
+
+/* =========================================================
+   GAMING
+   ========================================================= */
+
+.game-row {
+  border-color: var(--line);
+}
+
+.tag {
+  color: var(--teal);
+  background: rgba(0, 240, 255, 0.05);
+  border-color: rgba(0, 240, 255, 0.25);
+}
+
+.game-title {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+}
+
+.game-note {
+  color: var(--ink-soft);
+}
+
+.log {
+  border-left-color: var(--rust);
+  color: var(--ink-soft);
+}
+
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+
+.contact-list li {
+  border-color: var(--line);
+}
+
+.contact-list .label {
+  color: var(--ink-soft);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.contact-list a {
+  color: var(--teal);
+}
+
+
+/* =========================================================
+   GALLERY
+   ========================================================= */
+
+.gallery-intro h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.gallery-intro h1::before {
+  content: "// ";
+  color: var(--teal);
+}
+
+.gallery-grid {
+  gap: 3rem 2rem;
+}
+
+.gallery-item {
+  position: relative;
+}
+
+.gallery-item img {
+  background: var(--surface);
+  border-color: var(--line);
+  border-radius: 0;
+
+  filter:
+    grayscale(0.35)
+    contrast(1.1);
+
+  transition:
+    transform 200ms ease,
+    border-color 200ms ease,
+    box-shadow 200ms ease,
+    filter 200ms ease;
+}
+
+.gallery-item img:hover {
+  transform: translateY(-3px);
+
+  border-color: var(--teal);
+
+  box-shadow:
+    0 0 0 1px rgba(0, 240, 255, 0.12),
+    0 0 30px rgba(0, 240, 255, 0.08);
+
+  filter:
+    grayscale(0)
+    contrast(1.12);
+}
+
+.gallery-caption h2 {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.gallery-caption h2::before {
+  content: "↳ ";
+  color: var(--teal);
+}
+
+.gallery-caption p {
+  color: var(--ink-soft);
+}
+
+
+/* =========================================================
+   GALLERY YEAR
+   ========================================================= */
+
+.guess-year {
+  color: var(--teal);
+  background: transparent;
+  border-color: rgba(0, 240, 255, 0.25);
+  font-family: var(--font-mono);
+}
+
+.guess-year:hover {
+  color: var(--paper);
+  background: var(--teal);
+  border-color: var(--teal);
+}
+
+.guess-year:disabled {
+  color: var(--paper);
+  background: var(--teal);
+  border-color: var(--teal);
+}
+
+.gallery-year {
+  color: var(--ink-soft);
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.site-footer {
+  color: var(--ink-soft);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+}
+
+
+/* =========================================================
+   LIGHTBOX
+   ========================================================= */
+
+.lightbox {
+  background: rgba(3, 5, 8, 0.96);
+}
+
+.lightbox img {
+  border-color: rgba(0, 240, 255, 0.25);
+
+  box-shadow:
+    0 0 60px rgba(0, 240, 255, 0.08);
+}
+
+.lightbox-close {
+  color: var(--teal);
+  font-family: var(--font-display);
+}
+
+.lightbox-close:hover {
+  color: var(--rust);
+}
+
+
+/* =========================================================
+   MACHINA DETAILS
+   ========================================================= */
+
+.gallery-page::before {
+  content: "";
+
+  display: block;
+
+  width: 42px;
+  height: 2px;
+
+  background: var(--teal);
+
+  margin-bottom: 1.5rem;
+
+  box-shadow:
+    0 0 12px rgba(0, 240, 255, 0.5);
+}
+
+.gallery-year,
+.row-meta,
+.year-heading {
+  font-variant-numeric: tabular-nums;
+}
+
+.gallery-item::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  top: 0;
+
+  height: 1px;
+
+  background: var(--teal);
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  transition: opacity 200ms ease;
+}
+
+.gallery-item:hover::after {
+  opacity: 0.5;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .gallery-intro h1 {
+    font-size: 1.7rem;
+  }
+
+  .gallery-grid {
+    gap: 2.5rem;
+  }
+
+  .hero-name {
+    font-size: 2.4rem;
+  }
+
+}
+
