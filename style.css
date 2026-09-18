@@ -118,24 +118,38 @@ button:focus-visible {
 }
 .wordmark:hover { color: var(--teal-dark); }
 
-.header-actions {
-  display: flex;
-  align-items: center;
-  gap: 0.85rem;
-}
-
-.theme-toggle {
-  background: none;
+/* Floating theme tab, fixed to the viewport edge — independent of the nav row */
+.theme-tab {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 60;
+  background: var(--paper);
   border: 1px solid var(--line);
-  border-radius: var(--radius);
+  border-right: none;
+  border-radius: var(--radius) 0 0 var(--radius);
   color: var(--ink-soft);
   font-family: var(--font-body);
   font-size: 0.8rem;
   font-weight: 500;
-  padding: 0.3rem 0.65rem;
+  letter-spacing: 0.02em;
   cursor: pointer;
+  padding: 0.85rem 0.5rem;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transition: padding-right 150ms ease, color 150ms ease, background-color 200ms ease, border-color 200ms ease;
 }
-.theme-toggle:hover { color: var(--ink); border-color: var(--ink-soft); }
+.theme-tab:hover {
+  color: var(--ink);
+  background: var(--surface);
+  border-color: var(--ink-soft);
+  padding-right: 0.75rem;
+}
+.theme-tab:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 2px;
+}
 
 .nav-toggle {
   display: flex;
