@@ -1,1 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Gallery | Md. Aziz Hossain</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="publications.html">Publications</a>
+            <a href="teaching.html">Teaching</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+
+    <main class="gallery-page">
+
+        <!-- Introduction -->
+        <section class="gallery-intro">
+            <h1>Gallery</h1>
+
+            <p>
+                A collection of snippets, ideas, images, and little things
+                that I have found interesting along the way.
+            </p>
+
+            <p>
+                Some of these are here because they inspired me, some because
+                I found them beautiful or clever, and others simply because
+                they made me stop and think.
+            </p>
+        </section>
+
+
+        <!-- Gallery -->
+        <section class="gallery-grid">
+
+            <!-- Gallery Item 1 -->
+            <article class="gallery-item">
+
+                <img
+                    src="images/gallery/example-1.jpg"
+                    alt="Description of the first image"
+                    onclick="openLightbox(this)"
+                >
+
+                <div class="gallery-caption">
+                    <h2>Why I chose this</h2>
+
+                    <p>
+                        Write here why you found this particular snippet
+                        interesting or worth keeping.
+                    </p>
+                </div>
+
+            </article>
+
+
+            <!-- Gallery Item 2 -->
+            <article class="gallery-item">
+
+                <img
+                    src="images/gallery/example-2.jpg"
+                    alt="Description of the second image"
+                    onclick="openLightbox(this)"
+                >
+
+                <div class="gallery-caption">
+                    <h2>Why I chose this</h2>
+
+                    <p>
+                        Add your thoughts about this image here.
+                    </p>
+                </div>
+
+            </article>
+
+
+            <!-- Add more gallery items here -->
+
+
+        </section>
+
+    </main>
+
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+
+        <span class="lightbox-close">&times;</span>
+
+        <img
+            id="lightbox-image"
+            src=""
+            alt=""
+        >
+
+    </div>
+
+
+    <script>
+        function openLightbox(image) {
+            const lightbox = document.getElementById("lightbox");
+            const lightboxImage = document.getElementById("lightbox-image");
+
+            lightboxImage.src = image.src;
+            lightboxImage.alt = image.alt;
+
+            lightbox.classList.add("active");
+        }
+
+        function closeLightbox() {
+            document.getElementById("lightbox").classList.remove("active");
+        }
+
+        // Close the lightbox when pressing Escape
+        document.addEventListener("keydown", function(event) {
+            if (event.key === "Escape") {
+                closeLightbox();
+            }
+        });
+    </script>
+
+</body>
+</html>
