@@ -59,64 +59,27 @@
 
 
 <!-- =====================================================
-     Page layout
+     Main content
      ===================================================== -->
 
-<div class="page-layout">
+<main
+  id="main"
+  class="content"
+>
 
 
   <!-- ===================================================
-       News sidebar
+       Hero
        =================================================== -->
 
-  <aside
-    class="news-sidebar"
-    aria-label="News"
-  >
-
-    <p class="news-heading">
-      News
-    </p>
-
-
-    <article class="news-entry">
-
-      <time
-        class="news-date"
-        datetime="2026-09"
-      >
-        September 2026
-      </time>
-
-      <p class="news-text">
-        Still looking for evidence of disturbance.
-        Nothing conclusive yet.
-      </p>
-
-    </article>
-
-
-  </aside>
-
-
-  <!-- ===================================================
-       Main content
-       =================================================== -->
-
-  <main
-    id="main"
-    class="content"
-  >
+  <section class="hero">
 
 
     <!-- =================================================
-         Hero
+         Photo and links
          ================================================= -->
 
-    <div class="hero">
-
-
-      <!-- Profile photo -->
+    <div class="hero-visual">
 
       <div class="hero-photo">
 
@@ -129,215 +92,316 @@
       </div>
 
 
-      <!-- Hero text -->
+      <div class="hero-links">
 
-      <div class="hero-text">
+        <a href="cv.pdf">
+          CV
+        </a>
 
-        <h1 class="hero-name">
-          Mohammed Aziz Hossain
-        </h1>
+        <a
+          href="https://github.com/MAzizHossain"
+        >
+          GitHub
+        </a>
 
-
-        <p class="hero-tagline">
-          Naturally curious, usually found tinkering in a lab,
-          occasional poetry attempts, and probably playing
-          strategy games.
-        </p>
-
-
-        <div class="hero-links">
-
-          <a href="cv.pdf">
-            CV
-          </a>
-
-          <a
-            href="https://github.com/MAzizHossain"
-          >
-            GitHub
-          </a>
-
-          <a
-            href="https://www.linkedin.com/in/aziz2077"
-          >
-            LinkedIn
-          </a>
-
-        </div>
-
-
-        <p>
-          I am interested in understanding how biological
-          systems work and how their interactions shape the
-          world around them. I enjoy research, exploring new
-          ideas, and unwinding with movies, books, and video
-          games.
-        </p>
+        <a
+          href="https://www.linkedin.com/in/aziz2077"
+        >
+          LinkedIn
+        </a>
 
       </div>
 
+    </div>
+
+
+    <!-- =================================================
+         Introduction
+         ================================================= -->
+
+    <div class="hero-text">
+
+      <h1 class="hero-name">
+        Mohammed Aziz Hossain
+      </h1>
+
+
+      <p class="hero-tagline">
+        Naturally curious, usually found tinkering in a lab,
+        occasional poetry attempts, and probably playing
+        strategy games.
+      </p>
+
+
+      <p>
+        I am interested in understanding how biological
+        systems work and how their interactions shape the
+        world around them. I enjoy research, exploring new
+        ideas, and unwinding with movies, books, and video
+        games.
+      </p>
 
     </div>
+
+
+  </section>
+
+
+  <!-- ===================================================
+       Expandable News / Currently
+       =================================================== -->
+
+  <div class="info-drawers">
+
+
+    <!-- =================================================
+         News
+         ================================================= -->
+
+    <section class="info-drawer">
+
+      <button
+        class="drawer-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="news-content"
+      >
+
+        <span class="drawer-title">
+          News
+        </span>
+
+        <span
+          class="drawer-symbol"
+          aria-hidden="true"
+        >
+          +
+        </span>
+
+      </button>
+
+
+      <div
+        class="drawer-content"
+        id="news-content"
+        hidden
+      >
+
+        <article class="news-entry">
+
+          <time
+            class="news-date"
+            datetime="2026-09"
+          >
+            September 2026
+          </time>
+
+          <p>
+            Still looking for evidence of disturbance.
+            Nothing conclusive yet.
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
 
 
     <!-- =================================================
          Currently
          ================================================= -->
 
-    <div class="status">
+    <section class="info-drawer">
 
-      <h2>
-        Currently
-      </h2>
+      <button
+        class="drawer-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="currently-content"
+      >
 
-      <p>
-        Currently reading whatever catches my attention and
-        tinkering with GitHub Pages. Treating the whole thing
-        as research, mostly because “I have no idea what I am
-        doing” sounds less impressive.
+        <span class="drawer-title">
+          Currently
+        </span>
+
+        <span
+          class="drawer-symbol"
+          aria-hidden="true"
+        >
+          +
+        </span>
+
+      </button>
+
+
+      <div
+        class="drawer-content"
+        id="currently-content"
+        hidden
+      >
+
+        <p>
+          Currently reading whatever catches my attention and
+          tinkering with GitHub Pages. Treating the whole thing
+          as research, mostly because “I have no idea what I am
+          doing” sounds less impressive.
+        </p>
+
+      </div>
+
+    </section>
+
+
+  </div>
+
+
+  <!-- ===================================================
+       Explore
+       =================================================== -->
+
+  <p class="section-label">
+    Explore
+  </p>
+
+
+  <div class="row-list">
+
+
+    <!-- =================================================
+         Publications
+         ================================================= -->
+
+    <div class="row">
+
+      <div class="row-head">
+
+        <span class="row-title">
+
+          <a href="publications.html">
+            Publications
+          </a>
+
+        </span>
+
+      </div>
+
+      <p class="row-desc">
+        A list of things I have researched, written, and
+        somehow convinced other people to publish.
       </p>
 
     </div>
 
 
     <!-- =================================================
-         Explore
+         Teaching
          ================================================= -->
 
-    <p class="section-label">
-      Explore
-    </p>
+    <div class="row">
 
+      <div class="row-head">
 
-    <div class="row-list">
+        <span class="row-title">
 
+          <a href="teaching.html">
+            Teaching
+          </a>
 
-      <!-- Publications -->
-
-      <div class="row">
-
-        <div class="row-head">
-
-          <span class="row-title">
-
-            <a href="publications.html">
-              Publications
-            </a>
-
-          </span>
-
-        </div>
-
-        <p class="row-desc">
-          A list of things I have researched, written, and
-          somehow convinced other people to publish.
-        </p>
+        </span>
 
       </div>
 
-
-      <!-- Teaching -->
-
-      <div class="row">
-
-        <div class="row-head">
-
-          <span class="row-title">
-
-            <a href="teaching.html">
-              Teaching
-            </a>
-
-          </span>
-
-        </div>
-
-        <p class="row-desc">
-          A collection of scientific rabbit holes,
-          questionable reading choices, and books I probably
-          did not need to read.
-        </p>
-
-      </div>
-
-
-      <!-- Gaming -->
-
-      <div class="row">
-
-        <div class="row-head">
-
-          <span class="row-title">
-
-            <a href="gaming.html">
-              Gaming
-            </a>
-
-          </span>
-
-        </div>
-
-        <p class="row-desc">
-          Games I have played, games I fell in love with, and
-          compelling evidence of hours I sacrificed to them.
-        </p>
-
-      </div>
-
-
-      <!-- Gallery -->
-
-      <div class="row">
-
-        <div class="row-head">
-
-          <span class="row-title">
-
-            <a href="gallery.html">
-              Gallery
-            </a>
-
-          </span>
-
-        </div>
-
-        <p class="row-desc">
-          Just a collection of things I found interesting.
-          Interpret them at your own peril.
-        </p>
-
-      </div>
-
-
-      <!-- Contact -->
-
-      <div class="row">
-
-        <div class="row-head">
-
-          <span class="row-title">
-
-            <a href="contact.html">
-              Contact
-            </a>
-
-          </span>
-
-        </div>
-
-        <p class="row-desc">
-          How to find me (without a search party)
-        </p>
-
-      </div>
-
+      <p class="row-desc">
+        A collection of scientific rabbit holes,
+        questionable reading choices, and books I probably
+        did not need to read.
+      </p>
 
     </div>
 
 
-  </main>
+    <!-- =================================================
+         Gaming
+         ================================================= -->
 
-</div>
+    <div class="row">
+
+      <div class="row-head">
+
+        <span class="row-title">
+
+          <a href="gaming.html">
+            Gaming
+          </a>
+
+        </span>
+
+      </div>
+
+      <p class="row-desc">
+        Games I have played, games I fell in love with, and
+        compelling evidence of hours I sacrificed to them.
+      </p>
+
+    </div>
+
+
+    <!-- =================================================
+         Gallery
+         ================================================= -->
+
+    <div class="row">
+
+      <div class="row-head">
+
+        <span class="row-title">
+
+          <a href="gallery.html">
+            Gallery
+          </a>
+
+        </span>
+
+      </div>
+
+      <p class="row-desc">
+        Just a collection of things I found interesting.
+        Interpret them at your own peril.
+      </p>
+
+    </div>
+
+
+    <!-- =================================================
+         Contact
+         ================================================= -->
+
+    <div class="row">
+
+      <div class="row-head">
+
+        <span class="row-title">
+
+          <a href="contact.html">
+            Contact
+          </a>
+
+        </span>
+
+      </div>
+
+      <p class="row-desc">
+        How to find me (without a search party)
+      </p>
+
+    </div>
+
+
+  </div>
+
+
+</main>
 
 
 <!-- =====================================================
