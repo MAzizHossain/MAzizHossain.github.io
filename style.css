@@ -1247,7 +1247,7 @@ button:focus-visible,
 
 
 /* =========================================================
-   Guess the year button
+   Guess the year
    ========================================================= */
 
 .guess-year {
@@ -1258,6 +1258,8 @@ button:focus-visible,
   align-items: center;
 
   justify-content: center;
+
+  gap: 0.4rem;
 
   min-height: 2rem;
 
@@ -1301,25 +1303,11 @@ button:focus-visible,
 
 
 /* ---------------------------------------------------------
-   Guess-the-year icon
+   Arrow
    --------------------------------------------------------- */
 
 .guess-year-icon {
-  display: inline-flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  flex-shrink: 0;
-
-  width: 0.9rem;
-
-  height: 0.9rem;
-
-  margin-right: 0.4rem;
-
-  font-size: 0.85rem;
+  display: inline-block;
 
   line-height: 1;
 
@@ -1330,7 +1318,7 @@ button:focus-visible,
 
 
 /* ---------------------------------------------------------
-   Revealed state
+   Open / revealed state
    --------------------------------------------------------- */
 
 .guess-year[aria-expanded="true"] {
@@ -1342,8 +1330,6 @@ button:focus-visible,
 }
 
 .guess-year[aria-expanded="true"] .guess-year-icon {
-  transform: rotate(180deg);
-
   color: var(--rust);
 }
 
