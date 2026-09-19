@@ -310,7 +310,6 @@ button:focus-visible {
     3px 0 16px rgba(0, 0, 0, 0.08);
 }
 
-
 .side-updates .info-panel + .info-panel {
   border-top: 1px solid var(--line);
 }
@@ -1451,18 +1450,32 @@ button:focus-visible {
     position: fixed;
 
     left: 0;
-    top: 50%;
 
-    transform: translate(-100%, -50%);
+    top: 0;
+
+    transform: translateX(-100%);
 
     width: min(17rem, 82vw);
 
     max-width: none;
 
-    max-height: 80vh;
+    height: 100vh;
+
+    max-height: 100vh;
+
     overflow-y: auto;
 
     z-index: 90;
+
+    border-radius: 0;
+
+    border-top: none;
+
+    border-bottom: none;
+
+    border-left: none;
+
+    padding-top: 1.5rem;
 
     transition: transform 250ms ease;
 
@@ -1476,11 +1489,12 @@ button:focus-visible {
      ------------------------------------------------------- */
 
   .side-updates.updates-open {
-    transform:
-      translate(
-        0,
-        -50%
-      );
+    transform: translateX(0);
+  }
+
+  /* Automatically expand interior accordion content when drawer is open on mobile */
+  .side-updates.updates-open .info-content {
+    display: block !important;
   }
 
 
@@ -1520,10 +1534,9 @@ button:focus-visible {
 
     top: 50%;
 
-    right: -2.3rem;
+    left: 100%;
 
-    transform:
-      translateY(-50%);
+    transform: translateY(-50%);
 
     width: 2.3rem;
 
@@ -1574,29 +1587,6 @@ button:focus-visible {
   /* -------------------------------------------------------
      Open drawer arrow
      ------------------------------------------------------- */
-
-  .side-updates.updates-open
-  .updates-drawer-toggle {
-    right: 0;
-
-    transform:
-      translate(
-        100%,
-        -50%
-      );
-
-    border-left:
-      1px solid
-      var(--line);
-
-    border-right: none;
-
-    border-radius:
-      var(--radius)
-      0
-      0
-      var(--radius);
-  }
 
   .side-updates.updates-open .drawer-arrow-icon {
     transform: rotate(180deg);
