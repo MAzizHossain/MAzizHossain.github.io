@@ -725,12 +725,6 @@ function initGalleryYearGuess() {
         );
 
 
-      var buttonIcon =
-        button.querySelector(
-          ".guess-year-icon"
-        );
-
-
       if (!buttonText) {
         return;
       }
@@ -782,19 +776,12 @@ function initGalleryYearGuess() {
               year;
 
             buttonText.textContent =
-              "Hide year";
+              "Hide the year";
 
             button.setAttribute(
               "aria-expanded",
               "true"
             );
-
-            if (buttonIcon) {
-
-              buttonIcon.textContent =
-                "↙";
-
-            }
 
           }
 
@@ -815,13 +802,6 @@ function initGalleryYearGuess() {
               "aria-expanded",
               "false"
             );
-
-            if (buttonIcon) {
-
-              buttonIcon.textContent =
-                "↗";
-
-            }
 
           }
 
