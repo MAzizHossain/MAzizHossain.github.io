@@ -2,9 +2,6 @@
 // Site configuration
 // =========================================================
 
-// Single source of truth for the site nav.
-// To add a page: add one entry here and create the matching .html file.
-
 var NAV_ITEMS = [
   { href: "index.html", label: "Home" },
   { href: "publications.html", label: "Publications" },
@@ -46,7 +43,6 @@ function preferredTheme() {
 
   return "light";
 }
-
 
 function applyTheme(theme) {
   document.documentElement.setAttribute("data-theme", theme);
@@ -359,7 +355,6 @@ function loadPublications() {
 // Gallery Features
 // =========================================================
 
-// Guess the year toggle
 function initGalleryYearGuess() {
   var buttons = document.querySelectorAll(".guess-year");
 
@@ -403,8 +398,6 @@ function initGalleryYearGuess() {
   });
 }
 
-
-// Gallery shuffle (Fisher-Yates)
 function shuffleGallery() {
   var gallery = document.querySelector(".gallery-grid");
 
@@ -426,8 +419,6 @@ function shuffleGallery() {
   });
 }
 
-
-// Lightbox implementation
 var lightbox = null;
 var lightboxImage = null;
 var lightboxClose = null;
@@ -472,7 +463,6 @@ function initLightbox() {
       closeLightbox();
     }
 
-    // Focus trap inside open lightbox
     if (event.key === "Tab" && !lightbox.hidden) {
       event.preventDefault();
       lightboxClose.focus();
