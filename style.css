@@ -37,8 +37,13 @@
 /* =========================================================
    Reset & base
    ========================================================= */
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
@@ -51,25 +56,61 @@ body {
   transition: background-color 200ms ease, color 200ms ease;
 }
 
-h1, h2, h3 { font-family: var(--font-display); color: var(--ink); margin: 0; }
-p { margin: 0 0 1rem; max-width: 62ch; }
-a { color: var(--teal-dark); text-decoration-thickness: 1px; text-underline-offset: 2px; }
-a:hover { color: var(--rust); }
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  color: var(--ink);
+  margin: 0;
+}
 
-img, svg { max-width: 100%; display: block; }
+p {
+  margin: 0 0 1rem;
+  max-width: 62ch;
+}
+
+a {
+  color: var(--teal-dark);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  color: var(--rust);
+}
+
+img,
+svg {
+  max-width: 100%;
+  display: block;
+}
 
 .sr-only {
-  position: absolute; width: 1px; height: 1px;
-  padding: 0; margin: -1px; overflow: hidden;
-  clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .skip-link {
-  position: absolute; left: -999px; top: 0;
-  background: var(--ink); color: var(--paper);
-  padding: 0.6rem 1rem; z-index: 100;
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 0.6rem 1rem;
+  z-index: 100;
 }
-.skip-link:focus { left: 0.5rem; top: 0.5rem; }
+
+.skip-link:focus {
+  left: 0.5rem;
+  top: 0.5rem;
+}
 
 a:focus-visible,
 button:focus-visible {
@@ -78,7 +119,9 @@ button:focus-visible {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
@@ -116,7 +159,10 @@ button:focus-visible {
   text-decoration: none;
   line-height: 1.3;
 }
-.wordmark:hover { color: var(--teal-dark); }
+
+.wordmark:hover {
+  color: var(--teal-dark);
+}
 
 /* Floating theme tab, fixed to the viewport edge — independent of the nav row */
 .theme-tab {
@@ -138,22 +184,26 @@ button:focus-visible {
   padding: 0.85rem 0.5rem;
   writing-mode: vertical-rl;
   text-orientation: mixed;
-  transition: padding-right 150ms ease, color 150ms ease, background-color 200ms ease, border-color 200ms ease;
+  transition:
+    padding-right 150ms ease,
+    color 150ms ease,
+    background-color 200ms ease,
+    border-color 200ms ease;
 }
+
 .theme-tab:hover {
   color: var(--ink);
   background: var(--surface);
   border-color: var(--ink-soft);
   padding-right: 0.75rem;
 }
+
 .theme-tab:focus-visible {
   outline: 2px solid var(--teal);
   outline-offset: 2px;
 }
 
-/* Fixed left-side panel for News / Current progress — same fixed-to-edge,
-   vertically-centered mechanism as the theme tab, but wider, horizontal
-   text, and built to hold expandable content rather than a single label. */
+/* Fixed left-side panel for News / Current progress */
 .side-updates {
   position: fixed;
   left: 0;
@@ -187,10 +237,12 @@ button:focus-visible {
   color: var(--ink);
   padding: 1.1rem 1.35rem;
 }
+
 .side-updates .info-toggle:hover,
 .side-updates .info-toggle[aria-expanded="true"] {
   color: var(--teal-dark);
 }
+
 .side-updates .info-toggle:focus-visible {
   outline: 2px solid var(--teal);
   outline-offset: -2px;
@@ -199,6 +251,7 @@ button:focus-visible {
 .side-updates .info-content {
   padding: 0 1.35rem 1.25rem;
 }
+
 .side-updates .news-date {
   display: block;
   font-family: var(--font-mono);
@@ -206,6 +259,7 @@ button:focus-visible {
   color: var(--ink-soft);
   margin-bottom: 0.4rem;
 }
+
 .side-updates .news-text,
 .side-updates .status-text {
   color: var(--ink-soft);
@@ -215,26 +269,45 @@ button:focus-visible {
 }
 
 @media (max-width: 700px) {
-  .side-updates { width: 11.5rem; }
-  .side-updates .info-toggle { font-size: 0.98rem; padding: 0.9rem 1rem; }
-  .side-updates .info-content { padding: 0 1rem 1rem; }
+  .side-updates {
+    width: 11.5rem;
+  }
+
+  .side-updates .info-toggle {
+    font-size: 0.98rem;
+    padding: 0.9rem 1rem;
+  }
+
+  .side-updates .info-content {
+    padding: 0 1rem 1rem;
+  }
+
   .side-updates .news-text,
-  .side-updates .status-text { font-size: 0.85rem; }
+  .side-updates .status-text {
+    font-size: 0.85rem;
+  }
 }
 
 .nav-toggle {
   display: flex;
-  width: 2.1rem; height: 2.1rem;
-  padding: 0; border: none; background: none;
+  width: 2.1rem;
+  height: 2.1rem;
+  padding: 0;
+  border: none;
+  background: none;
   cursor: pointer;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 4px;
 }
+
 .nav-toggle span {
-  display: block; width: 22px; height: 2px;
-  background: var(--ink); border-radius: 1px;
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--ink);
+  border-radius: 1px;
 }
 
 .nav-links {
@@ -242,12 +315,17 @@ button:focus-visible {
   flex-direction: column;
   gap: 0.1rem;
   position: absolute;
-  top: 100%; left: 0; right: 0;
+  top: 100%;
+  left: 0;
+  right: 0;
   background: var(--paper);
   border-bottom: 1px solid var(--line);
   padding: 0.5rem 1.5rem 1.25rem;
 }
-.nav-links.open { display: flex; }
+
+.nav-links.open {
+  display: flex;
+}
 
 .nav-links a {
   color: var(--ink-soft);
@@ -256,15 +334,24 @@ button:focus-visible {
   font-weight: 500;
   padding: 0.6rem 0;
   border-bottom: 1px solid transparent;
-  transition: border-color var(--speed) ease, color var(--speed) ease;
+  transition:
+    border-color var(--speed) ease,
+    color var(--speed) ease;
 }
-.nav-links a:hover { color: var(--ink); }
+
+.nav-links a:hover {
+  color: var(--ink);
+}
+
 .nav-links a.active {
   color: var(--ink);
   font-weight: 600;
   border-bottom-color: var(--teal);
 }
-.nav-links a.active[data-section="gaming"] { border-bottom-color: var(--rust); }
+
+.nav-links a.active[data-section="gaming"] {
+  border-bottom-color: var(--rust);
+}
 
 /* Promote the nav from a hamburger menu to an inline top bar once there's room */
 @media (min-width: 701px) {
@@ -274,7 +361,11 @@ button:focus-visible {
     justify-content: space-between;
     padding: 1.25rem 3.25rem;
   }
-  .nav-toggle { display: none; }
+
+  .nav-toggle {
+    display: none;
+  }
+
   .nav-links {
     display: flex;
     flex-direction: row;
@@ -284,7 +375,10 @@ button:focus-visible {
     border-bottom: none;
     padding: 0;
   }
-  .nav-links a { padding: 0.2rem 0 0.35rem; }
+
+  .nav-links a {
+    padding: 0.2rem 0 0.35rem;
+  }
 }
 
 /* =========================================================
@@ -323,18 +417,31 @@ button:focus-visible {
   gap: 1.5rem;
   margin-bottom: 0.5rem;
 }
-.hero-text { flex: 1; min-width: 0; }
+
+.hero-text {
+  flex: 1;
+  min-width: 0;
+}
 
 .hero-photo {
   flex-shrink: 0;
   width: 150px;
 }
+
+/* =========================================================
+   Profile picture — circular
+   ========================================================= */
 .hero-photo img {
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
+
+  /* Makes the rectangular image completely circular */
+  border-radius: 50%;
+
+  /* Subtle border around the circle */
   border: 1px solid var(--line);
-  border-radius: var(--radius);
+
   background: var(--surface);
 }
 
@@ -346,12 +453,14 @@ button:focus-visible {
   font-size: 0.95rem;
   font-weight: 500;
 }
+
 .hero-links a {
   color: var(--teal-dark);
   text-decoration: none;
   border-bottom: 1px solid transparent;
   padding-bottom: 1px;
 }
+
 .hero-links a:hover {
   color: var(--rust);
   border-bottom-color: currentColor;
@@ -379,15 +488,35 @@ button:focus-visible {
 }
 
 @keyframes rise {
-  from { opacity: 0; transform: translateY(10px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (min-width: 701px) {
-  .hero { flex-direction: row; align-items: flex-start; gap: 2.75rem; }
-  .hero-photo { width: 220px; }
-  .hero-name { font-size: 3rem; }
-  .hero-tagline { font-size: 1.3rem; }
+  .hero {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 2.75rem;
+  }
+
+  .hero-photo {
+    width: 220px;
+  }
+
+  .hero-name {
+    font-size: 3rem;
+  }
+
+  .hero-tagline {
+    font-size: 1.3rem;
+  }
 }
 
 .status {
@@ -396,6 +525,7 @@ button:focus-visible {
   margin: 0 0 3rem;
   max-width: 52ch;
 }
+
 .status h2 {
   font-size: 0.95rem;
   font-weight: 600;
@@ -403,7 +533,11 @@ button:focus-visible {
   margin-bottom: 0.25rem;
   color: var(--ink);
 }
-.status p { color: var(--ink-soft); margin: 0; }
+
+.status p {
+  color: var(--ink-soft);
+  margin: 0;
+}
 
 .section-label {
   font-size: 1.1rem;
@@ -417,6 +551,7 @@ button:focus-visible {
 .row-list {
   border-top: 1px solid var(--line);
 }
+
 .row {
   position: relative;
   display: flex;
@@ -425,6 +560,7 @@ button:focus-visible {
   padding: 1.5rem 0;
   border-bottom: 1px solid var(--line);
 }
+
 .row-head {
   display: flex;
   align-items: baseline;
@@ -432,31 +568,40 @@ button:focus-visible {
   gap: 1rem;
   flex-wrap: wrap;
 }
+
 .row-title {
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 1.15rem;
 }
+
 .row-title a {
   color: var(--ink);
   text-decoration: none;
 }
+
 .row-title a::after {
   content: "";
   position: absolute;
   inset: 0;
 }
-.row-title a:hover { color: var(--teal-dark); }
+
+.row-title a:hover {
+  color: var(--teal-dark);
+}
+
 .row-meta {
   color: var(--ink-soft);
   font-size: 0.9rem;
   white-space: nowrap;
 }
+
 .row-desc {
   color: var(--ink-soft);
   margin: 0;
   max-width: 60ch;
 }
+
 .row-links {
   font-size: 0.9rem;
   display: flex;
@@ -464,7 +609,10 @@ button:focus-visible {
   position: relative;
   z-index: 1;
 }
-.row-links a { color: var(--teal-dark); }
+
+.row-links a {
+  color: var(--teal-dark);
+}
 
 .year-heading {
   font-family: var(--font-mono);
@@ -473,7 +621,10 @@ button:focus-visible {
   color: var(--ink-soft);
   margin: 2.25rem 0 0;
 }
-.year-heading:first-child { margin-top: 0; }
+
+.year-heading:first-child {
+  margin-top: 0;
+}
 
 /* =========================================================
    Numbered book list (teaching page)
@@ -485,6 +636,7 @@ button:focus-visible {
   padding: 0;
   border-top: 1px solid var(--line);
 }
+
 .book-list li {
   counter-increment: book;
   display: flex;
@@ -494,6 +646,7 @@ button:focus-visible {
   border-bottom: 1px solid var(--line);
   font-weight: 500;
 }
+
 .book-list li::before {
   content: counter(book, decimal-leading-zero) ".";
   font-family: var(--font-mono);
@@ -513,7 +666,10 @@ button:focus-visible {
   padding: 1.25rem 0;
   border-bottom: 1px solid var(--line);
 }
-.game-row:first-child { border-top: 1px solid var(--line); }
+
+.game-row:first-child {
+  border-top: 1px solid var(--line);
+}
 
 .tag {
   display: inline-block;
@@ -528,8 +684,14 @@ button:focus-visible {
   white-space: nowrap;
 }
 
-.game-title { font-weight: 600; }
-.game-note { color: var(--ink-soft); margin: 0.2rem 0 0; }
+.game-title {
+  font-weight: 600;
+}
+
+.game-note {
+  color: var(--ink-soft);
+  margin: 0.2rem 0 0;
+}
 
 .log {
   font-family: var(--font-mono);
@@ -550,6 +712,7 @@ button:focus-visible {
   margin: 0;
   border-top: 1px solid var(--line);
 }
+
 .contact-list li {
   border-bottom: 1px solid var(--line);
   padding: 1.1rem 0;
@@ -558,9 +721,20 @@ button:focus-visible {
   gap: 1rem;
   flex-wrap: wrap;
 }
-.contact-list .label { color: var(--ink-soft); font-size: 0.95rem; }
-.contact-list a { font-weight: 500; text-decoration: none; }
-.contact-list a:hover { text-decoration: underline; }
+
+.contact-list .label {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+.contact-list a {
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.contact-list a:hover {
+  text-decoration: underline;
+}
 
 /* =========================================================
    Footer
