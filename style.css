@@ -20,9 +20,7 @@
   --speed: 150ms;
 }
 
-/* Dark theme — same tokens, different values. Everything else in this
-   file reads colors through these variables, so this one block re-themes
-   the whole site. */
+/* Dark theme */
 :root[data-theme="dark"] {
   --paper: #15181B;
   --surface: #1E2225;
@@ -53,7 +51,9 @@ body {
   font-size: 1.0625rem;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  transition: background-color 200ms ease, color 200ms ease;
+  transition:
+    background-color 200ms ease,
+    color 200ms ease;
 }
 
 h1,
@@ -164,7 +164,9 @@ button:focus-visible {
   color: var(--teal-dark);
 }
 
-/* Floating theme tab, fixed to the viewport edge — independent of the nav row */
+/* =========================================================
+   Theme tab
+   ========================================================= */
 .theme-tab {
   position: fixed;
   top: 50%;
@@ -203,7 +205,9 @@ button:focus-visible {
   outline-offset: 2px;
 }
 
-/* Fixed left-side panel for News / Current progress */
+/* =========================================================
+   Side updates
+   ========================================================= */
 .side-updates {
   position: fixed;
   left: 0;
@@ -288,6 +292,9 @@ button:focus-visible {
   }
 }
 
+/* =========================================================
+   Navigation
+   ========================================================= */
 .nav-toggle {
   display: flex;
   width: 2.1rem;
@@ -353,7 +360,7 @@ button:focus-visible {
   border-bottom-color: var(--rust);
 }
 
-/* Promote the nav from a hamburger menu to an inline top bar once there's room */
+/* Desktop navigation */
 @media (min-width: 701px) {
   .sidebar {
     flex-direction: row;
@@ -382,7 +389,7 @@ button:focus-visible {
 }
 
 /* =========================================================
-   Content
+   General content
    ========================================================= */
 .content {
   max-width: var(--maxw);
@@ -409,7 +416,7 @@ button:focus-visible {
 }
 
 /* =========================================================
-   Hero (home page)
+   Hero / Home page
    ========================================================= */
 .hero {
   display: flex;
@@ -423,25 +430,19 @@ button:focus-visible {
   min-width: 0;
 }
 
+/* Small profile picture */
 .hero-photo {
   flex-shrink: 0;
-  width: 150px;
+  width: 120px;
 }
 
-/* =========================================================
-   Profile picture — circular
-   ========================================================= */
+/* Circular profile picture */
 .hero-photo img {
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-
-  /* Makes the rectangular image completely circular */
   border-radius: 50%;
-
-  /* Subtle border around the circle */
   border: 1px solid var(--line);
-
   background: var(--surface);
 }
 
@@ -499,6 +500,7 @@ button:focus-visible {
   }
 }
 
+/* Desktop hero */
 @media (min-width: 701px) {
   .hero {
     flex-direction: row;
@@ -507,7 +509,7 @@ button:focus-visible {
   }
 
   .hero-photo {
-    width: 220px;
+    width: 160px;
   }
 
   .hero-name {
@@ -546,7 +548,7 @@ button:focus-visible {
 }
 
 /* =========================================================
-   Row list (explore links, publications, teaching)
+   Row list
    ========================================================= */
 .row-list {
   border-top: 1px solid var(--line);
@@ -627,7 +629,7 @@ button:focus-visible {
 }
 
 /* =========================================================
-   Numbered book list (teaching page)
+   Numbered book list
    ========================================================= */
 .book-list {
   list-style: none;
@@ -701,6 +703,191 @@ button:focus-visible {
   border-left: 2px solid var(--rust);
   padding-left: 1rem;
   margin-top: 0.5rem;
+}
+
+/* =========================================================
+   Gallery page
+   ========================================================= */
+.gallery-page {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem 4rem;
+}
+
+.gallery-intro {
+  margin-bottom: 2.75rem;
+}
+
+.gallery-intro h1 {
+  font-size: 2.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.gallery-intro p {
+  color: var(--ink-soft);
+  max-width: 58ch;
+}
+
+/* Gallery grid */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+/* Individual gallery item */
+.gallery-item {
+  min-width: 0;
+  border-top: 1px solid var(--line);
+  padding-top: 1.5rem;
+}
+
+/* Gallery images
+   These stay rectangular and are deliberately constrained. */
+.gallery-item > img {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  cursor: zoom-in;
+}
+
+/* Gallery caption */
+.gallery-caption {
+  max-width: 520px;
+  padding-top: 1rem;
+}
+
+.gallery-caption h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.gallery-caption p {
+  color: var(--ink-soft);
+  margin-bottom: 1rem;
+}
+
+/* =========================================================
+   Gallery year button
+   ========================================================= */
+.gallery-year-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.guess-year {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0;
+  border: none;
+  background: none;
+  color: var(--teal-dark);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.guess-year:hover {
+  color: var(--rust);
+}
+
+.guess-year-icon {
+  transition: transform var(--speed) ease;
+}
+
+.guess-year[aria-expanded="true"] .guess-year-icon {
+  transform: rotate(90deg);
+}
+
+.gallery-year {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+}
+
+/* =========================================================
+   Gallery lightbox
+   ========================================================= */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: rgba(15, 18, 20, 0.9);
+}
+
+.lightbox[hidden] {
+  display: none;
+}
+
+.lightbox img {
+  max-width: 90vw;
+  max-height: 85vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: var(--radius);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  border: none;
+  background: none;
+  color: white;
+  font-size: 2.25rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.lightbox-close:hover {
+  color: var(--rust);
+}
+
+/* =========================================================
+   Gallery responsive layout
+   ========================================================= */
+@media (min-width: 701px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2.5rem 2rem;
+  }
+
+  .gallery-item > img {
+    max-width: 100%;
+    aspect-ratio: 4 / 3;
+  }
+
+  .gallery-caption {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .gallery-page {
+    padding: 2.5rem 1.25rem 3rem;
+  }
+
+  .gallery-item > img {
+    max-width: 100%;
+  }
+
+  .gallery-grid {
+    gap: 2rem;
+  }
 }
 
 /* =========================================================
