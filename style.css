@@ -1245,6 +1245,11 @@ button:focus-visible,
   flex-wrap: wrap;
 }
 
+
+/* =========================================================
+   Guess the year button
+   ========================================================= */
+
 .guess-year {
   appearance: none;
 
@@ -1294,17 +1299,58 @@ button:focus-visible,
   color: var(--teal-dark);
 }
 
-.guess-year:disabled {
-  cursor: default;
 
+/* ---------------------------------------------------------
+   Guess-the-year icon
+   --------------------------------------------------------- */
+
+.guess-year-icon {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  width: 0.9rem;
+
+  height: 0.9rem;
+
+  margin-right: 0.4rem;
+
+  font-size: 0.85rem;
+
+  line-height: 1;
+
+  transition:
+    transform 150ms ease,
+    color 150ms ease;
+}
+
+
+/* ---------------------------------------------------------
+   Revealed state
+   --------------------------------------------------------- */
+
+.guess-year[aria-expanded="true"] {
   background: var(--surface);
 
   border-color: var(--teal);
 
   color: var(--ink);
-
-  opacity: 1;
 }
+
+.guess-year[aria-expanded="true"] .guess-year-icon {
+  transform: rotate(180deg);
+
+  color: var(--rust);
+}
+
+
+/* ---------------------------------------------------------
+   Year
+   --------------------------------------------------------- */
 
 .gallery-year {
   font-family: var(--font-mono);
@@ -1535,6 +1581,29 @@ button:focus-visible,
 
   .gallery-year-row {
     gap: 0.5rem;
+  }
+
+
+  /* -------------------------------------------------------
+     Guess-the-year button on mobile
+     ------------------------------------------------------- */
+
+  .guess-year {
+    min-height: 2rem;
+
+    padding:
+      0.3rem
+      0.6rem;
+  }
+
+  .guess-year-icon {
+    width: 0.85rem;
+
+    height: 0.85rem;
+
+    margin-right: 0.35rem;
+
+    font-size: 0.8rem;
   }
 
 
