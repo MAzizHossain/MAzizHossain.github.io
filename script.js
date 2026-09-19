@@ -500,6 +500,69 @@ function initInfoPanels() {
 
 }
 
+// =========================================================
+// Mobile News / Current Progress drawer
+// =========================================================
+
+function initUpdatesDrawer() {
+
+  var drawer =
+    document.querySelector(
+      ".side-updates"
+    );
+
+  var toggle =
+    document.querySelector(
+      ".updates-drawer-toggle"
+    );
+
+  if (
+    !drawer ||
+    !toggle
+  ) {
+    return;
+  }
+
+  var arrow =
+    toggle.querySelector(
+      "span"
+    );
+
+  toggle.addEventListener(
+    "click",
+    function () {
+
+      var isOpen =
+        drawer.classList.toggle(
+          "updates-open"
+        );
+
+      toggle.setAttribute(
+        "aria-expanded",
+        isOpen
+          ? "true"
+          : "false"
+      );
+
+      toggle.setAttribute(
+        "aria-label",
+        isOpen
+          ? "Close site updates"
+          : "Open site updates"
+      );
+
+      if (arrow) {
+        arrow.textContent =
+          isOpen
+            ? "←"
+            : "→";
+      }
+
+    }
+  );
+
+}
+
 
 // =========================================================
 // Dynamic Publications
@@ -1177,13 +1240,15 @@ document.addEventListener(
     // Shared site features
     // -------------------------------------------------------
 
-    initToggle();
+initToggle();
 
-    initThemeToggle();
+initThemeToggle();
 
-    initInfoPanels();
+initInfoPanels();
 
-    loadPublications();
+initUpdatesDrawer();
+
+loadPublications();
 
 
     // -------------------------------------------------------
