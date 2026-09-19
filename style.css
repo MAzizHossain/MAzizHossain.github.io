@@ -3,7 +3,6 @@
    ========================================================= */
 
 :root {
-  /* Soft cream paper — intentionally avoids a bright white background */
   --paper: #E9E4D8;
   --surface: #DED8CA;
 
@@ -25,7 +24,6 @@
   --radius: 3px;
   --speed: 150ms;
 
-  /* Tell the browser that the light theme is intentionally not white */
   color-scheme: light;
 }
 
@@ -50,6 +48,7 @@
 
   color-scheme: dark;
 }
+
 
 /* =========================================================
    RESET & BASE
@@ -286,10 +285,6 @@ button:focus-visible {
   overflow: hidden;
 }
 
-/* Hidden by default (desktop). Shown only on mobile, see the
-   max-width:700px block below — this was missing entirely,
-   which is why the toggle button had no visible tab and the
-   panel had no closed state on phones. */
 .updates-drawer-toggle {
   display: none;
 }
@@ -400,8 +395,6 @@ button:focus-visible {
     transition: opacity 200ms ease;
   }
 
-  /* Only applied via JS when the tab is actually sitting over
-     text while the drawer is closed. */
   .updates-drawer-toggle.tab-dim {
     opacity: 0.35;
   }
@@ -619,14 +612,6 @@ button:focus-visible {
 /* =========================================================
    PROFILE PHOTO
    ========================================================= */
-
-/*
-   Desktop size:
-   Original = 220px
-   New size ≈ 40% larger = 308px
-
-   The image stays perfectly circular.
-*/
 
 .hero-photo {
   flex-shrink: 0;
@@ -984,11 +969,6 @@ button:focus-visible {
   border-bottom: 1px solid var(--line);
 }
 
-/* :first-child never actually matched here, since a heading always
-   precedes the first row — this adjacent-sibling version correctly
-   gives a top border to the first row of each group instead, since
-   a heading breaking the sequence means the next .game-row after it
-   is not immediately preceded by another .game-row. */
 .game-row + .game-row {
   border-top: none;
 }
@@ -1045,22 +1025,27 @@ button:focus-visible {
    ========================================================= */
 
 /*
-   Centered 2 × 2 gallery.
+   3 × 3 gallery.
 
-   The gallery itself stays within the main content width,
-   while each image is kept at a controlled size.
+   Desktop/tablet:
+   - 3 columns
+   - 3 items per row
+   - 9 items = exactly 3 rows
+
+   The gallery is limited to 900px so the cards don't
+   become excessively wide on large screens.
 */
 
 .gallery-grid {
   display: grid;
 
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 
   gap: 1.5rem;
 
   width: 100%;
 
-  max-width: 700px;
+  max-width: 900px;
 
   margin: 0 auto;
 }
@@ -1074,7 +1059,9 @@ button:focus-visible {
 
   width: 100%;
 
-  height: 180px;
+  aspect-ratio: 4 / 3;
+
+  height: auto;
 
   object-fit: cover;
 
@@ -1163,7 +1150,7 @@ button:focus-visible {
 
 .gallery-page {
   width: 100%;
-  max-width: 900px;
+  max-width: 1100px;
 
   margin: 0 auto;
 
@@ -1199,16 +1186,21 @@ button:focus-visible {
   line-height: 1.65;
 }
 
+
+/* =========================================================
+   3 × 3 GALLERY PAGE
+   ========================================================= */
+
 .gallery-page .gallery-grid {
   display: grid;
 
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 
-  gap: 2.25rem 1.75rem;
+  gap: 2.25rem 1.5rem;
 
   width: 100%;
 
-  max-width: 700px;
+  max-width: 900px;
 
   margin: 0 auto;
 }
@@ -1222,7 +1214,9 @@ button:focus-visible {
 
   width: 100%;
 
-  height: 180px;
+  height: auto;
+
+  aspect-ratio: 4 / 3;
 
   object-fit: cover;
 
@@ -1345,8 +1339,6 @@ button:focus-visible {
   display: none;
 }
 
-/* script.js adds this class while the lightbox is open, but there
-   was no rule for it — the page kept scrolling behind the overlay. */
 body.lightbox-open {
   overflow: hidden;
 }
@@ -1547,6 +1539,11 @@ body.lightbox-open {
   .gallery-intro p {
     font-size: 1rem;
   }
+
+  /*
+     Mobile switches from 3 × 3 to 1 column so
+     images and captions remain readable.
+  */
 
   .gallery-page .gallery-grid {
     grid-template-columns: 1fr;
