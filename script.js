@@ -1241,13 +1241,9 @@ document.addEventListener(
     // -------------------------------------------------------
 
 initToggle();
-
 initThemeToggle();
-
 initInfoPanels();
-
 initUpdatesDrawer();
-
 loadPublications();
 
 
