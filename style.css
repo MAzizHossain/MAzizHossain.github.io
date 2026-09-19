@@ -179,11 +179,9 @@ img {
 
 .nav-links a {
   color: var(--ink);
-
+  font-weight: 600;
   text-decoration: none;
-
   white-space: nowrap;
-
   transition: none;
 }
 
@@ -304,9 +302,8 @@ img {
 
 .hero-links a {
   color: var(--ink);
-
+  font-weight: 600;
   text-decoration: none;
-
   white-space: nowrap;
 
   transition: none;
