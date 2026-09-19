@@ -596,17 +596,7 @@ button:focus-visible {
 
 /* =========================================================
    PROFILE PHOTO
-   *
-   * IMPORTANT:
-   * These selectors are scoped specifically to .hero-photo.
-   * They do NOT affect gallery images.
-   *
-   * Original mobile size: 150px
-   * New mobile size: 250px
-   *
-   * Original desktop size: 220px
-   * New desktop size: 350px
-   * ========================================================= */
+   ========================================================= */
 
 .hero-photo {
   flex-shrink: 0;
@@ -756,14 +746,6 @@ button:focus-visible {
     gap: 2.75rem;
   }
 
-  /*
-   * Desktop profile:
-   *
-   * Original: 220px
-   * New: 350px
-   *
-   * This is about 59% larger.
-   */
   .hero-photo {
     width: 350px;
 
@@ -1140,14 +1122,6 @@ button:focus-visible {
    Gallery
    ========================================================= */
 
-/*
- * IMPORTANT:
- * Gallery styles are completely independent from .hero-photo.
- *
- * Changing the profile image size above will NOT change
- * gallery images.
- */
-
 .gallery-page {
   max-width: var(--maxw);
 
@@ -1212,10 +1186,6 @@ button:focus-visible {
    ========================================================= */
 
 .gallery-item > img {
-  /*
-   * These dimensions are intentionally unchanged.
-   * They are NOT affected by the larger profile image.
-   */
   width: 100%;
 
   height: 220px;
@@ -1430,20 +1400,6 @@ button:focus-visible {
      Profile photo
      ------------------------------------------------------- */
 
-  /*
-   * The photo is explicitly the first item in .hero.
-   *
-   * This means the HTML should ideally be:
-   *
-   * <div class="hero">
-   *   <div class="hero-photo">...</div>
-   *   <div class="hero-text">...</div>
-   * </div>
-   *
-   * The CSS order below also guarantees that behavior
-   * if the two elements are siblings.
-   */
-
   .hero {
     flex-direction: column;
 
@@ -1491,36 +1447,28 @@ button:focus-visible {
      News / Current Progress drawer
      ------------------------------------------------------- */
 
-  /*
-   * On phones the panel is completely hidden off-screen
-   * until the user opens it.
-   *
-   * This prevents it from permanently covering content
-   * while scrolling.
-   */
+  .side-updates {
+    position: fixed;
 
- .side-updates {
-  position: fixed;
+    left: 0;
+    top: 50%;
 
-  left: 0;
-  top: 50%;
+    transform: translate(-100%, -50%);
 
-  transform: translate(-100%, -50%);
+    width: min(17rem, 82vw);
 
-  width: min(17rem, 82vw);
+    max-width: none;
 
-  max-width: none;
+    max-height: 80vh;
+    overflow-y: auto;
 
-  max-height: 80vh;
-  overflow-y: auto;
+    z-index: 90;
 
-  z-index: 90;
+    transition: transform 250ms ease;
 
-  transition: transform 250ms ease;
-
-  box-shadow:
-    4px 0 18px rgba(0, 0, 0, 0.12);
-}
+    box-shadow:
+      4px 0 18px rgba(0, 0, 0, 0.12);
+  }
 
 
   /* -------------------------------------------------------
@@ -1564,12 +1512,6 @@ button:focus-visible {
   /* -------------------------------------------------------
      Drawer arrow
      ------------------------------------------------------- */
-
-  /*
-   * Closed:
-   * The arrow sticks out from the right edge of the
-   * hidden drawer, giving the user a visible handle.
-   */
 
   .updates-drawer-toggle {
     display: flex;
@@ -1623,15 +1565,15 @@ button:focus-visible {
     background: var(--surface);
   }
 
+  .drawer-arrow-icon {
+    display: inline-block;
+    transition: transform 250ms ease;
+  }
+
 
   /* -------------------------------------------------------
      Open drawer arrow
      ------------------------------------------------------- */
-
-  /*
-   * When open, the arrow moves to the outer right edge
-   * of the drawer and changes direction.
-   */
 
   .side-updates.updates-open
   .updates-drawer-toggle {
@@ -1655,6 +1597,10 @@ button:focus-visible {
       0
       var(--radius);
   }
+
+  .side-updates.updates-open .drawer-arrow-icon {
+    transform: rotate(180deg);
+  }
 }
 
 
@@ -1671,12 +1617,6 @@ button:focus-visible {
       3rem;
   }
 
-  /*
-   * Still substantially larger than the original 150px,
-   * but slightly reduced for very narrow screens.
-   *
-   * 220px is ~47% larger than 150px.
-   */
   .hero-photo {
     width: 220px;
 
@@ -1698,9 +1638,6 @@ button:focus-visible {
   }
 
   .gallery-item > img {
-    /*
-     * Gallery remains independent.
-     */
     height: 190px;
   }
 }
