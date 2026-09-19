@@ -21,7 +21,6 @@
   --paper: #16181a;
   --surface: #202326;
   --line: #353a3f;
-
   --ink: #f1f2f3;
   --ink-soft: #a9afb5;
 }
@@ -43,19 +42,20 @@ html {
 
 body {
   margin: 0;
-
   background: var(--paper);
   color: var(--ink);
-
   font-family: var(--font-sans);
-
   font-size: 1.05rem;
-
   line-height: 1.65;
 }
 
 img {
+  display: block;
   max-width: 100%;
+}
+
+a {
+  color: var(--ink);
 }
 
 
@@ -65,17 +65,12 @@ img {
 
 .skip-link {
   position: absolute;
-
   top: -100px;
   left: 1rem;
-
   z-index: 1000;
-
+  padding: 0.5rem 1rem;
   background: var(--ink);
   color: var(--paper);
-
-  padding: 0.5rem 1rem;
-
   border-radius: var(--radius);
 }
 
@@ -85,48 +80,32 @@ img {
 
 .sr-only {
   position: absolute;
-
   width: 1px;
   height: 1px;
-
   padding: 0;
   margin: -1px;
-
   overflow: hidden;
-
   clip: rect(0, 0, 0, 0);
-
   white-space: nowrap;
-
   border: 0;
 }
 
 
 /* =========================================================
-   TOP HEADER
+   HEADER
    ========================================================= */
 
 .sidebar {
   position: relative;
+  z-index: 50;
 
   width: 100%;
-
-  margin: 0;
-
   padding: 2rem 3rem 0;
 
   display: flex;
-
   align-items: center;
   justify-content: space-between;
-
-  z-index: 50;
 }
-
-
-/* =========================================================
-   WORDMARK
-   ========================================================= */
 
 .sidebar-top {
   flex-shrink: 0;
@@ -136,81 +115,46 @@ img {
   display: block;
 
   color: var(--ink);
-
   font-family: var(--font-display);
-
   font-size: 1.3rem;
-
   font-weight: 600;
-
   line-height: 1.2;
 
   text-decoration: none;
-
   white-space: nowrap;
 }
 
 .wordmark:hover,
 .wordmark:focus {
   color: var(--ink);
-
-  text-decoration: none;
 }
 
 
 /* =========================================================
-   DESKTOP NAVIGATION
+   NAVIGATION
    ========================================================= */
 
 .nav-links {
   display: flex;
-
-  flex-direction: row;
-
   align-items: center;
-
-  justify-content: flex-end;
-
   gap: 1.6rem;
-
   margin-left: auto;
 
   font-family: var(--font-mono);
-
   font-size: 1rem;
 }
 
 .nav-links a {
   color: var(--ink);
-
   font-weight: 600;
-
   text-decoration: none;
-
   white-space: nowrap;
-
-  transition: none;
 }
 
-
-/*
-   Keep navigation the same color in every state.
-*/
-
-.nav-links a:link,
-.nav-links a:visited,
 .nav-links a:hover,
-.nav-links a:active,
 .nav-links a.active {
-  color: var(--ink);
-}
-
-.nav-links a:hover {
   text-decoration: underline;
 }
-
-
-/* Hamburger hidden on desktop */
 
 .nav-toggle {
   display: none;
@@ -223,11 +167,8 @@ img {
 
 .content {
   width: 100%;
-
   max-width: 48rem;
-
   margin: 0 auto;
-
   padding: 4rem 1.5rem;
 }
 
@@ -238,106 +179,56 @@ img {
 
 .hero {
   display: flex;
-
   align-items: flex-start;
-
   gap: 3rem;
-
   margin-bottom: 4rem;
 }
 
-
-/* =========================================================
-   PROFILE COLUMN
-   ========================================================= */
-
 .hero-photo {
   flex: 0 0 14rem;
-
   width: 14rem;
 
   display: flex;
-
   flex-direction: column;
-
   align-items: center;
 }
 
-
-/* =========================================================
-   PROFILE IMAGE
-   ========================================================= */
-
 .profile-photo {
-  display: block;
-
   width: 14rem;
-
   height: 14rem;
 
+  border: 1px solid var(--line);
   border-radius: 50%;
 
   object-fit: cover;
-
-  border: 1px solid var(--line);
 }
 
-
-/* =========================================================
-   PROFILE LINKS
-   2 × 2
-   ========================================================= */
-
 .hero-links {
-  display: grid;
-
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
-
-  gap: 0.5rem 0.8rem;
-
   width: 100%;
-
   margin-top: 1rem;
 
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem 0.8rem;
+
   font-family: var(--font-mono);
-
   font-size: 0.8rem;
-
   text-align: center;
 }
 
 .hero-links a {
   color: var(--ink);
-
   font-weight: 600;
-
   text-decoration: none;
-
   white-space: nowrap;
-
-  transition: none;
-}
-
-.hero-links a:link,
-.hero-links a:visited,
-.hero-links a:hover,
-.hero-links a:active {
-  color: var(--ink);
 }
 
 .hero-links a:hover {
   text-decoration: underline;
 }
 
-
-/* =========================================================
-   HERO TEXT
-   ========================================================= */
-
 .hero-text {
   flex: 1;
-
   min-width: 0;
 }
 
@@ -345,54 +236,42 @@ img {
   margin: 0 0 0.6rem;
 
   color: var(--ink);
-
   font-family: var(--font-display);
-
   font-size: 2.5rem;
-
   font-weight: 600;
-
   line-height: 1.15;
 }
 
 .hero-tagline {
-  margin-top: 0;
+  margin: 0;
 
   color: var(--ink-soft);
-
   font-size: 1.15rem;
-
   font-style: italic;
-
   line-height: 1.5;
 }
 
 
 /* =========================================================
-   EXPLORE SECTION
+   SECTIONS
    ========================================================= */
 
 .section-label {
   margin: 0 0 1.5rem;
-
   padding-bottom: 0.5rem;
 
   border-bottom: 1px solid var(--line);
 
   color: var(--ink);
-
   font-family: var(--font-display);
-
   font-size: 1.6rem;
-
   font-weight: 600;
-
   line-height: 1.2;
 }
 
 
 /* =========================================================
-   ROWS
+   CONTENT ROWS
    ========================================================= */
 
 .row-list {
@@ -405,33 +284,16 @@ img {
 
 .row-head {
   display: flex;
-
   align-items: baseline;
-
   justify-content: space-between;
-
   gap: 1rem;
 }
 
 .row-title a {
   color: var(--ink);
-
-  font-family: var(--font-sans);
-
   font-size: 1.15rem;
-
   font-weight: 700;
-
   text-decoration: none;
-
-  transition: none;
-}
-
-.row-title a:link,
-.row-title a:visited,
-.row-title a:hover,
-.row-title a:active {
-  color: var(--ink);
 }
 
 .row-title a:hover {
@@ -440,41 +302,24 @@ img {
 
 .row-desc {
   margin: 0.2rem 0 0;
-
   color: var(--ink-soft);
-
   font-size: 0.98rem;
-
   line-height: 1.6;
 }
-
-
-/* =========================================================
-   YEAR HEADINGS
-   ========================================================= */
 
 .year-heading {
   margin: 2rem 0 0.75rem;
 
   color: var(--ink);
-
   font-family: var(--font-display);
-
   font-size: 1.4rem;
-
   font-weight: 600;
 }
 
-
-/* =========================================================
-   ROW META
-   ========================================================= */
-
-.row-meta {
+.row-meta,
+.gallery-year {
   color: var(--ink-soft);
-
   font-family: var(--font-mono);
-
   font-size: 0.75rem;
 }
 
@@ -484,134 +329,76 @@ img {
 
 .row-links a {
   color: var(--ink);
-
   font-family: var(--font-mono);
-
   font-size: 0.75rem;
-
   font-weight: 500;
-
   text-decoration: underline;
 }
 
-
-/* =========================================================
-   PUBLICATION ERROR
-   ========================================================= */
-
 .publication-error {
   color: var(--ink-soft);
-
   font-size: 0.95rem;
 }
 
 
 /* =========================================================
-   NEWS / CURRENT PROGRESS
-   DESKTOP: LEFT / VERTICALLY CENTERED
+   SIDE UPDATES / NEWS
    ========================================================= */
 
 .side-updates {
   position: fixed;
-
   left: 0;
-
   top: 50%;
-
   transform: translateY(-50%);
-
   z-index: 60;
 
   width: 15rem;
-
   max-width: 42vw;
 
   overflow: visible;
 
   background: var(--paper);
-
   border: 1px solid var(--line);
-
   border-left: none;
+  border-radius: 0 var(--radius) var(--radius) 0;
 
-  border-radius:
-    0
-    var(--radius)
-    var(--radius)
-    0;
-
-  box-shadow:
-    3px 0 16px rgba(0, 0, 0, 0.08);
+  box-shadow: 3px 0 16px rgba(0, 0, 0, 0.08);
 }
-
-
-/* =========================================================
-   NEWS INNER SCROLL
-   ========================================================= */
 
 .side-updates-content {
   max-height: 80vh;
-
   overflow-y: auto;
 }
-
-
-/* =========================================================
-   NEWS PANELS
-   ========================================================= */
 
 .side-updates .info-panel + .info-panel {
   border-top: 1px solid var(--line);
 }
 
-
-/* =========================================================
-   NEWS HEADERS
-   ========================================================= */
-
 .side-updates .info-toggle {
   display: block;
-
   width: 100%;
 
   padding: 1.1rem 1.35rem;
 
   background: none;
-
-  border: none;
+  border: 0;
 
   color: var(--ink);
-
   font-family: var(--font-display);
-
   font-size: 1.15rem;
-
   font-weight: 600;
-
   line-height: 1.3;
-
   text-align: left;
 
   cursor: pointer;
 }
 
-
-/*
-   No color change when clicked / opened.
-*/
-
 .side-updates .info-toggle:hover,
 .side-updates .info-toggle:focus,
 .side-updates .info-toggle[aria-expanded="true"] {
-  color: var(--ink);
-
   background: transparent;
+  color: var(--ink);
 }
-
-
-/* =========================================================
-   NEWS CONTENT
-   ========================================================= */
 
 .side-updates .info-content {
   padding: 0 1.35rem 1.25rem;
@@ -619,13 +406,10 @@ img {
 
 .side-updates .news-date {
   display: block;
-
   margin-bottom: 0.4rem;
 
   color: var(--ink-soft);
-
   font-family: var(--font-mono);
-
   font-size: 0.75rem;
 }
 
@@ -634,59 +418,41 @@ img {
   margin: 0;
 
   color: var(--ink-soft);
-
   font-size: 0.9rem;
-
   line-height: 1.5;
 }
 
 
 /* =========================================================
    THEME BUTTON
-   DESKTOP: RIGHT / PARALLEL TO NEWS
    ========================================================= */
 
 .theme-tab {
   position: fixed;
-
   right: 1.5rem;
-
   top: 50%;
-
   transform: translateY(-50%);
-
   z-index: 80;
 
   padding: 0.55rem 1rem;
 
   background: var(--paper);
-
   color: var(--ink);
 
   border: 1px solid var(--line);
-
   border-radius: var(--radius);
 
   font-family: var(--font-mono);
-
   font-size: 0.85rem;
-
   font-weight: 500;
 
   cursor: pointer;
 
-  box-shadow:
-    0 2px 10px rgba(0, 0, 0, 0.08);
-
-  transition:
-    background-color 150ms ease,
-    color 150ms ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
 
 .theme-tab:hover {
   background: var(--surface);
-
-  color: var(--ink);
 }
 
 
@@ -694,75 +460,127 @@ img {
    GALLERY
    ========================================================= */
 
-.gallery-grid {
-  display: grid;
-
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
-
-  gap: 1.5rem;
-
+.gallery-page,
+.contact-page {
   width: 100%;
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 5rem;
+}
+
+.gallery-intro,
+.contact-intro {
+  max-width: 48rem;
+  margin-bottom: 3rem;
+}
+
+.gallery-intro h1,
+.contact-intro h1 {
+  margin: 0 0 0.75rem;
+
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.gallery-intro p,
+.contact-intro p {
+  margin: 0;
+
+  color: var(--ink-soft);
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+.gallery-page .gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 3rem 2rem;
 }
 
 .gallery-item {
   min-width: 0;
 }
 
-
-/*
-   Controlled gallery thumbnail size.
-*/
-
-.gallery-item img {
-  display: block;
-
+.gallery-page .gallery-item img {
   width: 100%;
-
-  max-width: 100%;
-
-  height: 18rem;
+  height: 17rem;
 
   object-fit: cover;
 
   border: 1px solid var(--line);
-
   border-radius: var(--radius);
+  background: var(--surface);
 
   cursor: pointer;
+
+  transition: opacity 150ms ease;
 }
 
+.gallery-page .gallery-item img:hover {
+  opacity: 0.88;
+}
 
-/* =========================================================
-   GALLERY YEAR / GUESS
-   ========================================================= */
+.gallery-caption {
+  padding-top: 1rem;
+}
 
-.gallery-year {
+.gallery-caption h2 {
+  margin: 0 0 0.5rem;
+
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.gallery-caption p {
+  margin: 0;
+
   color: var(--ink-soft);
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
 
-  font-family: var(--font-mono);
-
-  font-size: 0.75rem;
+.gallery-year-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.9rem;
 }
 
 .guess-year {
-  color: var(--ink);
-
-  background: transparent;
-
-  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
 
   padding: 0;
 
-  font-family: var(--font-mono);
+  border: 0;
+  background: transparent;
 
+  color: var(--ink);
+  font-family: var(--font-mono);
   font-size: 0.75rem;
+  font-weight: 500;
 
   cursor: pointer;
 }
 
 .guess-year:hover {
   text-decoration: underline;
+}
+
+.guess-year:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+.guess-year-icon {
+  font-size: 0.9rem;
 }
 
 
@@ -776,23 +594,18 @@ body.lightbox-open {
 
 #lightbox {
   position: fixed;
-
   inset: 0;
-
   z-index: 200;
 
   display: flex;
-
   align-items: center;
-
   justify-content: center;
 
   padding: 2rem;
 
-  background: rgba(0, 0, 0, 0.82);
+  background: rgba(0, 0, 0, 0.86);
 
   opacity: 0;
-
   transition: opacity 160ms ease;
 }
 
@@ -805,41 +618,37 @@ body.lightbox-open {
 }
 
 #lightbox-image {
-  display: block;
-
   width: auto;
-
   height: auto;
-
   max-width: 90vw;
-
-  max-height: 85vh;
+  max-height: 86vh;
 
   object-fit: contain;
-
   border-radius: var(--radius);
 }
 
 .lightbox-close {
   position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
 
-  top: 1rem;
+  width: 2.75rem;
+  height: 2.75rem;
 
-  right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  width: 2.5rem;
-
-  height: 2.5rem;
+  padding: 0;
 
   border: 1px solid rgba(255, 255, 255, 0.35);
-
   border-radius: 50%;
 
   background: rgba(0, 0, 0, 0.25);
+  color: #fff;
 
-  color: white;
-
-  font-size: 1.4rem;
+  font-size: 1.5rem;
+  line-height: 1;
 
   cursor: pointer;
 }
@@ -850,25 +659,108 @@ body.lightbox-open {
 
 
 /* =========================================================
+   CONTACT PAGE
+   ========================================================= */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.contact-item {
+  min-width: 0;
+
+  padding: 1.35rem 1.5rem;
+
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+
+  background: var(--paper);
+
+  transition: background-color 150ms ease;
+}
+
+.contact-item:hover {
+  background: var(--surface);
+}
+
+.contact-item a {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  width: 100%;
+
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.contact-item a:hover .contact-label {
+  text-decoration: underline;
+}
+
+.contact-icon {
+  flex: 0 0 1.5rem;
+
+  width: 1.5rem;
+  height: 1.5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--ink);
+}
+
+.contact-icon svg {
+  width: 1.1rem;
+  height: 1.1rem;
+
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.contact-details {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.contact-label {
+  color: var(--ink);
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.contact-value {
+  color: var(--ink-soft);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  line-height: 1.4;
+
+  overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
    FOOTER
    ========================================================= */
 
 .site-footer {
   width: 100%;
-
   max-width: 48rem;
-
   margin: 0 auto;
-
-  padding:
-    2rem
-    1.5rem
-    3rem;
+  padding: 2rem 1.5rem 3rem;
 
   color: var(--ink-soft);
-
   font-family: var(--font-mono);
-
   font-size: 0.75rem;
 }
 
@@ -879,28 +771,16 @@ body.lightbox-open {
 
 @media (max-width: 700px) {
 
-  /* -------------------------------------------------------
-     HEADER
-     ------------------------------------------------------- */
+  /* Header */
 
   .sidebar {
-    width: 100%;
-
-    margin: 0;
-
-    padding:
-      1.25rem
-      1.25rem
-      0;
-
     display: block;
+    padding: 1.25rem 1.25rem 0;
   }
 
   .sidebar-top {
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
   }
 
@@ -908,32 +788,19 @@ body.lightbox-open {
     font-size: 1.15rem;
   }
 
-
-  /* -------------------------------------------------------
-     MOBILE MENU BUTTON
-     ------------------------------------------------------- */
-
   .nav-toggle {
     display: flex;
-
     flex-direction: column;
-
     align-items: center;
-
     justify-content: center;
-
     gap: 4px;
 
     width: 2.25rem;
-
     height: 2.25rem;
-
     padding: 0;
 
     background: transparent;
-
     border: 1px solid var(--line);
-
     border-radius: var(--radius);
 
     cursor: pointer;
@@ -941,36 +808,22 @@ body.lightbox-open {
 
   .nav-toggle span:not(.sr-only) {
     display: block;
-
     width: 1rem;
-
     height: 1px;
-
     background: var(--ink);
   }
 
-
-  /* -------------------------------------------------------
-     MOBILE NAV
-     ------------------------------------------------------- */
-
   .nav-links {
     display: none;
-
     flex-direction: column;
-
     align-items: flex-start;
-
     gap: 0.75rem;
 
     margin-top: 1rem;
-
     padding: 1rem;
 
     background: var(--paper);
-
     border: 1px solid var(--line);
-
     border-radius: var(--radius);
   }
 
@@ -979,75 +832,41 @@ body.lightbox-open {
   }
 
   .nav-links a {
-    color: var(--ink);
-
     font-size: 0.9rem;
-
-    font-weight: 600;
   }
 
 
-  /* -------------------------------------------------------
-     MAIN CONTENT
-     ------------------------------------------------------- */
+  /* Main */
 
   .content {
-    width: 100%;
-
-    padding:
-      3rem
-      1.25rem;
+    padding: 3rem 1.25rem;
   }
 
 
-  /* -------------------------------------------------------
-     HERO
-     ------------------------------------------------------- */
+  /* Hero */
 
   .hero {
     flex-direction: column;
-
     align-items: center;
-
     gap: 1.75rem;
-
     margin-bottom: 3rem;
-
     text-align: center;
   }
 
-  .hero-photo {
-    flex: 0 0 auto;
-
+  .hero-photo,
+  .profile-photo {
     width: 14rem;
   }
 
   .profile-photo {
-    width: 14rem;
-
     height: 14rem;
   }
 
-
-  /* -------------------------------------------------------
-     PROFILE LINKS — 2 × 2
-     ------------------------------------------------------- */
-
   .hero-links {
     width: 14rem;
-
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
-
     gap: 0.5rem 0.75rem;
-
     font-size: 0.78rem;
   }
-
-
-  /* -------------------------------------------------------
-     HERO TEXT
-     ------------------------------------------------------- */
 
   .hero-text {
     width: 100%;
@@ -1062,9 +881,7 @@ body.lightbox-open {
   }
 
 
-  /* -------------------------------------------------------
-     EXPLORE
-     ------------------------------------------------------- */
+  /* Content */
 
   .row-head {
     display: block;
@@ -1075,869 +892,52 @@ body.lightbox-open {
   }
 
 
-  /* -------------------------------------------------------
-     GALLERY
-     ------------------------------------------------------- */
+  /* Gallery */
 
-  .gallery-grid {
-    grid-template-columns: 1fr;
-
-    gap: 1rem;
+  .gallery-page,
+  .contact-page {
+    padding: 3rem 1.25rem 4rem;
   }
 
-  .gallery-item img {
-    width: 100%;
-
-    height: auto;
-
-    max-height: 24rem;
-
-    object-fit: cover;
-  }
-
-
-  /* -------------------------------------------------------
-     THEME BUTTON
-     ------------------------------------------------------- */
-
-  .theme-tab {
-    top: auto;
-
-    right: 0.75rem;
-
-    bottom: 1rem;
-
-    transform: none;
-
-    padding: 0.45rem 0.75rem;
-
-    font-size: 0.75rem;
-  }
-
-
-  /* -------------------------------------------------------
-     NEWS DRAWER
-     ------------------------------------------------------- */
-
-  .side-updates {
-    position: fixed;
-
-    left: 0;
-
-    top: 0;
-
-    transform: translateX(-100%);
-
-    width: min(17rem, 82vw);
-
-    max-width: none;
-
-    height: 100vh;
-
-    max-height: 100vh;
-
-    overflow: visible;
-
-    z-index: 90;
-
-    border-radius: 0;
-
-    border-top: none;
-
-    border-bottom: none;
-
-    border-left: none;
-
-    transition:
-      transform 250ms ease;
-
-    box-shadow:
-      4px 0 18px rgba(0, 0, 0, 0.12);
-  }
-
-  .side-updates.updates-open {
-    transform: translateX(0);
-  }
-
-
-  /* -------------------------------------------------------
-     DRAWER CONTENT
-     ------------------------------------------------------- */
-
-  .side-updates-content {
-    height: 100vh;
-
-    max-height: 100vh;
-
-    overflow-y: auto;
-
-    padding-top: 1.5rem;
-  }
-
-  .side-updates .info-toggle {
-    padding:
-      0.9rem
-      1rem;
-
-    font-size: 1rem;
-  }
-
-  .side-updates .info-content {
-    padding:
-      0
-      1rem
-      1rem;
-  }
-
-  .side-updates .news-text,
-  .side-updates .status-text {
-    font-size: 0.85rem;
-  }
-
-
-  /* -------------------------------------------------------
-     DRAWER TOGGLE
-     ------------------------------------------------------- */
-
-  .updates-drawer-toggle {
-    display: flex;
-
-    position: absolute;
-
-    top: 50%;
-
-    left: 100%;
-
-    transform: translateY(-50%);
-
-    width: 2.5rem;
-
-    height: 3.2rem;
-
-    align-items: center;
-
-    justify-content: center;
-
-    padding: 0;
-
-    border:
-      1px solid
-      var(--line);
-
-    border-left: none;
-
-    border-radius:
-      0
-      var(--radius)
-      var(--radius)
-      0;
-
-    background: var(--paper);
-
-    color: var(--ink);
-
-    font-size: 1.25rem;
-
-    cursor: pointer;
-
-    box-shadow:
-      3px 0 12px rgba(0, 0, 0, 0.08);
-
-    z-index: 91;
-  }
-
-  .updates-drawer-toggle:hover {
-    color: var(--ink);
-
-    background: var(--surface);
-  }
-
-  .drawer-arrow-icon {
-    display: inline-block;
-
-    transition:
-      transform 250ms ease;
-  }
-
-
-  /* -------------------------------------------------------
-     FOOTER
-     ------------------------------------------------------- */
-
-  .site-footer {
-    padding-left: 1.25rem;
-
-    padding-right: 1.25rem;
-  }
-}
-
-
-/* =========================================================
-   VERY SMALL PHONES
-   ========================================================= */
-
-@media (max-width: 420px) {
-
-  .sidebar {
-    padding-left: 1rem;
-
-    padding-right: 1rem;
-  }
-
-  .content {
-    padding-left: 1rem;
-
-    padding-right: 1rem;
-  }
-
-  .hero-photo {
-    width: 12rem;
-  }
-
-  .profile-photo {
-    width: 12rem;
-
-    height: 12rem;
-  }
-
-  .hero-links {
-    width: 12rem;
-
-    font-size: 0.72rem;
-  }
-
-  .hero-name {
-    font-size: 1.9rem;
-  }
-
-  .theme-tab {
-    right: 0.6rem;
-
-    bottom: 0.75rem;
-  }
-}
-
-/* =========================================================
-   GALLERY PAGE
-   ========================================================= */
-
-.gallery-page {
-  width: 100%;
-  max-width: 64rem;
-  margin: 0 auto;
-  padding: 4rem 1.5rem 5rem;
-}
-
-
-/* =========================================================
-   GALLERY INTRO
-   ========================================================= */
-
-.gallery-intro {
-  max-width: 48rem;
-  margin-bottom: 3rem;
-}
-
-.gallery-intro h1 {
-  margin: 0 0 0.75rem;
-
-  color: var(--ink);
-
-  font-family: var(--font-display);
-
-  font-size: 2.5rem;
-  font-weight: 600;
-
-  line-height: 1.15;
-}
-
-.gallery-intro p {
-  margin: 0;
-
-  color: var(--ink-soft);
-
-  font-family: var(--font-sans);
-
-  font-size: 1.05rem;
-
-  line-height: 1.65;
-}
-
-
-/* =========================================================
-   GALLERY GRID
-   ========================================================= */
-
-.gallery-page .gallery-grid {
-  display: grid;
-
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
-
-  gap: 3rem 2rem;
-
-  width: 100%;
-}
-
-
-/* =========================================================
-   GALLERY ITEM
-   ========================================================= */
-
-.gallery-page .gallery-item {
-  min-width: 0;
-
-  margin: 0;
-}
-
-
-/* =========================================================
-   GALLERY IMAGE
-   ========================================================= */
-
-.gallery-page .gallery-item img {
-  display: block;
-
-  width: 100%;
-
-  /*
-     This keeps the thumbnails reasonably sized
-     instead of letting them become huge.
-  */
-  height: 17rem;
-
-  max-width: 100%;
-
-  object-fit: cover;
-
-  border: 1px solid var(--line);
-
-  border-radius: var(--radius);
-
-  background: var(--surface);
-
-  cursor: pointer;
-
-  transition:
-    opacity 150ms ease;
-}
-
-.gallery-page .gallery-item img:hover {
-  opacity: 0.88;
-}
-
-
-/* =========================================================
-   GALLERY CAPTION
-   ========================================================= */
-
-.gallery-page .gallery-caption {
-  padding-top: 1rem;
-}
-
-.gallery-page .gallery-caption h2 {
-  margin: 0 0 0.5rem;
-
-  color: var(--ink);
-
-  font-family: var(--font-display);
-
-  font-size: 1.3rem;
-
-  font-weight: 600;
-
-  line-height: 1.3;
-}
-
-.gallery-page .gallery-caption p {
-  margin: 0;
-
-  color: var(--ink-soft);
-
-  font-family: var(--font-sans);
-
-  font-size: 0.98rem;
-
-  line-height: 1.6;
-}
-
-
-/* =========================================================
-   YEAR ROW
-   ========================================================= */
-
-.gallery-page .gallery-year-row {
-  display: flex;
-
-  align-items: center;
-
-  gap: 0.75rem;
-
-  margin-top: 0.9rem;
-}
-
-
-/* =========================================================
-   GUESS YEAR BUTTON
-   ========================================================= */
-
-.gallery-page .guess-year {
-  display: inline-flex;
-
-  align-items: center;
-
-  gap: 0.4rem;
-
-  padding: 0;
-
-  border: none;
-
-  background: transparent;
-
-  color: var(--ink);
-
-  font-family: var(--font-mono);
-
-  font-size: 0.75rem;
-
-  font-weight: 500;
-
-  cursor: pointer;
-}
-
-.gallery-page .guess-year:hover {
-  text-decoration: underline;
-}
-
-.gallery-page .guess-year:focus-visible {
-  outline: 2px solid var(--ink);
-
-  outline-offset: 3px;
-}
-
-.gallery-page .guess-year-icon {
-  font-size: 0.9rem;
-}
-
-
-/* =========================================================
-   REVEALED YEAR
-   ========================================================= */
-
-.gallery-page .gallery-year {
-  color: var(--ink-soft);
-
-  font-family: var(--font-mono);
-
-  font-size: 0.75rem;
-
-  font-weight: 500;
-}
-
-
-/* =========================================================
-   LIGHTBOX
-   ========================================================= */
-
-#lightbox {
-  position: fixed;
-
-  inset: 0;
-
-  z-index: 200;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  padding: 2rem;
-
-  background: rgba(0, 0, 0, 0.86);
-
-  opacity: 0;
-
-  transition: opacity 160ms ease;
-}
-
-#lightbox.active {
-  opacity: 1;
-}
-
-#lightbox[hidden] {
-  display: none;
-}
-
-#lightbox-image {
-  display: block;
-
-  width: auto;
-
-  height: auto;
-
-  max-width: 90vw;
-
-  max-height: 86vh;
-
-  object-fit: contain;
-
-  border-radius: var(--radius);
-}
-
-
-/* =========================================================
-   LIGHTBOX CLOSE
-   ========================================================= */
-
-.lightbox-close {
-  position: absolute;
-
-  top: 1.25rem;
-
-  right: 1.25rem;
-
-  width: 2.75rem;
-
-  height: 2.75rem;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  padding: 0;
-
-  border: 1px solid rgba(255, 255, 255, 0.35);
-
-  border-radius: 50%;
-
-  background: rgba(0, 0, 0, 0.25);
-
-  color: #fff;
-
-  font-size: 1.5rem;
-
-  line-height: 1;
-
-  cursor: pointer;
-}
-
-.lightbox-close:hover {
-  background: rgba(255, 255, 255, 0.15);
-}
-
-
-/* =========================================================
-   MOBILE GALLERY
-   ========================================================= */
-
-@media (max-width: 700px) {
-
-  .gallery-page {
-    padding:
-      3rem
-      1.25rem
-      4rem;
-  }
-
-  .gallery-intro {
+  .gallery-intro,
+  .contact-intro {
     margin-bottom: 2.5rem;
   }
 
-  .gallery-intro h1 {
+  .gallery-intro h1,
+  .contact-intro h1 {
     font-size: 2.15rem;
   }
 
-  .gallery-intro p {
+  .gallery-intro p,
+  .contact-intro p {
     font-size: 1rem;
   }
 
   .gallery-page .gallery-grid {
     grid-template-columns: 1fr;
-
     gap: 2.75rem;
   }
 
   .gallery-page .gallery-item img {
     height: auto;
-
     max-height: 24rem;
-
     aspect-ratio: 4 / 3;
-
-    object-fit: cover;
   }
 
-  .gallery-page .gallery-caption h2 {
+  .gallery-caption h2 {
     font-size: 1.25rem;
   }
 
-  .gallery-page .gallery-caption p {
+  .gallery-caption p {
     font-size: 0.96rem;
   }
 
-  #lightbox {
-    padding: 1rem;
-  }
 
-  #lightbox-image {
-    max-width: 94vw;
-
-    max-height: 82vh;
-  }
-}
-
-
-/* =========================================================
-   SMALL PHONES
-   ========================================================= */
-
-@media (max-width: 420px) {
-
-  .gallery-page {
-    padding-left: 1rem;
-
-    padding-right: 1rem;
-  }
-
-  .gallery-page .gallery-item img {
-    max-height: 20rem;
-  }
-}
-
-/* =========================================================
-   CONTACT PAGE
-   ========================================================= */
-
-.contact-page {
-  width: 100%;
-  max-width: 64rem;
-  margin: 0 auto;
-  padding: 4rem 1.5rem 5rem;
-}
-
-
-/* =========================================================
-   CONTACT INTRO
-   ========================================================= */
-
-.contact-intro {
-  max-width: 48rem;
-  margin-bottom: 3rem;
-}
-
-.contact-intro h1 {
-  margin: 0 0 0.75rem;
-
-  color: var(--ink);
-
-  font-family: var(--font-display);
-
-  font-size: 2.5rem;
-
-  font-weight: 600;
-
-  line-height: 1.15;
-}
-
-.contact-intro p {
-  margin: 0;
-
-  color: var(--ink-soft);
-
-  font-family: var(--font-sans);
-
-  font-size: 1.05rem;
-
-  line-height: 1.65;
-}
-
-
-/* =========================================================
-   CONTACT GRID
-   ========================================================= */
-
-.contact-grid {
-  display: grid;
-
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
-
-  gap: 1rem;
-
-  width: 100%;
-}
-
-
-/* =========================================================
-   CONTACT CARD
-   ========================================================= */
-
-.contact-item {
-  min-width: 0;
-
-  padding: 1.35rem 1.5rem;
-
-  border: 1px solid var(--line);
-
-  border-radius: var(--radius);
-
-  background: var(--paper);
-
-  transition:
-    background-color 150ms ease;
-}
-
-.contact-item:hover {
-  background: var(--surface);
-}
-
-
-/* =========================================================
-   CONTACT LINK
-   ========================================================= */
-
-.contact-item a {
-  display: flex;
-
-  align-items: center;
-
-  gap: 1rem;
-
-  width: 100%;
-
-  color: var(--ink);
-
-  text-decoration: none;
-}
-
-
-/* Keep exactly the same color in every state */
-
-.contact-item a:link,
-.contact-item a:visited,
-.contact-item a:hover,
-.contact-item a:active {
-  color: var(--ink);
-
-  text-decoration: none;
-}
-
-
-/* =========================================================
-   CONTACT ICON
-   ========================================================= */
-
-.contact-icon {
-  flex: 0 0 auto;
-
-  width: 1.5rem;
-  height: 1.5rem;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  color: var(--ink);
-}
-
-.contact-icon svg {
-  display: block;
-
-  width: 1.2rem;
-  height: 1.2rem;
-
-  fill: none;
-
-  stroke: currentColor;
-
-  stroke-width: 1.8;
-
-  stroke-linecap: round;
-
-  stroke-linejoin: round;
-}
-
-
-/* =========================================================
-   CONTACT TEXT
-   ========================================================= */
-
-.contact-details {
-  min-width: 0;
-
-  display: flex;
-
-  flex-direction: column;
-
-  gap: 0.15rem;
-}
-
-.contact-label {
-  color: var(--ink);
-
-  font-family: var(--font-sans);
-
-  font-size: 1.1rem;
-
-  font-weight: 700;
-
-  line-height: 1.3;
-}
-
-.contact-value {
-  color: var(--ink-soft);
-
-  font-family: var(--font-mono);
-
-  font-size: 0.78rem;
-
-  line-height: 1.4;
-
-  overflow-wrap: anywhere;
-}
-
-
-/* =========================================================
-   CONTACT HOVER
-   ========================================================= */
-
-.contact-item a:hover .contact-label {
-  text-decoration: underline;
-}
-
-
-/* =========================================================
-   MOBILE CONTACT
-   ========================================================= */
-
-@media (max-width: 700px) {
-
-  .contact-page {
-    padding:
-      3rem
-      1.25rem
-      4rem;
-  }
-
-  .contact-intro {
-    margin-bottom: 2.5rem;
-  }
-
-  .contact-intro h1 {
-    font-size: 2.15rem;
-  }
-
-  .contact-intro p {
-    font-size: 1rem;
-  }
+  /* Contact */
 
   .contact-grid {
     grid-template-columns: 1fr;
-
     gap: 0.8rem;
   }
 
@@ -1950,13 +950,14 @@ body.lightbox-open {
   }
 
   .contact-icon {
+    flex-basis: 1.4rem;
     width: 1.4rem;
     height: 1.4rem;
   }
 
   .contact-icon svg {
-    width: 1.1rem;
-    height: 1.1rem;
+    width: 1rem;
+    height: 1rem;
   }
 
   .contact-label {
@@ -1966,18 +967,168 @@ body.lightbox-open {
   .contact-value {
     font-size: 0.75rem;
   }
+
+
+  /* Theme */
+
+  .theme-tab {
+    top: auto;
+    right: 0.75rem;
+    bottom: 1rem;
+    transform: none;
+
+    padding: 0.45rem 0.75rem;
+    font-size: 0.75rem;
+  }
+
+
+  /* News drawer */
+
+  .side-updates {
+    top: 0;
+    width: min(17rem, 82vw);
+    height: 100vh;
+    max-width: none;
+    max-height: 100vh;
+
+    transform: translateX(-100%);
+
+    border-top: 0;
+    border-bottom: 0;
+    border-left: 0;
+    border-radius: 0;
+
+    transition: transform 250ms ease;
+
+    box-shadow: 4px 0 18px rgba(0, 0, 0, 0.12);
+  }
+
+  .side-updates.updates-open {
+    transform: translateX(0);
+  }
+
+  .side-updates-content {
+    height: 100vh;
+    max-height: 100vh;
+    padding-top: 1.5rem;
+  }
+
+  .side-updates .info-toggle {
+    padding: 0.9rem 1rem;
+    font-size: 1rem;
+  }
+
+  .side-updates .info-content {
+    padding: 0 1rem 1rem;
+  }
+
+  .side-updates .news-text,
+  .side-updates .status-text {
+    font-size: 0.85rem;
+  }
+
+  .updates-drawer-toggle {
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 2.5rem;
+    height: 3.2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: 1px solid var(--line);
+    border-left: 0;
+    border-radius: 0 var(--radius) var(--radius) 0;
+
+    background: var(--paper);
+    color: var(--ink);
+
+    font-size: 1.25rem;
+    cursor: pointer;
+
+    box-shadow: 3px 0 12px rgba(0, 0, 0, 0.08);
+  }
+
+  .updates-drawer-toggle:hover {
+    background: var(--surface);
+  }
+
+  .drawer-arrow-icon {
+    display: inline-block;
+    transition: transform 250ms ease;
+  }
+
+
+  /* Footer */
+
+  .site-footer {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+
+  /* Lightbox */
+
+  #lightbox {
+    padding: 1rem;
+  }
+
+  #lightbox-image {
+    max-width: 94vw;
+    max-height: 82vh;
+  }
 }
 
 
 /* =========================================================
-   VERY SMALL PHONES
+   SMALL PHONES
    ========================================================= */
 
 @media (max-width: 420px) {
 
+  .sidebar {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .content,
+  .gallery-page,
   .contact-page {
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+
+  .hero-photo,
+  .profile-photo {
+    width: 12rem;
+  }
+
+  .profile-photo {
+    height: 12rem;
+  }
+
+  .hero-links {
+    width: 12rem;
+    font-size: 0.72rem;
+  }
+
+  .hero-name {
+    font-size: 1.9rem;
+  }
+
+  .theme-tab {
+    right: 0.6rem;
+    bottom: 0.75rem;
+  }
+
+  .gallery-page .gallery-item img {
+    max-height: 20rem;
   }
 
   .contact-item {
@@ -1988,4 +1139,3 @@ body.lightbox-open {
     gap: 0.75rem;
   }
 }
-
