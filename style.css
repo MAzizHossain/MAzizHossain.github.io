@@ -282,31 +282,32 @@ button:focus-visible {
   position: fixed;
 
   left: 0;
+
   top: 50%;
 
-  transform: translateY(-50%);
+  transform:
+    translate(
+      -100%,
+      -50%
+    );
 
-  z-index: 60;
+  width: min(
+    17rem,
+    82vw
+  );
 
-  width: 15rem;
+  max-width: none;
 
-  max-width: 42vw;
+  max-height: 80vh;
+  overflow-y: auto;
 
-  background: var(--paper);
+  z-index: 90;
 
-  border: 1px solid var(--line);
-  border-left: none;
-
-  border-radius:
-    0
-    var(--radius)
-    var(--radius)
-    0;
+  transition:
+    transform 250ms ease;
 
   box-shadow:
-    3px 0 16px rgba(0, 0, 0, 0.08);
-
-  overflow: hidden;
+    4px 0 18px rgba(0, 0, 0, 0.12);
 }
 
 .side-updates .info-panel + .info-panel {
