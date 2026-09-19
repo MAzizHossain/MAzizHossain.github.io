@@ -1,67 +1,428 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Teaching — Your Name</title>
-<meta name="description" content="Books worth reading.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,500&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Mohammed Aziz Hossain</title>
+
+  <meta
+    name="description"
+    content="Personal site of Mohammed Aziz Hossain — researcher, teacher, and gamer."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,500&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
 </head>
+
+
 <body>
 
-<a class="skip-link" href="#main">Skip to content</a>
+<a
+  class="skip-link"
+  href="#main"
+>
+  Skip to content
+</a>
 
-<header class="sidebar" id="site-header"></header>
 
-<main id="main" class="content">
+<!-- =====================================================
+     Navigation
+     ===================================================== -->
 
-  <h1 class="page-title">Teaching</h1>
-  <p class="page-intro">I do not think I am much of a teacher and I am usually the only student in my class. So I suppose I am still figuring out what to teach.</p>
+<header
+  class="sidebar"
+  id="site-header"
+></header>
 
-  <p class="section-label" style="margin-top: 2.5rem;">Books</p>
-  <p class="page-intro" style="margin-bottom: 1.5rem;">Books I have read throughout my academic journey, particularly those related to the life sciences 
-    and the questions that have shaped my understanding of biology. If you are interested in reading these books, please reach out :).
-  </p>
 
-  <!-- Life-science reads, in whatever order you like -->
-  <ol class="book-list">
-    <li> Microbiology An Introduction- Gerard Tortora, Berdell Funke, and Christine Case</li>
-    <li>Brock Biology of Microorganisms- Thomas Dale Brock</li>
-    <li>Microbiology: A laboratory manual- James G. Capuccino and Chad Welsh</li>
-    <li>Bailey & Scott’s Diagnostic Microbiology- Patricia M. Tille</li>
-    <li>Principles of Genetics- D. Peter Snustad</li>
-    <li>Gene Cloning and DNA analysis- Terry Brown</li>
-    <li>Molecular Biology of the Cell- Bruce Alberts</li>
-    <li>Molecular Biotechnology- Bernard R. Glick, Jerry J. Pasternack, Cheryl L. Patten</li>
-    <li>Kuby Immunology- Judith A. Owen, Jenny Punt, Sharon A. Stranford</li>
-    <li>Fundamentals of Molecular Virology- Nicholas H. Acheson</li>
-    <li>The Biology of Cancer- Robert A. Weinberg</li>
-    <li>Essential Neuroscience- Allan Siegel</li>
-    <li>A guide for the laboratory use of zebrafish- Monte Westerfield</li>
-    <li>100 years with Nobel Laureates- Encyclopedia Britannica</li>
-  </ol>
+<!-- =====================================================
+     Site updates (fixed to the left edge of the viewport)
+     ===================================================== -->
 
-  <p class="section-label" style="margin-top: 2.5rem;">Beyond the Lab Bench</p>
-  <p class="page-intro" style="margin-bottom: 1.5rem;">A few favorites that
-    have nothing to do with life science.In case that is what you are after (:.</p>
+<aside
+  class="side-updates"
+  aria-label="Site updates"
+>
 
-  <!-- Non-science reads -->
-  <ol class="book-list">
-    <li>The Great Adventures of Sherlock Holmes- Sir Arthur Conan Doyle</li>
-    <li>Feluda- Satyajit Ray</li>
-    <li>Foundation and Empire- Isaac Asimov</li>
-    <li>The Laws of Human Nature- Robert Greene</li>
-  </ol>
+  <!-- Mobile drawer toggle (hidden on desktop via CSS) -->
 
-  <!-- end replaceable section -->
+  <button
+    class="updates-drawer-toggle"
+    id="updates-drawer-toggle"
+    type="button"
+    aria-label="Open site updates"
+    aria-expanded="false"
+    aria-controls="site-updates-content"
+  >
+    <span aria-hidden="true">→</span>
+  </button>
+
+
+  <div id="site-updates-content">
+
+  <!-- News -->
+
+  <div class="info-panel">
+
+    <button
+      class="info-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="news-panel"
+    >
+      News
+    </button>
+
+
+    <div
+      class="info-content"
+      id="news-panel"
+      hidden
+    >
+
+      <article class="news-entry">
+
+        <time
+          class="news-date"
+          datetime="2026-09"
+        >
+          September 2026
+        </time>
+
+        <p class="news-text">
+          Still looking for evidence of disturbance.
+          Nothing conclusive yet.
+        </p>
+
+      </article>
+
+    </div>
+
+  </div>
+
+
+  <!-- Current progress -->
+
+  <div class="info-panel">
+
+    <button
+      class="info-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="currently-panel"
+    >
+      Current progress
+    </button>
+
+
+    <div
+      class="info-content"
+      id="currently-panel"
+      hidden
+    >
+
+      <p class="status-text">
+        Currently reading whatever catches my attention
+        and tinkering with GitHub Pages. Treating the
+        whole thing as research, mostly because
+        “I have no idea what I am doing” sounds less
+        impressive.
+      </p>
+
+    </div>
+
+  </div>
+
+  </div>
+
+
+</aside>
+
+
+<!-- =====================================================
+     Home page
+     ===================================================== -->
+
+<main
+  id="main"
+  class="content home-content"
+>
+
+
+  <!-- ===================================================
+       Hero
+       =================================================== -->
+
+  <section
+    class="hero"
+    aria-labelledby="hero-name"
+  >
+
+
+    <!-- Profile photo -->
+
+    <div class="hero-photo">
+
+      <img
+        src="profile.jpg"
+        alt="Photo of Aziz Hossain"
+        class="profile-photo"
+      >
+
+
+      <!-- Links directly underneath photo -->
+
+      <div class="hero-links">
+
+        <a href="cv.pdf">
+          CV
+        </a>
+
+        <a
+          href="https://github.com/MAzizHossain"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/aziz2077"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn
+        </a>
+
+        <a
+          href="https://scholar.google.com/citations?user=eGO1N70AAAAJ&hl=en&authuser=3"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Google Scholar
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- Hero text -->
+
+    <div class="hero-text">
+
+      <h1
+        class="hero-name"
+        id="hero-name"
+      >
+        Mohammed Aziz Hossain
+      </h1>
+
+
+      <p class="hero-tagline">
+        Naturally curious, usually found tinkering in a lab,
+        occasional poetry attempts, and probably playing
+        strategy games.
+      </p>
+
+
+      <p>
+        I am interested in understanding how biological
+        systems work and how their interactions shape the
+        world around them. I enjoy research, exploring new
+        ideas, and unwinding with movies, books, and video
+        games.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- ===================================================
+       Explore
+       =================================================== -->
+
+  <section
+    class="explore"
+    aria-labelledby="explore-heading"
+  >
+
+    <h2
+      class="section-label"
+      id="explore-heading"
+    >
+      Explore
+    </h2>
+
+
+    <div class="row-list">
+
+
+      <!-- Publications -->
+
+      <article class="row">
+
+        <div class="row-head">
+
+          <span class="row-title">
+
+            <a href="publications.html">
+              Publications
+            </a>
+
+          </span>
+
+        </div>
+
+        <p class="row-desc">
+          A list of things I have researched, written,
+          and somehow convinced other people to publish.
+        </p>
+
+      </article>
+
+
+      <!-- Teaching -->
+
+      <article class="row">
+
+        <div class="row-head">
+
+          <span class="row-title">
+
+            <a href="teaching.html">
+              Teaching
+            </a>
+
+          </span>
+
+        </div>
+
+        <p class="row-desc">
+          A collection of scientific rabbit holes,
+          questionable reading choices, and books I
+          probably did not need to read.
+        </p>
+
+      </article>
+
+
+      <!-- Gaming -->
+
+      <article class="row">
+
+        <div class="row-head">
+
+          <span class="row-title">
+
+            <a href="gaming.html">
+              Gaming
+            </a>
+
+          </span>
+
+        </div>
+
+        <p class="row-desc">
+          Games I have played, games I fell in love with,
+          and compelling evidence of hours I sacrificed
+          to them.
+        </p>
+
+      </article>
+
+
+      <!-- Gallery -->
+
+      <article class="row">
+
+        <div class="row-head">
+
+          <span class="row-title">
+
+            <a href="gallery.html">
+              Gallery
+            </a>
+
+          </span>
+
+        </div>
+
+        <p class="row-desc">
+          Just a collection of things I found interesting.
+          Interpret them at your own peril.
+        </p>
+
+      </article>
+
+
+      <!-- Contact -->
+
+      <article class="row">
+
+        <div class="row-head">
+
+          <span class="row-title">
+
+            <a href="contact.html">
+              Contact
+            </a>
+
+          </span>
+
+        </div>
+
+        <p class="row-desc">
+          How to find me (without a search party).
+        </p>
+
+      </article>
+
+
+    </div>
+
+  </section>
+
 
 </main>
 
-<footer class="site-footer" id="site-footer"></footer>
+
+<!-- =====================================================
+     Footer
+     ===================================================== -->
+
+<footer
+  class="site-footer"
+  id="site-footer"
+></footer>
+
 
 <script src="script.js"></script>
+
 </body>
+
 </html>
