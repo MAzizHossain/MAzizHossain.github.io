@@ -273,6 +273,14 @@ button:focus-visible {
   overflow: hidden;
 }
 
+/* Hidden by default (desktop). Shown only on mobile, see the
+   max-width:700px block below — this was missing entirely,
+   which is why the toggle button had no visible tab and the
+   panel had no closed state on phones. */
+.updates-drawer-toggle {
+  display: none;
+}
+
 .side-updates .info-panel + .info-panel {
   border-top: 1px solid var(--line);
 }
@@ -341,6 +349,39 @@ button:focus-visible {
 @media (max-width: 700px) {
   .side-updates {
     width: 11.5rem;
+    max-width: none;
+    overflow: visible;
+
+    transform: translate(-100%, -50%);
+    transition: transform 220ms ease;
+  }
+
+  .side-updates.updates-open {
+    transform: translate(0, -50%);
+  }
+
+  .updates-drawer-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    top: 50%;
+    right: -1.9rem;
+    transform: translateY(-50%);
+
+    width: 1.9rem;
+    height: 3.25rem;
+    padding: 0;
+
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-left: none;
+    border-radius: 0 var(--radius) var(--radius) 0;
+
+    color: var(--ink-soft);
+    font-size: 1rem;
+    cursor: pointer;
   }
 
   .side-updates .info-toggle {
@@ -911,11 +952,17 @@ button:focus-visible {
 
   padding: 1.25rem 0;
 
+  border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
 
-.game-row:first-child {
-  border-top: 1px solid var(--line);
+/* :first-child never actually matched here, since a heading always
+   precedes the first row — this adjacent-sibling version correctly
+   gives a top border to the first row of each group instead, since
+   a heading breaking the sequence means the next .game-row after it
+   is not immediately preceded by another .game-row. */
+.game-row + .game-row {
+  border-top: none;
 }
 
 .tag {
@@ -1268,6 +1315,12 @@ button:focus-visible {
 
 #lightbox[hidden] {
   display: none;
+}
+
+/* script.js adds this class while the lightbox is open, but there
+   was no rule for it — the page kept scrolling behind the overlay. */
+body.lightbox-open {
+  overflow: hidden;
 }
 
 #lightbox-image {
