@@ -256,18 +256,14 @@ function initToggle() {
 
 
   // -------------------------------------------------------
-  // Open / close menu with hamburger button
+  // Open / close menu with the hamburger button.
   // -------------------------------------------------------
 
   toggle.addEventListener(
     "click",
     function (event) {
 
-      // Prevent this click from being interpreted
-      // as an outside click.
-
       event.stopPropagation();
-
 
       var isOpen =
         links.classList.toggle(
@@ -287,7 +283,7 @@ function initToggle() {
 
 
   // -------------------------------------------------------
-  // Close menu when clicking a navigation link
+  // Close menu when a navigation link is clicked.
   // -------------------------------------------------------
 
   links
@@ -316,20 +312,20 @@ function initToggle() {
 
 
   // -------------------------------------------------------
-  // Close menu when clicking anywhere outside it
+  // Close menu when clicking anywhere outside it.
   // -------------------------------------------------------
 
   document.addEventListener(
     "click",
     function (event) {
 
-      var menuIsOpen =
+      var isOpen =
         links.classList.contains(
           "open"
         );
 
 
-      if (!menuIsOpen) {
+      if (!isOpen) {
         return;
       }
 
@@ -359,6 +355,36 @@ function initToggle() {
           "aria-expanded",
           "false"
         );
+
+      }
+
+    }
+  );
+
+
+  // -------------------------------------------------------
+  // Close menu with Escape.
+  // -------------------------------------------------------
+
+  document.addEventListener(
+    "keydown",
+    function (event) {
+
+      if (
+        event.key === "Escape" &&
+        links.classList.contains("open")
+      ) {
+
+        links.classList.remove(
+          "open"
+        );
+
+        toggle.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+        toggle.focus();
 
       }
 
@@ -755,15 +781,50 @@ function initGalleryYearGuess() {
           }
 
 
-          yearDisplay.textContent =
-            year;
+          var isRevealed =
+            button.getAttribute(
+              "aria-expanded"
+            ) === "true";
 
 
-          button.textContent =
-            "It was " + year + ".";
+          // -------------------------------------------------
+          // Reveal the year.
+          // -------------------------------------------------
+
+          if (!isRevealed) {
+
+            yearDisplay.textContent =
+              year;
+
+            button.textContent =
+              "Hide year";
+
+            button.setAttribute(
+              "aria-expanded",
+              "true"
+            );
+
+          }
 
 
-          button.disabled = true;
+          // -------------------------------------------------
+          // Hide the year and restore the button.
+          // -------------------------------------------------
+
+          else {
+
+            yearDisplay.textContent =
+              "";
+
+            button.textContent =
+              "Guess the year";
+
+            button.setAttribute(
+              "aria-expanded",
+              "false"
+            );
+
+          }
 
         }
       );
