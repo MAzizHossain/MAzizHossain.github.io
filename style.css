@@ -382,6 +382,21 @@ button:focus-visible {
     color: var(--ink-soft);
     font-size: 1rem;
     cursor: pointer;
+
+    opacity: 1;
+    transition: opacity 200ms ease;
+  }
+
+  /* Only applied via JS when the tab is actually sitting over
+     text while the drawer is closed. */
+  .updates-drawer-toggle.tab-dim {
+    opacity: 0.35;
+  }
+
+  .updates-drawer-toggle.tab-dim:hover,
+  .updates-drawer-toggle.tab-dim:focus-visible,
+  .updates-drawer-toggle.tab-dim:active {
+    opacity: 1;
   }
 
   .side-updates .info-toggle {
