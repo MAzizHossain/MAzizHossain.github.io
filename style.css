@@ -21,6 +21,11 @@
   --speed: 150ms;
 }
 
+
+/* =========================================================
+   DARK THEME
+   ========================================================= */
+
 :root[data-theme="dark"] {
   --paper: #15181B;
   --surface: #1E2225;
@@ -49,12 +54,16 @@ html {
 
 body {
   margin: 0;
+
   background: var(--paper);
   color: var(--ink);
+
   font-family: var(--font-body);
   font-size: 1.0625rem;
   line-height: 1.6;
+
   -webkit-font-smoothing: antialiased;
+
   transition:
     background-color 200ms ease,
     color 200ms ease;
@@ -64,6 +73,7 @@ h1,
 h2,
 h3 {
   margin: 0;
+
   color: var(--ink);
   font-family: var(--font-display);
 }
@@ -96,12 +106,17 @@ svg {
 
 .sr-only {
   position: absolute;
+
   width: 1px;
   height: 1px;
+
   padding: 0;
   margin: -1px;
+
   overflow: hidden;
+
   clip: rect(0, 0, 0, 0);
+
   white-space: nowrap;
   border: 0;
 }
@@ -110,6 +125,7 @@ svg {
   position: absolute;
   left: -999px;
   top: 0;
+
   z-index: 100;
 
   padding: 0.6rem 1rem;
@@ -151,12 +167,11 @@ button:focus-visible {
   z-index: 50;
 
   width: 100%;
+
   display: flex;
   flex-direction: column;
 
   padding: 1.1rem 1.5rem;
-
-  gap: 0;
 
   background: var(--paper);
   border-bottom: 1px solid var(--line);
@@ -170,10 +185,12 @@ button:focus-visible {
 
 .wordmark {
   color: var(--ink);
+
   font-family: var(--font-display);
   font-size: 1.15rem;
   font-weight: 600;
   line-height: 1.3;
+
   text-decoration: none;
 }
 
@@ -188,8 +205,10 @@ button:focus-visible {
 
 .theme-tab {
   position: fixed;
+
   top: 50%;
   right: 0;
+
   z-index: 60;
 
   transform: translateY(-50%);
@@ -209,6 +228,7 @@ button:focus-visible {
   letter-spacing: 0.02em;
 
   cursor: pointer;
+
   writing-mode: vertical-rl;
   text-orientation: mixed;
 
@@ -221,20 +241,24 @@ button:focus-visible {
 
 .theme-tab:hover {
   padding-right: 0.75rem;
+
   background: var(--surface);
   color: var(--ink);
+
   border-color: var(--ink-soft);
 }
 
 
 /* =========================================================
-   NEWS / CURRENT PROGRESS PANEL
+   NEWS / CURRENT PROGRESS
    ========================================================= */
 
 .side-updates {
   position: fixed;
+
   left: 0;
   top: 50%;
+
   z-index: 60;
 
   width: 15rem;
@@ -243,6 +267,7 @@ button:focus-visible {
   transform: translateY(-50%);
 
   background: var(--paper);
+
   border: 1px solid var(--line);
   border-left: none;
   border-radius: 0 var(--radius) var(--radius) 0;
@@ -258,6 +283,7 @@ button:focus-visible {
 
 .side-updates .info-toggle {
   display: block;
+
   width: 100%;
 
   padding: 1.1rem 1.35rem;
@@ -296,6 +322,7 @@ button:focus-visible {
   margin-bottom: 0.4rem;
 
   color: var(--ink-soft);
+
   font-family: var(--font-mono);
   font-size: 0.75rem;
 }
@@ -305,6 +332,7 @@ button:focus-visible {
   margin: 0;
 
   color: var(--ink-soft);
+
   font-size: 0.92rem;
   line-height: 1.55;
 }
@@ -366,11 +394,13 @@ button:focus-visible {
   height: 2px;
 
   background: var(--ink);
+
   border-radius: 1px;
 }
 
 .nav-links {
   position: absolute;
+
   top: 100%;
   left: 0;
   right: 0;
@@ -383,6 +413,7 @@ button:focus-visible {
   padding: 0.5rem 1.5rem 1.25rem;
 
   background: var(--paper);
+
   border-bottom: 1px solid var(--line);
 }
 
@@ -414,6 +445,7 @@ button:focus-visible {
 .nav-links a.active {
   color: var(--ink);
   font-weight: 600;
+
   border-bottom-color: var(--teal);
 }
 
@@ -524,8 +556,9 @@ button:focus-visible {
    ========================================================= */
 
 .hero-photo img {
-  width: 100%;
+  display: block;
 
+  width: 100%;
   aspect-ratio: 1 / 1;
 
   object-fit: cover;
@@ -534,7 +567,7 @@ button:focus-visible {
 
   border: 1px solid var(--line);
 
-  /* Circular profile picture without changing its size */
+  /* Keeps the original size while making it circular */
   border-radius: 50%;
 }
 
@@ -580,6 +613,7 @@ button:focus-visible {
 
   font-size: 2.1rem;
   font-weight: 600;
+
   letter-spacing: -0.01em;
 
   opacity: 0;
@@ -825,14 +859,22 @@ button:focus-visible {
    GALLERY
    ========================================================= */
 
+/*
+   Compact 2 × 2 gallery.
+
+   The max-width prevents the gallery from becoming too large
+   on wide screens while keeping two panels per row.
+*/
+
 .gallery-grid {
   display: grid;
 
   grid-template-columns: repeat(2, minmax(0, 1fr));
 
-  gap: 1.5rem;
+  gap: 1.25rem;
 
   width: 100%;
+  max-width: 560px;
 }
 
 .gallery-item {
@@ -872,13 +914,13 @@ button:focus-visible {
    ========================================================= */
 
 .gallery-caption {
-  padding: 1rem;
+  padding: 0.7rem 0.8rem;
 }
 
 .gallery-caption h2 {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.3rem;
 
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 600;
 }
 
@@ -887,7 +929,8 @@ button:focus-visible {
 
   color: var(--ink-soft);
 
-  font-size: 0.95rem;
+  font-size: 0.85rem;
+  line-height: 1.45;
 }
 
 
@@ -899,16 +942,20 @@ button:focus-visible {
   display: flex;
   align-items: center;
 
-  gap: 0.75rem;
+  gap: 0.6rem;
 
-  margin-top: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.gallery-year,
+.guess-year {
+  font-size: 0.7rem;
 }
 
 .gallery-year {
   color: var(--ink-soft);
 
   font-family: var(--font-mono);
-  font-size: 0.75rem;
 }
 
 .guess-year {
@@ -925,7 +972,6 @@ button:focus-visible {
   color: var(--ink);
 
   font-family: var(--font-mono);
-  font-size: 0.75rem;
   font-weight: 500;
 
   cursor: pointer;
@@ -941,7 +987,7 @@ button:focus-visible {
 }
 
 .guess-year-icon {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 }
 
 
@@ -1076,9 +1122,10 @@ button:focus-visible {
     padding: 3rem 1.25rem 4rem;
   }
 
-  /* Gallery becomes one column on mobile */
+  /* Keep gallery compact on mobile */
   .gallery-grid {
     grid-template-columns: 1fr;
+    max-width: 400px;
   }
 
   .gallery-item img {
@@ -1102,5 +1149,35 @@ button:focus-visible {
   .site-footer {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+  .content {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .hero-photo {
+    width: 150px;
+  }
+
+  .gallery-grid {
+    max-width: 340px;
+  }
+
+  .gallery-item img {
+    aspect-ratio: 4 / 3;
+  }
+
+  .site-footer {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
