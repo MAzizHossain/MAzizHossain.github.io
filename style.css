@@ -3,14 +3,19 @@
    ========================================================= */
 
 :root {
-  --paper: #EEF1EC;
-  --surface: #E3E8E0;
+  /* Soft cream paper — intentionally avoids a bright white background */
+  --paper: #E9E4D8;
+  --surface: #DED8CA;
+
   --ink: #1B2430;
-  --ink-soft: #57616C;
+  --ink-soft: #59605C;
+
   --teal: #2E6F6A;
   --teal-dark: #1F4E4A;
-  --rust: #C1622D;
-  --line: #CBD3CB;
+
+  --rust: #B85C2B;
+
+  --line: #C9C3B7;
 
   --font-display: "Fraunces", Georgia, serif;
   --font-body: "IBM Plex Sans", -apple-system, Segoe UI, sans-serif;
@@ -19,6 +24,9 @@
   --maxw: 760px;
   --radius: 3px;
   --speed: 150ms;
+
+  /* Tell the browser that the light theme is intentionally not white */
+  color-scheme: light;
 }
 
 
@@ -29,14 +37,19 @@
 :root[data-theme="dark"] {
   --paper: #15181B;
   --surface: #1E2225;
+
   --ink: #E7E9E6;
   --ink-soft: #A8AFA9;
+
   --teal: #4FA79F;
   --teal-dark: #7ED9CE;
-  --rust: #E3966B;
-  --line: #2A2E31;
-}
 
+  --rust: #E3966B;
+
+  --line: #2A2E31;
+
+  color-scheme: dark;
+}
 
 /* =========================================================
    RESET & BASE
