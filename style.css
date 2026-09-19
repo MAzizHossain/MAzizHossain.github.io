@@ -4,7 +4,7 @@
 
 :root {
   --font-display: 'Fraunces', serif;
-  --font-sans: 'IBM Plex Sans', sans-serif;
+  --font-sans: 'Source Sans 3', sans-serif;
   --font-mono: 'IBM Plex Mono', monospace;
 
   --paper: #fcfbf9;
@@ -48,7 +48,10 @@ body {
   color: var(--ink);
 
   font-family: var(--font-sans);
-  line-height: 1.6;
+
+  font-size: 1.05rem;
+
+  line-height: 1.65;
 }
 
 img {
@@ -179,15 +182,19 @@ img {
 
 .nav-links a {
   color: var(--ink);
+
   font-weight: 600;
+
   text-decoration: none;
+
   white-space: nowrap;
+
   transition: none;
 }
 
 
 /*
-   Navigation stays the same color in every state.
+   Keep navigation the same color in every state.
 */
 
 .nav-links a:link,
@@ -302,8 +309,11 @@ img {
 
 .hero-links a {
   color: var(--ink);
+
   font-weight: 600;
+
   text-decoration: none;
+
   white-space: nowrap;
 
   transition: none;
@@ -353,6 +363,8 @@ img {
   font-size: 1.15rem;
 
   font-style: italic;
+
+  line-height: 1.5;
 }
 
 
@@ -408,7 +420,7 @@ img {
 
   font-size: 1.15rem;
 
-  font-weight: 600;
+  font-weight: 700;
 
   text-decoration: none;
 
@@ -429,6 +441,65 @@ img {
 .row-desc {
   margin: 0.2rem 0 0;
 
+  color: var(--ink-soft);
+
+  font-size: 0.98rem;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   YEAR HEADINGS
+   ========================================================= */
+
+.year-heading {
+  margin: 2rem 0 0.75rem;
+
+  color: var(--ink);
+
+  font-family: var(--font-display);
+
+  font-size: 1.4rem;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   ROW META
+   ========================================================= */
+
+.row-meta {
+  color: var(--ink-soft);
+
+  font-family: var(--font-mono);
+
+  font-size: 0.75rem;
+}
+
+.row-links {
+  margin-top: 0.4rem;
+}
+
+.row-links a {
+  color: var(--ink);
+
+  font-family: var(--font-mono);
+
+  font-size: 0.75rem;
+
+  font-weight: 500;
+
+  text-decoration: underline;
+}
+
+
+/* =========================================================
+   PUBLICATION ERROR
+   ========================================================= */
+
+.publication-error {
   color: var(--ink-soft);
 
   font-size: 0.95rem;
@@ -526,7 +597,7 @@ img {
 
 
 /*
-   No blue/teal state on News or Current Progress.
+   No color change when clicked / opened.
 */
 
 .side-updates .info-toggle:hover,
@@ -600,6 +671,8 @@ img {
 
   font-size: 0.85rem;
 
+  font-weight: 500;
+
   cursor: pointer;
 
   box-shadow:
@@ -638,7 +711,7 @@ img {
 
 
 /*
-   Gallery thumbnails are kept at a sensible size.
+   Controlled gallery thumbnail size.
 */
 
 .gallery-item img {
@@ -657,6 +730,39 @@ img {
   border-radius: var(--radius);
 
   cursor: pointer;
+}
+
+
+/* =========================================================
+   GALLERY YEAR / GUESS
+   ========================================================= */
+
+.gallery-year {
+  color: var(--ink-soft);
+
+  font-family: var(--font-mono);
+
+  font-size: 0.75rem;
+}
+
+.guess-year {
+  color: var(--ink);
+
+  background: transparent;
+
+  border: none;
+
+  padding: 0;
+
+  font-family: var(--font-mono);
+
+  font-size: 0.75rem;
+
+  cursor: pointer;
+}
+
+.guess-year:hover {
+  text-decoration: underline;
 }
 
 
@@ -876,6 +982,8 @@ body.lightbox-open {
     color: var(--ink);
 
     font-size: 0.9rem;
+
+    font-weight: 600;
   }
 
 
