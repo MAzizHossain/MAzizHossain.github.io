@@ -1316,3 +1316,393 @@ body.lightbox-open {
     bottom: 0.75rem;
   }
 }
+
+/* =========================================================
+   GALLERY PAGE
+   ========================================================= */
+
+.gallery-page {
+  width: 100%;
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 5rem;
+}
+
+
+/* =========================================================
+   GALLERY INTRO
+   ========================================================= */
+
+.gallery-intro {
+  max-width: 48rem;
+  margin-bottom: 3rem;
+}
+
+.gallery-intro h1 {
+  margin: 0 0 0.75rem;
+
+  color: var(--ink);
+
+  font-family: var(--font-display);
+
+  font-size: 2.5rem;
+  font-weight: 600;
+
+  line-height: 1.15;
+}
+
+.gallery-intro p {
+  margin: 0;
+
+  color: var(--ink-soft);
+
+  font-family: var(--font-sans);
+
+  font-size: 1.05rem;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   GALLERY GRID
+   ========================================================= */
+
+.gallery-page .gallery-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 3rem 2rem;
+
+  width: 100%;
+}
+
+
+/* =========================================================
+   GALLERY ITEM
+   ========================================================= */
+
+.gallery-page .gallery-item {
+  min-width: 0;
+
+  margin: 0;
+}
+
+
+/* =========================================================
+   GALLERY IMAGE
+   ========================================================= */
+
+.gallery-page .gallery-item img {
+  display: block;
+
+  width: 100%;
+
+  /*
+     This keeps the thumbnails reasonably sized
+     instead of letting them become huge.
+  */
+  height: 17rem;
+
+  max-width: 100%;
+
+  object-fit: cover;
+
+  border: 1px solid var(--line);
+
+  border-radius: var(--radius);
+
+  background: var(--surface);
+
+  cursor: pointer;
+
+  transition:
+    opacity 150ms ease;
+}
+
+.gallery-page .gallery-item img:hover {
+  opacity: 0.88;
+}
+
+
+/* =========================================================
+   GALLERY CAPTION
+   ========================================================= */
+
+.gallery-page .gallery-caption {
+  padding-top: 1rem;
+}
+
+.gallery-page .gallery-caption h2 {
+  margin: 0 0 0.5rem;
+
+  color: var(--ink);
+
+  font-family: var(--font-display);
+
+  font-size: 1.3rem;
+
+  font-weight: 600;
+
+  line-height: 1.3;
+}
+
+.gallery-page .gallery-caption p {
+  margin: 0;
+
+  color: var(--ink-soft);
+
+  font-family: var(--font-sans);
+
+  font-size: 0.98rem;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   YEAR ROW
+   ========================================================= */
+
+.gallery-page .gallery-year-row {
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.75rem;
+
+  margin-top: 0.9rem;
+}
+
+
+/* =========================================================
+   GUESS YEAR BUTTON
+   ========================================================= */
+
+.gallery-page .guess-year {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 0.4rem;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: var(--ink);
+
+  font-family: var(--font-mono);
+
+  font-size: 0.75rem;
+
+  font-weight: 500;
+
+  cursor: pointer;
+}
+
+.gallery-page .guess-year:hover {
+  text-decoration: underline;
+}
+
+.gallery-page .guess-year:focus-visible {
+  outline: 2px solid var(--ink);
+
+  outline-offset: 3px;
+}
+
+.gallery-page .guess-year-icon {
+  font-size: 0.9rem;
+}
+
+
+/* =========================================================
+   REVEALED YEAR
+   ========================================================= */
+
+.gallery-page .gallery-year {
+  color: var(--ink-soft);
+
+  font-family: var(--font-mono);
+
+  font-size: 0.75rem;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   LIGHTBOX
+   ========================================================= */
+
+#lightbox {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 200;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 2rem;
+
+  background: rgba(0, 0, 0, 0.86);
+
+  opacity: 0;
+
+  transition: opacity 160ms ease;
+}
+
+#lightbox.active {
+  opacity: 1;
+}
+
+#lightbox[hidden] {
+  display: none;
+}
+
+#lightbox-image {
+  display: block;
+
+  width: auto;
+
+  height: auto;
+
+  max-width: 90vw;
+
+  max-height: 86vh;
+
+  object-fit: contain;
+
+  border-radius: var(--radius);
+}
+
+
+/* =========================================================
+   LIGHTBOX CLOSE
+   ========================================================= */
+
+.lightbox-close {
+  position: absolute;
+
+  top: 1.25rem;
+
+  right: 1.25rem;
+
+  width: 2.75rem;
+
+  height: 2.75rem;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+  border-radius: 50%;
+
+  background: rgba(0, 0, 0, 0.25);
+
+  color: #fff;
+
+  font-size: 1.5rem;
+
+  line-height: 1;
+
+  cursor: pointer;
+}
+
+.lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+
+/* =========================================================
+   MOBILE GALLERY
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .gallery-page {
+    padding:
+      3rem
+      1.25rem
+      4rem;
+  }
+
+  .gallery-intro {
+    margin-bottom: 2.5rem;
+  }
+
+  .gallery-intro h1 {
+    font-size: 2.15rem;
+  }
+
+  .gallery-intro p {
+    font-size: 1rem;
+  }
+
+  .gallery-page .gallery-grid {
+    grid-template-columns: 1fr;
+
+    gap: 2.75rem;
+  }
+
+  .gallery-page .gallery-item img {
+    height: auto;
+
+    max-height: 24rem;
+
+    aspect-ratio: 4 / 3;
+
+    object-fit: cover;
+  }
+
+  .gallery-page .gallery-caption h2 {
+    font-size: 1.25rem;
+  }
+
+  .gallery-page .gallery-caption p {
+    font-size: 0.96rem;
+  }
+
+  #lightbox {
+    padding: 1rem;
+  }
+
+  #lightbox-image {
+    max-width: 94vw;
+
+    max-height: 82vh;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+  .gallery-page {
+    padding-left: 1rem;
+
+    padding-right: 1rem;
+  }
+
+  .gallery-page .gallery-item img {
+    max-height: 20rem;
+  }
+}
