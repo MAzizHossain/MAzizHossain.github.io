@@ -282,33 +282,34 @@ button:focus-visible {
   position: fixed;
 
   left: 0;
-
   top: 50%;
 
-  transform:
-    translate(
-      -100%,
-      -50%
-    );
+  transform: translateY(-50%);
 
-  width: min(
-    17rem,
-    82vw
-  );
+  z-index: 60;
 
-  max-width: none;
+  width: 15rem;
+
+  max-width: 42vw;
 
   max-height: 80vh;
   overflow-y: auto;
 
-  z-index: 90;
+  background: var(--paper);
 
-  transition:
-    transform 250ms ease;
+  border: 1px solid var(--line);
+  border-left: none;
+
+  border-radius:
+    0
+    var(--radius)
+    var(--radius)
+    0;
 
   box-shadow:
-    4px 0 18px rgba(0, 0, 0, 0.12);
+    3px 0 16px rgba(0, 0, 0, 0.08);
 }
+
 
 .side-updates .info-panel + .info-panel {
   border-top: 1px solid var(--line);
@@ -1498,34 +1499,28 @@ button:focus-visible {
    * while scrolling.
    */
 
-  .side-updates {
-    position: fixed;
+ .side-updates {
+  position: fixed;
 
-    left: 0;
+  left: 0;
+  top: 50%;
 
-    top: 50%;
+  transform: translate(-100%, -50%);
 
-    transform:
-      translate(
-        -100%,
-        -50%
-      );
+  width: min(17rem, 82vw);
 
-    width: min(
-      17rem,
-      82vw
-    );
+  max-width: none;
 
-    max-width: none;
+  max-height: 80vh;
+  overflow-y: auto;
 
-    z-index: 90;
+  z-index: 90;
 
-    transition:
-      transform 250ms ease;
+  transition: transform 250ms ease;
 
-    box-shadow:
-      4px 0 18px rgba(0, 0, 0, 0.12);
-  }
+  box-shadow:
+    4px 0 18px rgba(0, 0, 0, 0.12);
+}
 
 
   /* -------------------------------------------------------
