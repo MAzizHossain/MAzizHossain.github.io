@@ -255,9 +255,19 @@ function initToggle() {
   }
 
 
+  // -------------------------------------------------------
+  // Open / close menu with hamburger button
+  // -------------------------------------------------------
+
   toggle.addEventListener(
     "click",
-    function () {
+    function (event) {
+
+      // Prevent this click from being interpreted
+      // as an outside click.
+
+      event.stopPropagation();
+
 
       var isOpen =
         links.classList.toggle(
@@ -275,6 +285,10 @@ function initToggle() {
     }
   );
 
+
+  // -------------------------------------------------------
+  // Close menu when clicking a navigation link
+  // -------------------------------------------------------
 
   links
     .querySelectorAll("a")
@@ -299,6 +313,57 @@ function initToggle() {
 
       }
     );
+
+
+  // -------------------------------------------------------
+  // Close menu when clicking anywhere outside it
+  // -------------------------------------------------------
+
+  document.addEventListener(
+    "click",
+    function (event) {
+
+      var menuIsOpen =
+        links.classList.contains(
+          "open"
+        );
+
+
+      if (!menuIsOpen) {
+        return;
+      }
+
+
+      var clickedInsideMenu =
+        links.contains(
+          event.target
+        );
+
+
+      var clickedToggle =
+        toggle.contains(
+          event.target
+        );
+
+
+      if (
+        !clickedInsideMenu &&
+        !clickedToggle
+      ) {
+
+        links.classList.remove(
+          "open"
+        );
+
+        toggle.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+      }
+
+    }
+  );
 
 }
 
