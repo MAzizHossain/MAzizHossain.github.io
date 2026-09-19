@@ -27,9 +27,6 @@ var THEME_KEY = "site-theme";
 // Theme
 // =========================================================
 
-// Applied immediately so the correct theme is set
-// as early as possible.
-
 function preferredTheme() {
 
   var stored = null;
@@ -255,10 +252,6 @@ function initToggle() {
   }
 
 
-  // -------------------------------------------------------
-  // Open / close menu with the hamburger button.
-  // -------------------------------------------------------
-
   toggle.addEventListener(
     "click",
     function (event) {
@@ -281,10 +274,6 @@ function initToggle() {
     }
   );
 
-
-  // -------------------------------------------------------
-  // Close menu when a navigation link is clicked.
-  // -------------------------------------------------------
 
   links
     .querySelectorAll("a")
@@ -310,10 +299,6 @@ function initToggle() {
       }
     );
 
-
-  // -------------------------------------------------------
-  // Close menu when clicking anywhere outside it.
-  // -------------------------------------------------------
 
   document.addEventListener(
     "click",
@@ -361,10 +346,6 @@ function initToggle() {
     }
   );
 
-
-  // -------------------------------------------------------
-  // Close menu with Escape.
-  // -------------------------------------------------------
 
   document.addEventListener(
     "keydown",
@@ -500,8 +481,6 @@ function initInfoPanels() {
             ) === "true";
 
 
-          // Toggle the button state.
-
           button.setAttribute(
             "aria-expanded",
             isOpen
@@ -509,8 +488,6 @@ function initInfoPanels() {
               : "true"
           );
 
-
-          // Show or hide the panel.
 
           panel.hidden =
             isOpen;
@@ -535,8 +512,6 @@ function loadPublications() {
       "publications"
     );
 
-
-  // Only runs on publications.html.
 
   if (!container) {
     return;
@@ -569,8 +544,6 @@ function loadPublications() {
           data.publications || [];
 
 
-        // Newest publications first.
-
         publications.sort(
           function (a, b) {
 
@@ -591,9 +564,6 @@ function loadPublications() {
         publications.forEach(
           function (publication) {
 
-
-            // Create a new year heading
-            // when the year changes.
 
             if (
               publication.year !==
@@ -639,8 +609,6 @@ function loadPublications() {
 
             }
 
-
-            // Create publication row.
 
             var row =
               document.createElement(
@@ -751,6 +719,23 @@ function initGalleryYearGuess() {
   buttons.forEach(
     function (button) {
 
+      var buttonText =
+        button.querySelector(
+          ".guess-year-text"
+        );
+
+
+      var buttonIcon =
+        button.querySelector(
+          ".guess-year-icon"
+        );
+
+
+      if (!buttonText) {
+        return;
+      }
+
+
       button.addEventListener(
         "click",
         function () {
@@ -796,13 +781,20 @@ function initGalleryYearGuess() {
             yearDisplay.textContent =
               year;
 
-            button.textContent =
+            buttonText.textContent =
               "Hide year";
 
             button.setAttribute(
               "aria-expanded",
               "true"
             );
+
+            if (buttonIcon) {
+
+              buttonIcon.textContent =
+                "↙";
+
+            }
 
           }
 
@@ -816,13 +808,20 @@ function initGalleryYearGuess() {
             yearDisplay.textContent =
               "";
 
-            button.textContent =
+            buttonText.textContent =
               "Guess the year";
 
             button.setAttribute(
               "aria-expanded",
               "false"
             );
+
+            if (buttonIcon) {
+
+              buttonIcon.textContent =
+                "↗";
+
+            }
 
           }
 
@@ -885,8 +884,6 @@ function shuffleGallery() {
 
   }
 
-
-  // Reinsert shuffled items.
 
   items.forEach(
     function (item) {
@@ -1052,10 +1049,6 @@ function openLightbox(image) {
     false;
 
 
-  // Force the browser to recognize
-  // the visible state before applying
-  // the active class.
-
   requestAnimationFrame(
     function () {
 
@@ -1103,9 +1096,6 @@ function closeLightbox() {
   lightboxImage.alt =
     "";
 
-
-  // Wait for the opacity transition
-  // before hiding the element.
 
   setTimeout(
     function () {
@@ -1188,9 +1178,6 @@ document.addEventListener(
     // -------------------------------------------------------
     // Theme tab
     // -------------------------------------------------------
-
-    // Prevent duplicate theme buttons if this script
-    // is accidentally loaded more than once.
 
     if (
       !document.getElementById(
