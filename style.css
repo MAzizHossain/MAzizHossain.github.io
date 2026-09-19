@@ -1706,3 +1706,286 @@ body.lightbox-open {
     max-height: 20rem;
   }
 }
+
+/* =========================================================
+   CONTACT PAGE
+   ========================================================= */
+
+.contact-page {
+  width: 100%;
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 5rem;
+}
+
+
+/* =========================================================
+   CONTACT INTRO
+   ========================================================= */
+
+.contact-intro {
+  max-width: 48rem;
+  margin-bottom: 3rem;
+}
+
+.contact-intro h1 {
+  margin: 0 0 0.75rem;
+
+  color: var(--ink);
+
+  font-family: var(--font-display);
+
+  font-size: 2.5rem;
+
+  font-weight: 600;
+
+  line-height: 1.15;
+}
+
+.contact-intro p {
+  margin: 0;
+
+  color: var(--ink-soft);
+
+  font-family: var(--font-sans);
+
+  font-size: 1.05rem;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   CONTACT GRID
+   ========================================================= */
+
+.contact-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 1rem;
+
+  width: 100%;
+}
+
+
+/* =========================================================
+   CONTACT CARD
+   ========================================================= */
+
+.contact-item {
+  min-width: 0;
+
+  padding: 1.35rem 1.5rem;
+
+  border: 1px solid var(--line);
+
+  border-radius: var(--radius);
+
+  background: var(--paper);
+
+  transition:
+    background-color 150ms ease;
+}
+
+.contact-item:hover {
+  background: var(--surface);
+}
+
+
+/* =========================================================
+   CONTACT LINK
+   ========================================================= */
+
+.contact-item a {
+  display: flex;
+
+  align-items: center;
+
+  gap: 1rem;
+
+  width: 100%;
+
+  color: var(--ink);
+
+  text-decoration: none;
+}
+
+
+/* Keep exactly the same color in every state */
+
+.contact-item a:link,
+.contact-item a:visited,
+.contact-item a:hover,
+.contact-item a:active {
+  color: var(--ink);
+
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   CONTACT ICON
+   ========================================================= */
+
+.contact-icon {
+  flex: 0 0 auto;
+
+  width: 1.5rem;
+  height: 1.5rem;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: var(--ink);
+}
+
+.contact-icon svg {
+  display: block;
+
+  width: 1.2rem;
+  height: 1.2rem;
+
+  fill: none;
+
+  stroke: currentColor;
+
+  stroke-width: 1.8;
+
+  stroke-linecap: round;
+
+  stroke-linejoin: round;
+}
+
+
+/* =========================================================
+   CONTACT TEXT
+   ========================================================= */
+
+.contact-details {
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.15rem;
+}
+
+.contact-label {
+  color: var(--ink);
+
+  font-family: var(--font-sans);
+
+  font-size: 1.1rem;
+
+  font-weight: 700;
+
+  line-height: 1.3;
+}
+
+.contact-value {
+  color: var(--ink-soft);
+
+  font-family: var(--font-mono);
+
+  font-size: 0.78rem;
+
+  line-height: 1.4;
+
+  overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   CONTACT HOVER
+   ========================================================= */
+
+.contact-item a:hover .contact-label {
+  text-decoration: underline;
+}
+
+
+/* =========================================================
+   MOBILE CONTACT
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .contact-page {
+    padding:
+      3rem
+      1.25rem
+      4rem;
+  }
+
+  .contact-intro {
+    margin-bottom: 2.5rem;
+  }
+
+  .contact-intro h1 {
+    font-size: 2.15rem;
+  }
+
+  .contact-intro p {
+    font-size: 1rem;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+
+    gap: 0.8rem;
+  }
+
+  .contact-item {
+    padding: 1.15rem 1.25rem;
+  }
+
+  .contact-item a {
+    gap: 0.85rem;
+  }
+
+  .contact-icon {
+    width: 1.4rem;
+    height: 1.4rem;
+  }
+
+  .contact-icon svg {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+
+  .contact-label {
+    font-size: 1.05rem;
+  }
+
+  .contact-value {
+    font-size: 0.75rem;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+  .contact-page {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .contact-item {
+    padding: 1rem;
+  }
+
+  .contact-item a {
+    gap: 0.75rem;
+  }
+}
+
