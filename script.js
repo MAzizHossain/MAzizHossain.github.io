@@ -84,33 +84,26 @@ function renderHeader() {
   var page = currentPage();
 
   var links = NAV_ITEMS.map(function (item) {
-    var attrs = ['href="' + item.href + '"'];
+    var activeClass = item.href === page ? 'class="active"' : '';
+    var sectionAttr = item.section ? `data-section="${item.section}"` : '';
 
-    if (item.href === page) {
-      attrs.push('class="active"');
-    }
-
-    if (item.section) {
-      attrs.push('data-section="' + item.section + '"');
-    }
-
-    return "<a " + attrs.join(" ") + ">" + item.label + "</a>";
+    return `<a href="${item.href}" ${activeClass} ${sectionAttr}>${item.label}</a>`;
   }).join("\n    ");
 
-  return (
-    '<div class="sidebar-top">\n' +
-    '  <a class="wordmark" href="index.html">' + SITE_NAME + '</a>\n' +
-    '  <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="nav-links">' +
-    '    <span></span>' +
-    '    <span></span>' +
-    '    <span></span>' +
-    '    <span class="sr-only">Menu</span>' +
-    '  </button>\n' +
-    '</div>\n' +
-    '<nav class="nav-links" id="nav-links" aria-label="Main navigation">\n' +
-    '    ' + links + '\n' +
-    '</nav>'
-  );
+  return `
+    <div class="sidebar-top">
+      <a class="wordmark" href="index.html">${SITE_NAME}</a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="nav-links">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span class="sr-only">Menu</span>
+      </button>
+    </div>
+    <nav class="nav-links" id="nav-links" aria-label="Main navigation">
+      ${links}
+    </nav>
+  `;
 }
 
 
@@ -352,8 +345,12 @@ function loadPublications() {
     })
     .catch(function (error) {
       console.error("Publication loading error:", error);
-      container.innerHTML =
-        '<p class="publication-error">Unable to load publications.</p>';
+      var isFileProtocol = window.location.protocol === "file:";
+      var msg = isFileProtocol 
+        ? "Publications cannot be fetched via file:// protocol. Use a local HTTP server."
+        : "Unable to load publications at this time.";
+
+      container.innerHTML = `<p class="publication-error">${msg}</p>`;
     });
 }
 
@@ -473,6 +470,12 @@ function initLightbox() {
   document.addEventListener("keydown", function (event) {
     if (event.key === "Escape" && !lightbox.hidden) {
       closeLightbox();
+    }
+
+    // Focus trap inside open lightbox
+    if (event.key === "Tab" && !lightbox.hidden) {
+      event.preventDefault();
+      lightboxClose.focus();
     }
   });
 }
