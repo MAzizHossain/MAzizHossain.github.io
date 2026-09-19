@@ -59,6 +59,93 @@
 
 
 <!-- =====================================================
+     Site updates (fixed to the left edge of the viewport)
+     ===================================================== -->
+
+<aside
+  class="side-updates"
+  aria-label="Site updates"
+>
+
+
+  <!-- News -->
+
+  <div class="info-panel">
+
+    <button
+      class="info-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="news-panel"
+    >
+      News
+    </button>
+
+
+    <div
+      class="info-content"
+      id="news-panel"
+      hidden
+    >
+
+      <article class="news-entry">
+
+        <time
+          class="news-date"
+          datetime="2026-09"
+        >
+          September 2026
+        </time>
+
+        <p class="news-text">
+          Still looking for evidence of disturbance.
+          Nothing conclusive yet.
+        </p>
+
+      </article>
+
+    </div>
+
+  </div>
+
+
+  <!-- Current progress -->
+
+  <div class="info-panel">
+
+    <button
+      class="info-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="currently-panel"
+    >
+      Current progress
+    </button>
+
+
+    <div
+      class="info-content"
+      id="currently-panel"
+      hidden
+    >
+
+      <p class="status-text">
+        Currently reading whatever catches my attention
+        and tinkering with GitHub Pages. Treating the
+        whole thing as research, mostly because
+        “I have no idea what I am doing” sounds less
+        impressive.
+      </p>
+
+    </div>
+
+  </div>
+
+
+</aside>
+
+
+<!-- =====================================================
      Home page
      ===================================================== -->
 
@@ -154,93 +241,6 @@
       </p>
 
     </div>
-
-  </section>
-
-
-  <!-- ===================================================
-       Quick information
-       =================================================== -->
-
-  <section
-    class="quick-info"
-    aria-label="Site updates"
-  >
-
-
-    <!-- News -->
-
-    <div class="info-panel">
-
-      <button
-        class="info-toggle"
-        type="button"
-        aria-expanded="false"
-        aria-controls="news-panel"
-      >
-        News
-      </button>
-
-
-      <div
-        class="info-content"
-        id="news-panel"
-        hidden
-      >
-
-        <article class="news-entry">
-
-          <time
-            class="news-date"
-            datetime="2026-09"
-          >
-            September 2026
-          </time>
-
-          <p class="news-text">
-            Still looking for evidence of disturbance.
-            Nothing conclusive yet.
-          </p>
-
-        </article>
-
-      </div>
-
-    </div>
-
-
-    <!-- Currently -->
-
-    <div class="info-panel">
-
-      <button
-        class="info-toggle"
-        type="button"
-        aria-expanded="false"
-        aria-controls="currently-panel"
-      >
-        Currently
-      </button>
-
-
-      <div
-        class="info-content"
-        id="currently-panel"
-        hidden
-      >
-
-        <p class="status-text">
-          Currently reading whatever catches my attention
-          and tinkering with GitHub Pages. Treating the
-          whole thing as research, mostly because
-          “I have no idea what I am doing” sounds less
-          impressive.
-        </p>
-
-      </div>
-
-    </div>
-
 
   </section>
 
