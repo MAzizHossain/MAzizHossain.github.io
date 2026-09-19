@@ -2,242 +2,101 @@
 <html lang="en">
 
 <head>
-
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Mohammed Aziz Hossain</title>
 
-  <meta
-    name="description"
-    content="Personal site of Mohammed Aziz Hossain — researcher, teacher, and gamer."
-  >
+  <meta name="description" content="Personal site of Mohammed Aziz Hossain — researcher, teacher, and gamer.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,500&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  >
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,500&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
-    rel="stylesheet"
-  >
-
-  <link
-    rel="stylesheet"
-    href="style.css"
-  >
-
+  <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
-<a
-  class="skip-link"
-  href="#main"
->
+<a class="skip-link" href="#main">
   Skip to content
 </a>
 
+<!-- Dynamic Navigation Shell -->
+<header class="sidebar" id="site-header"></header>
 
-<!-- =====================================================
-     Navigation
-     ===================================================== -->
-
-<header
-  class="sidebar"
-  id="site-header"
-></header>
-
-
-<!-- =====================================================
-     Site updates (fixed to the left edge of the viewport)
-     ===================================================== -->
-
-<aside
-  class="side-updates"
-  aria-label="Site updates"
->
-  <button
-    class="updates-drawer-toggle"
-    type="button"
-    aria-expanded="false"
-    aria-label="Open site updates"
-  >
-    <span aria-hidden="true" class="drawer-arrow-icon">▼</span>
+<!-- Site updates (fixed to left viewport edge) -->
+<aside class="side-updates" aria-label="Site updates">
+  <!-- Mobile Drawer Toggle Button -->
+  <button class="updates-drawer-toggle" type="button" aria-expanded="false" aria-label="Open site updates">
+    <span aria-hidden="true" class="drawer-arrow-icon">→</span>
   </button>
 
-  <!-- News -->
+  <!-- Inner Scroll Container -->
+  <div class="side-updates-content">
+    <!-- News Panel -->
+    <div class="info-panel">
+      <button class="info-toggle" type="button" aria-expanded="false" aria-controls="news-panel">
+        News
+      </button>
 
-  <div class="info-panel">
+      <div class="info-content" id="news-panel" hidden>
+        <article class="news-entry">
+          <time class="news-date" datetime="2026-09">
+            September 2026
+          </time>
+          <p class="news-text">
+            Still looking for evidence of disturbance.
+            Nothing conclusive yet.
+          </p>
+        </article>
+      </div>
+    </div>
 
-    <button
-      class="info-toggle"
-      type="button"
-      aria-expanded="false"
-      aria-controls="news-panel"
-    >
-      News
-    </button>
+    <!-- Current Progress Panel -->
+    <div class="info-panel">
+      <button class="info-toggle" type="button" aria-expanded="false" aria-controls="currently-panel">
+        Current progress
+      </button>
 
-
-    <div
-      class="info-content"
-      id="news-panel"
-      hidden
-    >
-
-      <article class="news-entry">
-
-        <time
-          class="news-date"
-          datetime="2026-09"
-        >
-          September 2026
-        </time>
-
-        <p class="news-text">
-          Still looking for evidence of disturbance.
-          Nothing conclusive yet.
+      <div class="info-content" id="currently-panel" hidden>
+        <p class="status-text">
+          Currently reading whatever catches my attention
+          and tinkering with GitHub Pages. Treating the
+          whole thing as research, mostly because
+          “I have no idea what I am doing” sounds less
+          impressive.
         </p>
-
-      </article>
-
+      </div>
     </div>
-
   </div>
-
-
-  <!-- Current progress -->
-
-  <div class="info-panel">
-
-    <button
-      class="info-toggle"
-      type="button"
-      aria-expanded="false"
-      aria-controls="currently-panel"
-    >
-      Current progress
-    </button>
-
-
-    <div
-      class="info-content"
-      id="currently-panel"
-      hidden
-    >
-
-      <p class="status-text">
-        Currently reading whatever catches my attention
-        and tinkering with GitHub Pages. Treating the
-        whole thing as research, mostly because
-        “I have no idea what I am doing” sounds less
-        impressive.
-      </p>
-
-    </div>
-
-  </div>
-
-
 </aside>
 
-
-<!-- =====================================================
-     Home page
-     ===================================================== -->
-
-<main
-  id="main"
-  class="content home-content"
->
-
-
-  <!-- ===================================================
-       Hero
-       =================================================== -->
-
-  <section
-    class="hero"
-    aria-labelledby="hero-name"
-  >
-
-
-    <!-- Profile photo -->
-
+<!-- Main Content -->
+<main id="main" class="content home-content">
+  <!-- Hero Section -->
+  <section class="hero" aria-labelledby="hero-name">
     <div class="hero-photo">
-
-      <img
-        src="profile.jpg"
-        alt="Photo of Aziz Hossain"
-        class="profile-photo"
-      >
-
-
-      <!-- Links directly underneath photo -->
+      <img src="profile.jpg" alt="Photo of Aziz Hossain" class="profile-photo">
 
       <div class="hero-links">
-
-        <a href="cv.pdf">
-          CV
-        </a>
-
-        <a
-          href="https://github.com/MAzizHossain"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          GitHub
-        </a>
-
-        <a
-          href="https://www.linkedin.com/in/aziz2077"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          LinkedIn
-        </a>
-
-        <a
-          href="https://scholar.google.com/citations?user=eGO1N70AAAAJ&hl=en&authuser=3"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Google Scholar
-        </a>
-
+        <a href="cv.pdf">CV</a>
+        <a href="https://github.com/MAzizHossain" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/aziz2077" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://scholar.google.com/citations?user=eGO1N70AAAAJ&hl=en&authuser=3" target="_blank" rel="noopener noreferrer">Google Scholar</a>
       </div>
-
     </div>
 
-
-    <!-- Hero text -->
-
     <div class="hero-text">
-
-      <h1
-        class="hero-name"
-        id="hero-name"
-      >
+      <h1 class="hero-name" id="hero-name">
         Mohammed Aziz Hossain
       </h1>
-
 
       <p class="hero-tagline">
         Naturally curious, usually found tinkering in a lab,
         occasional poetry attempts, and probably playing
         strategy games.
       </p>
-
 
       <p>
         I am interested in understanding how biological
@@ -246,173 +105,82 @@
         ideas, and unwinding with movies, books, and video
         games.
       </p>
-
     </div>
-
   </section>
 
-
-  <!-- ===================================================
-       Explore
-       =================================================== -->
-
-  <section
-    class="explore"
-    aria-labelledby="explore-heading"
-  >
-
-    <h2
-      class="section-label"
-      id="explore-heading"
-    >
+  <!-- Explore Section -->
+  <section class="explore" aria-labelledby="explore-heading">
+    <h2 class="section-label" id="explore-heading">
       Explore
     </h2>
 
-
     <div class="row-list">
-
-
-      <!-- Publications -->
-
       <article class="row">
-
         <div class="row-head">
-
           <span class="row-title">
-
-            <a href="publications.html">
-              Publications
-            </a>
-
+            <a href="publications.html">Publications</a>
           </span>
-
         </div>
-
         <p class="row-desc">
           A list of things I have researched, written,
           and somehow convinced other people to publish.
         </p>
-
       </article>
 
-
-      <!-- Teaching -->
-
       <article class="row">
-
         <div class="row-head">
-
           <span class="row-title">
-
-            <a href="teaching.html">
-              Teaching
-            </a>
-
+            <a href="teaching.html">Teaching</a>
           </span>
-
         </div>
-
         <p class="row-desc">
           A collection of scientific rabbit holes,
           questionable reading choices, and books I
           probably did not need to read.
         </p>
-
       </article>
 
-
-      <!-- Gaming -->
-
       <article class="row">
-
         <div class="row-head">
-
           <span class="row-title">
-
-            <a href="gaming.html">
-              Gaming
-            </a>
-
+            <a href="gaming.html">Gaming</a>
           </span>
-
         </div>
-
         <p class="row-desc">
           Games I have played, games I fell in love with,
           and compelling evidence of hours I sacrificed
           to them.
         </p>
-
       </article>
 
-
-      <!-- Gallery -->
-
       <article class="row">
-
         <div class="row-head">
-
           <span class="row-title">
-
-            <a href="gallery.html">
-              Gallery
-            </a>
-
+            <a href="gallery.html">Gallery</a>
           </span>
-
         </div>
-
         <p class="row-desc">
           Just a collection of things I found interesting.
           Interpret them at your own peril.
         </p>
-
       </article>
 
-
-      <!-- Contact -->
-
       <article class="row">
-
         <div class="row-head">
-
           <span class="row-title">
-
-            <a href="contact.html">
-              Contact
-            </a>
-
+            <a href="contact.html">Contact</a>
           </span>
-
         </div>
-
         <p class="row-desc">
           How to find me (without a search party).
         </p>
-
       </article>
-
-
     </div>
-
   </section>
-
-
 </main>
 
-
-<!-- =====================================================
-     Footer
-     ===================================================== -->
-
-<footer
-  class="site-footer"
-  id="site-footer"
-></footer>
-
+<footer class="site-footer" id="site-footer"></footer>
 
 <script src="script.js"></script>
-
 </body>
-
 </html>
