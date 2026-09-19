@@ -269,6 +269,64 @@ function initUpdatesDrawer() {
 
 
 // =========================================================
+// Dim the drawer tab only when it overlaps text (mobile only,
+// and only while the drawer is closed — once open, the panel
+// covering content is expected, so no dimming there).
+// =========================================================
+
+function initUpdatesTabDimming() {
+  var drawer = document.querySelector(".side-updates");
+  var toggle = document.querySelector(".updates-drawer-toggle");
+
+  if (!drawer || !toggle) {
+    return;
+  }
+
+  var mobileQuery = window.matchMedia("(max-width: 700px)");
+  var ticking = false;
+
+  function checkOverlap() {
+    ticking = false;
+
+    if (!mobileQuery.matches || drawer.classList.contains("updates-open")) {
+      toggle.classList.remove("tab-dim");
+      return;
+    }
+
+    var rect = toggle.getBoundingClientRect();
+    var x = rect.left + rect.width / 2;
+    var y = rect.top + rect.height / 2;
+
+    var previousPointerEvents = toggle.style.pointerEvents;
+    toggle.style.pointerEvents = "none";
+    var elAtPoint = document.elementFromPoint(x, y);
+    toggle.style.pointerEvents = previousPointerEvents;
+
+    var overText = false;
+    if (elAtPoint) {
+      var textEl = elAtPoint.closest("p, h1, h2, h3, li, a, span, blockquote");
+      if (textEl && textEl.textContent.trim().length > 0) {
+        overText = true;
+      }
+    }
+
+    toggle.classList.toggle("tab-dim", overText);
+  }
+
+  function requestCheck() {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(checkOverlap);
+    }
+  }
+
+  window.addEventListener("scroll", requestCheck, { passive: true });
+  window.addEventListener("resize", requestCheck);
+  checkOverlap();
+}
+
+
+// =========================================================
 // Dynamic Publications
 // =========================================================
 
@@ -543,6 +601,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initThemeToggle();
   initInfoPanels();
   initUpdatesDrawer();
+  initUpdatesTabDimming();
   loadPublications();
 
   // Gallery Features
